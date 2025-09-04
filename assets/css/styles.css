@@ -360,11 +360,10 @@ a {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  /* background-color: transparent; */
   flex-shrink: 0;
 }
 
-.client--upwork {
+/* .client--upwork {
   background-color: rgba(20, 168, 0, 1);
 }
 
@@ -386,7 +385,7 @@ a {
 
 .client--adobe {
   background-color: rgba(255, 0, 0, 1);
-}
+} */
 
 /* =============================SPECIAL============================= */
 
