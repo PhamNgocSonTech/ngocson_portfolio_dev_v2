@@ -53,6 +53,7 @@ a {
   cursor: pointer;
   /* pointer-events: auto; */
   transition: all 0.4s ease;
+  border-radius: 20px;
 }
 
 .btn:hover {
@@ -69,7 +70,8 @@ a {
 .header.fixed {
   position: sticky;
   top: -10px;
-  background-color: var(--background-color);
+  /* background-color: var(--background-color); */
+  backdrop-filter: blur(18px);
   z-index: 5;
 }
 
@@ -1111,6 +1113,7 @@ a {
 .footer__bottom {
   padding-top: 18px;
   border-top: 1px solid rgba(12, 7, 32, 0.2);
+  text-align: center;
 }
 
 .footer-img__icon {

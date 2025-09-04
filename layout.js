@@ -10,9 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
   loadPartial("#header", "header.html", () => {
     const pcNav = document.querySelector("#pc-nav");
     const mobileNav = document.querySelector("#mobile-nav");
+    const footerNav = document.querySelector("#footer-nav");
     // Copy from PC Nav to Mobile Nav
-    if (pcNav && mobileNav) {
+    if (pcNav && mobileNav && footerNav) {
       mobileNav.innerHTML = pcNav.innerHTML;
+      footerNav.innerHTML = pcNav.innerHTML;
     }
   });
   loadPartial("#footer", "footer.html");

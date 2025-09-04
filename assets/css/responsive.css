@@ -64,6 +64,11 @@
     margin-left: auto;
   }
 
+  .header__menu-icon-img {
+    width: 100px;
+    height: 100px;
+  }
+
   .navbar {
     order: 3;
     margin-left: 10px;
