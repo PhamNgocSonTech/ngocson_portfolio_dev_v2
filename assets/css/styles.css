@@ -233,7 +233,13 @@ a {
 }
 
 .hero__heading-name {
-  color: var(--primary-color);
+  /* color: var(--primary-color); */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  /* background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+  -webkit-background-clip: text; /* áp gradient lên text */
+  -webkit-text-fill-color: transparent; /* ẩn màu chữ gốc */
+  background-clip: text; /* fallback cho browser hỗ trợ */
+  color: transparent; /* fallback */
 }
 
 .hero__desc {
@@ -532,6 +538,7 @@ a {
   position: relative;
   background-color: var(--second-color);
   /* margin-top: 30px; */
+  border-radius: 20px;
 }
 
 .project__card-wrapper {
