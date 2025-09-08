@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #5d3bee;
+  --second-color: #fff;
+  --heading-color: #080415;
+  --background-color: #fbfaff;
+  --desc-color: #51586a;
+}
+
+html {
+  font-size: 62.5%;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "DM Sans", sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
