@@ -22,3 +22,44 @@ body {
   font-family: "DM Sans", sans-serif;
   -webkit-tap-highlight-color: transparent;
 }
+
+/* Overide CSS Button */
+
+.btn {
+  pointer-events: auto;
+  border: 1px solid var(--primary-color);
+  background-color: #fdfdfd;
+}
+
+.btn:hover {
+  background-color: #5d3bee;
+}
+
+/* Project Filter */
+.project__filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.fillter-btn {
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  line-height: 0.66;
+}
+
+.btn.fillter-btn:hover {
+  color: var(--second-color);
+}
+
+.projects {
+  background-color: #dadbdb;
+  margin-top: 100px;
+}
+
+.project__heading {
+  margin-bottom: 20px;
+}
