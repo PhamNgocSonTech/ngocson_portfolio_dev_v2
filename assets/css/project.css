@@ -55,11 +55,24 @@ body {
   color: var(--second-color);
 }
 
-.projects {
-  background-color: #dadbdb;
+.project {
+  /* background-color: #dadbdb; */
   margin-top: 100px;
 }
 
 .project__heading {
   margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+/* Trạng thái active */
+.project__filter .filter-btn.active {
+  background-color: #5d3bee; /* ví dụ tím đậm */
+  color: #fff;
+  border-color: #5d3bee;
+  box-shadow: 0 0 10px rgba(93, 59, 238, 0.5); /* thêm glow nhẹ */
+}
+
+.project__card-item {
+  background-color: #d4dfe6;
 }

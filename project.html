@@ -54,13 +54,13 @@
         <div class="main__container">
             <!-- Filter Button -->
             <div class="project__filter">
-                <button class="btn fillter-btn active ">All</button>
-                <button class="btn fillter-btn">Landing Pages</button>
-                <button class="btn fillter-btn">Web Apps</button>
+                <button data-filter="all" class="btn filter-btn active ">All</button>
+                <button data-filter="landing" class="btn filter-btn">Landing Pages</button>
+                <button data-filter="webapp" class="btn filter-btn">Web Apps</button>
             </div>
         </div>
         <!-- Landing Pages Projects -->
-        <section id="projects-landing" class="projects landing">
+        <section id="project-landing" class="project landing">
             <div class="main__container">
                 <h2 class="project__heading heading">Landing Pages</h2>
                 <!-- <div class="project__content">
@@ -144,7 +144,7 @@
         </section>
 
         <!-- Web Apps Projects -->
-        <section id="projects-webapp" class="projects webapp">
+        <section id="project-webapp" class="project webapp">
             <div class="main__container">
                 <h2 class="project__heading heading">Web Apps</h2>
 
@@ -233,6 +233,7 @@
     <footer class="" id="footer"></footer>
     <!-- Script JS Layout -->
     <script src="layout.js"></script>
+    <script src="./assets/js/filter-button.js"></script>
 
 </body>
 
