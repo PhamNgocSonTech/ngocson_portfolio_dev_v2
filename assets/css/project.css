@@ -23,19 +23,11 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Overide CSS Button */
-
 .btn {
   pointer-events: auto;
-  border: 1px solid var(--primary-color);
-  background-color: #fdfdfd;
 }
 
-.btn:hover {
-  background-color: #5d3bee;
-}
-
-/* Project Filter */
+/* Project Filter Button */
 .project__filter {
   display: flex;
   justify-content: center;
@@ -44,16 +36,29 @@ body {
   margin-top: 50px;
 }
 
-.fillter-btn {
+.filter-btn {
   font-weight: 600;
   color: var(--primary-color);
   font-size: 1.8rem;
-  line-height: 0.66;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid rgba(93, 59, 238, 0.3);
+  background: rgba(93, 59, 238, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
 }
 
-.btn.fillter-btn:hover {
-  color: var(--second-color);
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(93, 59, 238, 0.3);
 }
+
+/* Project CSS */
 
 .project {
   /* background-color: #dadbdb; */
@@ -61,18 +66,15 @@ body {
 }
 
 .project__heading {
-  margin-bottom: 20px;
   color: var(--primary-color);
+  text-align: center;
+  margin: 0 auto;
 }
 
-/* Trạng thái active */
-.project__filter .filter-btn.active {
-  background-color: #5d3bee; /* ví dụ tím đậm */
-  color: #fff;
-  border-color: #5d3bee;
-  box-shadow: 0 0 10px rgba(93, 59, 238, 0.5); /* thêm glow nhẹ */
+.project__card {
+  margin-top: 40px;
 }
 
 .project__card-item {
-  background-color: #d4dfe6;
+  background-color: #eae6ff;
 }
