@@ -41,6 +41,7 @@ button {
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 .btn {
@@ -446,20 +447,24 @@ a {
 .special__list {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
   gap: 30px;
 }
 
 .special__item {
   width: 370px;
-  height: 306px;
+  min-height: 306px;
   padding: 33px 43px;
-  background-color: var(--second-color);
-  transition: background-color 0.3s ease;
+  background-color: #f8f7ff;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .special__item:hover {
-  background-color: #d9e1e8;
+  background-color: #f3f0ff;
+  box-shadow: 0 4px 12px rgba(98, 76, 171, 0.25); /* đậm hơn khi hover */
 }
 
 .special__icon-wrapper {
@@ -469,8 +474,9 @@ a {
   width: 74px;
   height: 74px;
   border-radius: 50%;
-  border: 1px solid rgba(8, 4, 21, 0.05); /* viền đen mờ */
+  border: 1px solid rgba(8, 4, 21, 0.05);
   margin-bottom: 22px;
+  flex-shrink: 0;
 }
 
 .special__item-title {
@@ -480,6 +486,9 @@ a {
   line-height: 1.25; /* 125% */
   letter-spacing: -1.28px;
   margin-bottom: 15px;
+  min-height: 8rem;
+  display: flex;
+  align-items: flex-start;
 }
 
 .special__item-desc {
@@ -487,6 +496,9 @@ a {
   font-size: 1.8rem;
   font-weight: 400;
   line-height: 1.67; /* 166.667% */
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-start;
 }
 
 /* =============================PROJECTS============================= */
