@@ -486,7 +486,7 @@ a {
   line-height: 1.25; /* 125% */
   letter-spacing: -1.28px;
   margin-bottom: 15px;
-  min-height: 8rem;
+  min-height: 6rem;
   display: flex;
   align-items: flex-start;
 }
@@ -1007,17 +1007,17 @@ a {
   margin: 23px 0 21px; /* khoảng cách giữa question và answer khi mở */
 }
 
-/* =============================ATMOSPHERE============================= */
-.atmosphere {
+/* =============================Skills============================= */
+.skill {
   margin-top: 160px;
 }
 
-.atmosphere__content {
+.skill__content {
   max-width: 528px;
   margin: 0 auto;
 }
 
-.atmosphere__heading {
+.skill__heading {
   font-size: 5.6rem;
   line-height: 1.18; /* 117.857% */
   letter-spacing: -2.24px;
@@ -1025,7 +1025,7 @@ a {
   margin-bottom: 20px;
 }
 
-.atmosphere__desc {
+.skill__desc {
   color: var(--desc-color);
   text-align: center;
   font-size: 1.8rem;
@@ -1034,38 +1034,72 @@ a {
   margin-bottom: 30px;
 }
 
-.atmosphere__email {
+.skill__columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  /* grid-template-columns: repeat(4, 1fr); */
+  gap: 30px;
+  margin: 0 auto;
+}
+
+.skill__column {
+  padding: 30px 20px;
   text-align: center;
-  margin-bottom: 70px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(93, 59, 238, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(93, 59, 238, 0.06);
 }
 
-.atmosphere__email-link {
-  color: var(--primary-color);
-  font-size: 3.2rem;
+.skill__column:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(93, 59, 238, 0.15);
+  border-color: rgba(93, 59, 238, 0.12);
+}
+
+.skill__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.skill__title::after {
+  content: "";
+  width: 40px;
+  height: 3px;
+  background: var(--primary-color);
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.skill__list {
+  list-style: none;
+}
+
+.skill__item {
+  font-size: 1.6rem;
   font-weight: 500;
-  line-height: 1.25; /* 125% */
-  letter-spacing: -1.28px;
-  text-decoration-line: underline;
-  text-decoration-style: solid;
-  text-decoration-skip-ink: none;
-  text-underline-position: from-font;
+  color: var(--desc-color);
+  margin-bottom: 15px;
+  padding: 12px 16px;
+  background: rgba(93, 59, 238, 0.04);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
-.atmosphere__email-link:hover {
+.skill__item:last-child {
+  margin-bottom: 0;
+}
+
+.skill__item:hover {
+  background: rgba(93, 59, 238, 0.08);
   color: var(--heading-color);
-}
-
-.atmosphere__media {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.atmosphere__img {
-  width: 370px;
-  height: 529px;
-  object-fit: cover;
-  flex-shrink: 0;
+  transform: scale(1.02);
 }
 
 /* =============================BOOKING============================= */
