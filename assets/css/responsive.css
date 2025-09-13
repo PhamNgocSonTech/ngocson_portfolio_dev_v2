@@ -64,6 +64,11 @@
     margin-left: auto;
   }
 
+  .header__menu-icon-img {
+    width: 100px;
+    height: 100px;
+  }
+
   .navbar {
     order: 3;
     margin-left: 10px;
@@ -368,10 +373,17 @@
     z-index: 1;
   }
 
+  /* Client */
+  .client__title {
+    margin-bottom: 30px;
+  }
+
   .client__list {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+    margin: 0 auto;
   }
+
   .client__item {
     gap: 12px;
   }
