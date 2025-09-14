@@ -51,6 +51,11 @@
     align-items: center;
   }
 
+  .hero__heading {
+    line-height: 1.19; /* 119.048% */
+    letter-spacing: -1.68px;
+  }
+
   .header__icon {
     order: 1;
     flex: 0 0 auto;
