@@ -2,10 +2,6 @@
   pointer-events: auto;
 }
 
-a {
-  color: black;
-}
-
 .container {
   width: 1170px;
   max-width: calc(100% - 48px);
@@ -73,6 +69,7 @@ a {
   backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
+  margin-bottom: 20px;
 }
 
 .project__card-item:hover {
