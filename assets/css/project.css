@@ -2,8 +2,14 @@
   pointer-events: auto;
 }
 
-a {
-  color: black;
+.container {
+  width: 1170px;
+  max-width: calc(100% - 48px);
+  /* margin: 0 auto; */
+}
+
+.col {
+  margin-bottom: 20px; /* Đưa margin ra wrapper div */
 }
 
 /* Project Filter Button */
@@ -67,6 +73,8 @@ a {
   backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
+  margin-bottom: 20px;
+  height: 100%;
 }
 
 .project__card-item:hover {
@@ -75,7 +83,7 @@ a {
 }
 
 .project__card-wrapper {
-  padding: 16px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -84,10 +92,11 @@ a {
 .project__card-img {
   position: relative;
   width: 100%;
-  height: 200px;
-  border-radius: 15px;
+  height: 250px;
+  border-radius: 12px;
   overflow: hidden;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  flex-shrink: 0;
 }
 
 .project__img {
@@ -104,23 +113,34 @@ a {
 .project__card-content {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  flex: 1;
+  min-height: 0;
 }
 
 .project__card-title {
   font-weight: 700;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   margin-bottom: 10px;
+  flex-shrink: 0;
 }
 
 .project__card-desc {
+  display: block;
   margin-bottom: 6px;
   line-height: 1.6;
-  flex-grow: 1;
+  flex: 1;
+}
+.project__card-desc strong {
+  font-weight: bold;
+  color: var(--primary-color);
 }
 
 .project__tech-stack {
   margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  min-height: 90px;
 }
 
 .tech-stack-label {
@@ -131,6 +151,7 @@ a {
 
 .tech-tags {
   display: flex;
+  align-content: flex-start;
   flex-wrap: wrap;
   gap: 5px;
 }
@@ -148,6 +169,7 @@ a {
   display: flex;
   margin-top: auto;
   gap: 10px;
+  flex-shrink: 0;
 }
 
 .project__card-link {

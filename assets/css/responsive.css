@@ -51,6 +51,11 @@
     align-items: center;
   }
 
+  .hero__heading {
+    line-height: 1.19; /* 119.048% */
+    letter-spacing: -1.68px;
+  }
+
   .header__icon {
     order: 1;
     flex: 0 0 auto;
@@ -165,11 +170,11 @@
     justify-content: center;
   }
 
-  .project__card {
+  .project-home__card {
     grid-template-columns: repeat(1, 1fr);
   }
 
-  .project__heading {
+  .project-home__heading {
     font-size: 4.6rem;
   }
 
@@ -270,7 +275,7 @@
     display: none;
   }
 
-  .project__desc {
+  .project-home__desc {
     width: 350px;
   }
 
@@ -297,7 +302,7 @@
     margin-left: 40px;
   }
 
-  .project__card {
+  .project-home__card {
     grid-template-columns: repeat(1, 1fr);
   }
 
@@ -475,53 +480,53 @@
 
   /* Projects */
 
-  .project__content {
+  .project-home__content {
     flex-direction: column;
     text-align: center;
   }
 
-  .project__heading {
+  .project-home__heading {
     font-size: 3.6rem;
   }
 
-  .project__desc {
+  .project-home__desc {
     font-size: 1.6rem;
     margin-top: 20px;
   }
 
-  .project__card {
+  .project-home__card {
     /* width: 350px; */
     margin-bottom: 50px;
   }
 
-  /* .project__card-item {
+  /* .project-home__card-item {
     width: 100%;
   } */
-  .project__card-wrapper {
+  .project-home__card-wrapper {
     padding: 20px 15px;
     gap: 22px;
   }
 
-  .project__card-content {
+  .project-home__card-content {
     max-width: 176px;
     /* width: 100%; */
     /* margin-right: 22px; */
   }
 
-  .project__card-title {
+  .project-home__card-title {
     font-size: 2.4rem;
   }
 
-  .project__card-desc {
+  .project-home__card-desc {
     font-size: 1.4rem;
     margin-bottom: 4px;
   }
 
-  .project__card-link {
+  .project-home__card-link {
     font-size: 1.6rem;
   }
 
-  .project__card-img img {
+  .project-home__card-img img {
     width: 112px;
   }
 
@@ -902,7 +907,8 @@
     margin-top: 6px;
     font-size: 1.4rem;
   }
-  .projects {
+
+  .projects-home {
     max-width: 100%;
   }
 }
@@ -932,7 +938,7 @@
     overflow: hidden !important;
   }
 
-  .project__card-decor {
+  .project-home__card-decor {
     max-width: 100% !important;
     height: auto !important;
     display: block;
