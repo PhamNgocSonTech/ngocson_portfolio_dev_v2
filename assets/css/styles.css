@@ -503,13 +503,13 @@ a {
 
 /* =============================PROJECTS============================= */
 
-.projects {
+.projects-home {
   margin-top: 140px;
   background: #7189ff;
   padding: 86px 0;
 }
 
-.project__content {
+.project-home__content {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -519,7 +519,7 @@ a {
   /* height: 132px; */
 }
 
-.project__heading {
+.project-home__heading {
   max-width: 468px;
   color: var(--second-color);
   font-size: 5.6rem;
@@ -527,7 +527,7 @@ a {
   letter-spacing: -2.24px;
 }
 
-.project__desc {
+.project-home__desc {
   max-width: 370px;
   color: var(--second-color);
   font-size: 1.8rem;
@@ -536,7 +536,7 @@ a {
   opacity: 0.7;
 }
 
-.project__card {
+.project-home__card {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 30px;
@@ -544,14 +544,14 @@ a {
   margin-bottom: 80px;
 }
 
-.project__card-item {
+.project-home__card-item {
   position: relative;
   background-color: var(--second-color);
   /* margin-top: 30px; */
   border-radius: 20px;
 }
 
-.project__card-wrapper {
+.project-home__card-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -559,11 +559,11 @@ a {
   padding: 44px 34px;
 }
 
-.project__card-content {
+.project-home__card-content {
   width: 220px;
 }
 
-.project__card-title {
+.project-home__card-title {
   color: var(--heading-color);
   font-size: 3.2rem;
   font-weight: 500;
@@ -572,7 +572,7 @@ a {
   margin-bottom: 10px;
 }
 
-.project__card-desc {
+.project-home__card-desc {
   color: var(--desc-color);
   font-size: 1.6rem;
   font-style: normal;
@@ -581,34 +581,34 @@ a {
   margin-bottom: 20px;
 }
 
-.project__card-link {
+.project-home__card-link {
   color: var(--heading-color);
   font-size: 1.8rem;
   font-weight: 700;
   line-height: 1.67; /* 166.667% */
 }
-.project__card-link:hover {
+.project-home__card-link:hover {
   text-decoration: underline;
 }
 
-.project__card-img img {
+.project-home__card-img img {
   position: relative;
   max-width: 246px;
   z-index: 1;
 }
 
-.project__card-decor {
+.project-home__card-decor {
   position: absolute;
   inset: 0 0 auto auto;
   z-index: 0;
 }
 
-.project__cta {
+.project-home__cta {
   background: var(--second-color);
   margin: 0 auto;
 }
 
-.project__cta-btn {
+.project-home__cta-btn {
   display: inline-block;
   color: var(--heading-color);
   font-size: 1.8rem;
@@ -616,11 +616,11 @@ a {
   line-height: 1.67; /* 166.667% */
 }
 
-.project__cta.btn:hover {
+.project-home__cta.btn:hover {
   background-color: var(--primary-color);
 }
 
-.project__cta.btn:hover .project__cta-btn {
+.project-home__cta.btn:hover .project__cta-btn {
   color: var(--second-color);
 }
 /* =============================ABOUT ME============================= */
