@@ -130,6 +130,10 @@
   line-height: 1.6;
   flex: 1;
 }
+.project__card-desc strong {
+  font-weight: bold;
+  color: var(--primary-color);
+}
 
 .project__tech-stack {
   margin-bottom: 15px;
