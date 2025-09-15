@@ -913,6 +913,21 @@
   }
 }
 
+@media (max-width: 375px) {
+  .hero__portrait {
+    margin-top: 40px; /* nhỏ hơn cho màn siêu nhỏ */
+  }
+}
+
+@media (max-width: 575px) {
+  .hero__portrait {
+    margin-top: 60px;
+  }
+
+  .clients {
+    margin-top: 150px;
+  }
+}
 /* @media (max-width: 575px) {
   .hero__image-wrap,
   .hero__decor-center,
