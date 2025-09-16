@@ -7,7 +7,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules/
+node_modules
 .DS_Store
 dist
 dist-ssr
@@ -28,6 +28,8 @@ coverage
 *.sw?
 
 *.tsbuildinfo
-.env
-.env.local
-.env.*.local
+/src/components/DynamicProps.vue
+/src/components/ChangingProps.vue
+/src/components/FallbackContent.vue
+/src/components/SlotComponent.vue
+/src/components/StaticProps.vue
