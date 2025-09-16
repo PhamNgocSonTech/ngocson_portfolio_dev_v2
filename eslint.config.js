@@ -18,6 +18,10 @@ export default defineConfig([
         ...globals.browser,
       },
     },
+    rules: {
+      'vue/script-setup-uses-vars': 'error', // macro không bị coi là undefined
+      'no-undef': 'off',                     // tắt check no-undef cho macro Vue
+    },
   },
 
   js.configs.recommended,
