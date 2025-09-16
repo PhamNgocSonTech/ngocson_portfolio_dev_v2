@@ -1,23 +1,5 @@
 /* PC */
 @media screen and (min-width: 992px) {
-  /* .header__inner {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-  } */
-
-  /* .header__email {
-    justify-self: start;
-  } */
-
-  /* .header__icon {
-    justify-self: center;
-  } */
-
-  /* .navbar {
-    justify-self: end;
-  } */
-
   .show-on-mobile {
     display: none;
   }
@@ -176,6 +158,10 @@
 
   .project-home__heading {
     font-size: 4.6rem;
+  }
+
+  .row {
+    row-gap: 30px;
   }
 
   .atmosphere__media {
@@ -875,6 +861,14 @@
 /* Extra Small Mobile */
 
 @media (max-width: 575px) {
+  .hero__portrait {
+    margin-top: 60px;
+  }
+
+  .clients {
+    margin-top: 150px;
+  }
+
   .navbar--footer {
     margin-top: 10px;
     margin-bottom: 40px;
@@ -912,50 +906,3 @@
     max-width: 100%;
   }
 }
-
-@media (max-width: 375px) {
-  .hero__portrait {
-    margin-top: 40px; /* nhỏ hơn cho màn siêu nhỏ */
-  }
-}
-
-@media (max-width: 575px) {
-  .hero__portrait {
-    margin-top: 60px;
-  }
-
-  .clients {
-    margin-top: 150px;
-  }
-}
-/* @media (max-width: 575px) {
-  .hero__image-wrap,
-  .hero__decor-center,
-  .hero__decor-center.show-on-mobile {
-    max-width: 100% !important;
-    height: auto !important;
-    overflow: hidden !important;
-  }
-
-  .special {
-    overflow-x: hidden;
-  }
-
-  .special__list {
-    max-width: 100% !important;
-    width: 100% !important;
-    margin: 0 auto !important;
-    transform: none !important;
-  }
-
-  .atmosphere__media {
-    max-width: 100% !important;
-    overflow: hidden !important;
-  }
-
-  .project-home__card-decor {
-    max-width: 100% !important;
-    height: auto !important;
-    display: block;
-  }
-} */
