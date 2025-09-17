@@ -24,8 +24,8 @@
                   Dynamic and interactive apps built with modern front-end technologies,
                   focusing on performance and clean, maintainable code.
                 </p>
-                <a href="project.html?filter=webapp" class="project-home__card-link">See
-                  More</a>
+                <RouterLink to="/projects#webapp" class="project-home__card-link">See
+                  More</RouterLink>
               </div>
               <div class="project-home__card-img">
                 <img src="../assets/img/project-wally.png" class="project-home__img" alt="">
@@ -44,8 +44,8 @@
                   Pixel-perfect pages converted from Figma into responsive HTML/CSS,
                   optimized for accessibility and cross-device experience.
                 </p>
-                <a href="project.html?filter=landing" class="project-home__card-link">See
-                  More</a>
+                <RouterLink to="/projects#landing" class="project-home__card-link">See
+                  More</RouterLink>
               </div>
               <div class="project-home__card-img">
                 <img src="../assets/img/project-bank.png" class="project-home__img" alt="">
