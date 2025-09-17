@@ -14,9 +14,18 @@ import  './assets/css/responsive.css'
 import './assets/css/header.css'
 import './assets/css/footer.css'
 
+import 'animate.css'
+import WOW from 'wow.js'
+
 const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
 
 app.mount('#app')
+
+new WOW(
+  {
+    animateClass: 'animate__animated', // default
+  }
+).init();
