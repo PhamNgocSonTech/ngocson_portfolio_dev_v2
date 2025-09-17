@@ -4,6 +4,16 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 
+// Import CSS
+import './assets/css/reset.css'
+import './assets/css/grid.css'
+import  './assets/css/styles.css'
+import  './assets/css/responsive.css'
+
+// Header and Footer CSS
+import './assets/css/header.css'
+import './assets/css/footer.css'
+
 const app = createApp(App)
 
 app.use(createPinia())
