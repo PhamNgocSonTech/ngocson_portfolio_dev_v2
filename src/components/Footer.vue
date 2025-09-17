@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { RouterLink } from 'vue-router'
+</script>
 
 <template>
   <!-- Footer -->
@@ -13,9 +15,9 @@
             <a href="mailto:phamngocson7a1@gmail.com" class="footer__email-link">phamngocson7a1@gmail.com</a>
           </div>
           <div class="footer__icon">
-            <a href="index.html#home">
+            <RouterLink to="/">
               <img src="../assets/icons/footer-icon.svg" alt="" class="footer-img__icon">
-            </a>
+            </RouterLink>
           </div>
           <nav class="navbar navbar--footer">
             <!-- Footer Menu Toggle Tablet/Mobile  -->
@@ -30,16 +32,16 @@
             </label>
             <ul id="footer-nav" class="navbar__list">
               <li class="navbar__item">
-                <a href="#projects" class="navbar__link">Projects</a>
+                <RouterLink to="/#projects" class="navbar__link">Projects</RouterLink>
               </li>
               <li class="navbar__item">
-                <a href="index.html#journey" class="navbar__link">About</a>
+                <RouterLink to="/#about" class="navbar__link">About</RouterLink>
               </li>
               <li class="navbar__item">
-                <a href="index.html#service" class="navbar__link">Skills</a>
+                <RouterLink to="/#skill" class="navbar__link">Skills</RouterLink>
               </li>
               <li class="navbar__item">
-                <a href="index.html#contact" class="navbar__link">Contact</a>
+                <RouterLink to="/#contact" class="navbar__link">Contact</RouterLink>
               </li>
             </ul>
           </nav>

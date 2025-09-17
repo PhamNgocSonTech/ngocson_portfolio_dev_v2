@@ -2,7 +2,7 @@
 
 <template>
   <!-- My Skill -->
-  <section id="service" class="skill">
+  <section id="skill" class="skill">
     <div class="main__container">
       <div class="skill__content">
         <h2 class="skill__heading heading">My Skills</h2>

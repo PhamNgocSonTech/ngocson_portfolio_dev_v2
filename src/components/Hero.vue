@@ -4,7 +4,7 @@
 
 <template>
   <!-- Hero -->
-  <section id="home" class="hero">
+  <section class="hero">
     <div class="main__container">
       <div class="hero__inner">
         <div class="hero__image-wrap">

@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+import {RouterLink} from 'vue-router'
+</script>
 
 <template>
   <!-- PC Header -->
@@ -14,17 +16,15 @@
         </div>
         <!-- Logo -->
         <div class="header__icon">
-          <!-- <img src="./assets/img/logo.svg" alt="" class="header-img__icon"> -->
-          <a href="index.html#home">
+          <RouterLink to="/">
             <img src="../assets/icons/header-icon.svg" alt="" class="header-img__icon">
-          </a>
+          </RouterLink>
 
         </div>
         <!-- Navbar -->
         <nav class="navbar">
           <!-- Header Menu Toggle Tablet/Mobile  -->
           <label for="header__menu-checkbox" class="navbar__menu">
-            <!-- <img src="./assets/img//toggle-menu.svg" alt="" class="navbar__menu-icon"> -->
             <svg width="17" height="8" viewBox="0 0 17 8" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M1 7H16" stroke="#5D3BEE" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" />
@@ -36,16 +36,16 @@
           <!-- Navigation -->
           <ul id="pc-nav" class="navbar__list">
             <li class="navbar__item">
-              <a href="#projects" class="navbar__link">Projects</a>
+              <RouterLink to="/#projects" class="navbar__link">Projects</RouterLink>
             </li>
             <li class="navbar__item">
-              <a href="index.html#journey" class="navbar__link">About</a>
+              <RouterLink to="/#about" class="navbar__link">About</RouterLink>
             </li>
             <li class="navbar__item">
-              <a href="index.html#service" class="navbar__link">Skills</a>
+              <RouterLink to="/#skill" class="navbar__link">Skills</RouterLink>
             </li>
             <li class="navbar__item">
-              <a href="index.html#contact" class="navbar__link">Contact</a>
+              <RouterLink to="/#contact" class="navbar__link">Contact</RouterLink>
             </li>
           </ul>
         </nav>
@@ -74,5 +74,6 @@
   <!-- End Header -->
 </template>
 
-<style scoped>
+<style>
+@import '../assets/css/responsive.css';
 </style>

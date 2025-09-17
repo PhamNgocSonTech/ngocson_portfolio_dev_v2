@@ -441,7 +441,7 @@
     position: relative;
   }
 
-  .special__dots input[type="radio"]:checked + 
+  .special__dots input[type="radio"]:checked +
 
 /* Khi radio checked thì label kế nó được active */
 #dot1:checked ~ .special__dots label[for="dot1"],
@@ -859,7 +859,6 @@
 }
 
 /* Extra Small Mobile */
-
 @media (max-width: 575px) {
   .hero__portrait {
     margin-top: 60px;
@@ -882,7 +881,7 @@
     font-size: 1.4rem;
   }
 
-  /* 
+  /*
   .footer__links {
     margin-left: 20px;
     width: 100%;
