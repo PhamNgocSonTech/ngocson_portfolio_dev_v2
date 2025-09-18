@@ -1,14 +1,73 @@
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import ProjectCard from '@/components/ProjectCard.vue'
 // Import Imgs
 import RealEstateImg from '@/assets/img/projects/new-real-estate.png'
 import LessonPageImg from '@/assets/img/projects/new-lesson-landing-page.png'
 import eLearningImg from '@/assets/img/projects/new-eLearning-landing-page.png'
 import PortfolioImg from '@/assets/img/projects/portfolio-template.png'
+import DreamBlogImg from '@/assets/img/projects/new-dream-diary-blog.png'
+import ChitChatImg from '@/assets/img/projects/chit-chat.png'
+import OnstagramsImg from '@/assets/img/projects/onstagrams-resize.png'
+import PokeGameImg from '@/assets/img/projects/flip-card-poke.png'
+import { useRoute } from 'vue-router'
+import router from '@/router/index.js'
 const filter = ref('all')
+const route = useRoute()
+
+watch(
+  () => route.query.type, (newType) => {
+    if(['landing', 'webapp'].includes(newType)) {
+      filter.value = newType
+    }else {
+      filter.value = 'all'
+    }
+  },
+  {immediate: true}
+)
 
 const projects = [
+  //  Web App
+  {
+    img: DreamBlogImg,
+    title: 'Dream Diary Blogs',
+    desc: 'Dream Diary Blogs is personal blog website Admin can create blog on any topic from life. Dream Diary Blogs is personal blog website Admin can create blog on any topic from life.',
+    techStack: ['VueJS', 'Vuex', 'VueRouter', ' Firebase'],
+    github: 'https://github.com/PhamNgocSonTech/DreamDiaryBlog/',
+    liveDemo: 'https://vueblog-f7532.web.app/',
+    type: 'webapp',
+  },
+
+  {
+    img: ChitChatImg,
+    title: 'Chit Chat',
+    desc: 'Chit Chat is a group chat website. Create chat room and can invite friends to join it.',
+    techStack: ['VueJS', 'NodeJS', 'ExpressJS', 'Socket.io', 'MongoDB', 'JWT'],
+    github: 'https://github.com/PhamNgocSonTech/ChitChat/',
+    liveDemo: 'https://chit-chat-bay.vercel.app/',
+    type: 'webapp',
+  },
+
+  {
+    img: OnstagramsImg,
+    title: 'Onstagrams (Team Project)',
+    desc: 'Onstagrams is social app a place that connects everyone. All users can puslish status and interact it.',
+    techStack: ['NodeJS', 'ExpressJS', 'MongoDB', 'ReactJS', 'Redux', 'Cloudinary', 'Nodemailer'],
+    github: 'https://github.com/PhamNgocSonTech/Onstagrams/',
+    liveDemo: 'https://onstagrams.vercel.app/',
+    type: 'webapp',
+  },
+
+  {
+    img: PokeGameImg,
+    title: 'Pokemon Flip Card (Web Game)',
+    desc: 'Pokemon Flip Card is a simple game with two identical cards that will be score. There are different difficulty modes 4x4 6x6 8x8 10x10 which will have different number of cards displayed..',
+    techStack: ['VueJS'],
+    github: 'https://github.com/PhamNgocSonTech/PokemonFlipCardNewVersion/',
+    liveDemo: 'https://flip-card-poke.netlify.app/',
+    type: 'webapp',
+  },
+
   // Landing Page
   {
     img: RealEstateImg,
@@ -51,6 +110,17 @@ const projects = [
   },
 ]
 
+// Update Filter & URL
+const setFilter = (newValue) => {
+  filter.value = newValue
+  router.push({
+    name: 'projects',
+    query: newValue === 'all' ? {} : {type: newValue}
+  })
+}
+
+
+// Filter Button
 const filteredProjects = computed(() => {
   if (filter.value === 'all') return projects
   return projects.filter((p) => p.type === filter.value)
@@ -67,7 +137,7 @@ const currentHeading = computed(() => {
     case 'webapp':
       return `Web Apps (${countProject})`
     default:
-      return "Coming Soon...😓"
+      return 'Coming Soon...😓'
   }
 })
 </script>
@@ -76,13 +146,16 @@ const currentHeading = computed(() => {
   <div class="container">
     <!-- Filter Button -->
     <div class="project__filter">
-      <button :class="{ active: filter === 'all' }" @click="filter = 'all'" class="btn filter-btn">
+      <button
+        :class="{ active: filter === 'all' }"
+        @click="setFilter('all')"
+        class="btn filter-btn">
         All
       </button>
 
       <button
         :class="{ active: filter === 'landing' }"
-        @click="filter = 'landing'"
+        @click="setFilter('landing')"
         class="btn filter-btn"
       >
         Landing Pages
@@ -90,7 +163,7 @@ const currentHeading = computed(() => {
 
       <button
         :class="{ active: filter === 'webapp' }"
-        @click="filter = 'webapp'"
+        @click="setFilter('webapp')"
         class="btn filter-btn"
       >
         Web Apps
