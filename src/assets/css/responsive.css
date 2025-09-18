@@ -27,99 +27,9 @@
 
 /* Tablet & Mobile */
 @media screen and (max-width: 991px) {
-  .header__inner {
-    display: flex;
-    /* justify-content: space-between; */
-    align-items: center;
-  }
-
   .hero__heading {
     line-height: 1.19; /* 119.048% */
     letter-spacing: -1.68px;
-  }
-
-  .header__icon {
-    order: 1;
-    flex: 0 0 auto;
-  }
-
-  .header__email {
-    display: flex;
-    align-items: center;
-    /* gap: 0px; */
-    order: 2;
-    margin-left: auto;
-  }
-
-  .header__menu-icon-img {
-    width: 100px;
-    height: 100px;
-  }
-
-  .navbar {
-    order: 3;
-    margin-left: 10px;
-  }
-
-  .navbar__list,
-  .header__email-link {
-    display: none;
-  }
-
-  .navbar__menu,
-  .navbar--footer .navbar__menu {
-    display: block;
-  }
-
-  .navbar__menu,
-  .navbar--footer .navbar__menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 46px;
-    height: 46px;
-    border: 2px solid rgba(93, 59, 238, 0.2);
-    border-radius: 50%;
-    background-color: var(--second-color);
-  }
-
-  .header__overlay {
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 5;
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.5s ease;
-  }
-
-  .header__menu-drawer {
-    position: fixed;
-    inset: 0 0 0 40%;
-    background-color: var(--background-color);
-    z-index: 5;
-    transform: translateX(100%);
-    transition: 0.4s ease;
-    padding: 60px;
-  }
-
-  .header__menu-checkbox:checked ~ .header__overlay {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .header__menu-checkbox:checked ~ .header__menu-drawer {
-    transform: translateX(0);
-  }
-
-  .header__menu-icon ul {
-    margin-top: 30px;
-  }
-
-  .header__menu-icon ul a {
-    display: block;
-    padding: 18px 0;
-    font-weight: 500;
   }
 
   .hero__decor-second {
@@ -205,27 +115,6 @@
 
 /* Table */
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .header__inner {
-    display: flex;
-    justify-content: center;
-  }
-  .header__email-link {
-    display: block;
-  }
-  .header__icon {
-    order: 2;
-    margin: 0 auto;
-  }
-
-  .header__email {
-    display: flex;
-    align-items: center;
-    /* gap: 0px; */
-    order: 1;
-    /* margin-right: auto; */
-    margin: 0;
-  }
-
   .navbar {
     order: 3;
     margin-left: auto;
