@@ -70,4 +70,5 @@ defineProps({
 
 <style scoped>
 @import "@/assets/css/project.css";
+
 </style>

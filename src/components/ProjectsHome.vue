@@ -24,7 +24,7 @@
                   Dynamic and interactive apps built with modern front-end technologies,
                   focusing on performance and clean, maintainable code.
                 </p>
-                <RouterLink to="/projects#webapp" class="project-home__card-link">See
+                <RouterLink :to="{name: 'projects', query:{type: 'webapp'}}" class="project-home__card-link">See
                   More</RouterLink>
               </div>
               <div class="project-home__card-img">
@@ -44,7 +44,7 @@
                   Pixel-perfect pages converted from Figma into responsive HTML/CSS,
                   optimized for accessibility and cross-device experience.
                 </p>
-                <RouterLink to="/projects#landing" class="project-home__card-link">See
+                <RouterLink :to="{name: 'projects', query:{type: 'landing'}}" class="project-home__card-link">See
                   More</RouterLink>
               </div>
               <div class="project-home__card-img">
