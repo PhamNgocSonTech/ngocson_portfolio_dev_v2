@@ -1,4 +1,5 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+</script>
 
 <template>
   <!-- My Skill -->
@@ -7,43 +8,48 @@
       <div class="skill__content">
         <h2 class="skill__heading heading">My Skills</h2>
         <p class="skill__desc">Technologies and frameworks I use in development.</p>
-        <!-- <div class="skill__email">
-            <a href="#!" class="skill__email-link">@interaction_arif</a>
-        </div> -->
       </div>
-      <div class="skill__columns">
-        <div class="skill__column skill__column--frontend">
-          <h3 class="skill__title">Frontend</h3>
-          <ul class="skill__list">
-            <li class="skill__item">HTML/CSS</li>
-            <li class="skill__item">Javascript</li>
-            <li class="skill__item">Sass</li>
-            <li class="skill__item">VueJS</li>
-          </ul>
+      <div class="row skill__columns">
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="skill__column skill__column--frontend">
+            <h3 class="skill__title">Frontend</h3>
+            <ul class="skill__list">
+              <li class="skill__item">HTML/CSS</li>
+              <li class="skill__item">Javascript</li>
+              <li class="skill__item">Sass</li>
+              <li class="skill__item">VueJS</li>
+            </ul>
+          </div>
         </div>
-        <div class="skill__column skill__column--backend">
-          <h3 class="skill__title">Backend</h3>
-          <ul class="skill__list">
-            <li class="skill__item">NodeJS</li>
-            <li class="skill__item">ExpressJS</li>
-            <li class="skill__item">MongoDB</li>
-            <li class="skill__item">SQL</li>
-          </ul>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="skill__column skill__column--backend">
+            <h3 class="skill__title">Backend</h3>
+            <ul class="skill__list">
+              <li class="skill__item">NodeJS</li>
+              <li class="skill__item">ExpressJS</li>
+              <li class="skill__item">MongoDB</li>
+              <li class="skill__item">SQL</li>
+            </ul>
+          </div>
         </div>
-        <div class="skill__column skill__column--tool">
-          <h3 class="skill__title">Tools</h3>
-          <ul class="skill__list">
-            <li class="skill__item">Postman</li>
-            <li class="skill__item">Vercel</li>
-            <li class="skill__item">Cloudinary</li>
-            <li class="skill__item">AI</li>
-          </ul>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="skill__column skill__column--tool">
+            <h3 class="skill__title">Tools</h3>
+            <ul class="skill__list">
+              <li class="skill__item">Postman</li>
+              <li class="skill__item">Vercel</li>
+              <li class="skill__item">Cloudinary</li>
+              <li class="skill__item">AI</li>
+            </ul>
+          </div>
         </div>
-        <div class="skill__column skill__column--erp">
-          <h3 class="skill__title">ERP</h3>
-          <ul class="skill__list">
-            <li class="skill__item">Odoo</li>
-          </ul>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="skill__column skill__column--erp">
+            <h3 class="skill__title">ERP</h3>
+            <ul class="skill__list">
+              <li class="skill__item">Odoo</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -78,13 +84,6 @@
   margin-bottom: 30px;
 }
 
-.skill__columns {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  /* grid-template-columns: repeat(4, 1fr); */
-  gap: 30px;
-  margin: 0 auto;
-}
 
 .skill__column {
   padding: 30px 20px;

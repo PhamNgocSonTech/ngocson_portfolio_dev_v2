@@ -63,4 +63,5 @@ import { RouterLink } from 'vue-router'
   <!-- End Footer -->
 </template>
 
-<style scoped></style>
+<style scoped>
+</style>
