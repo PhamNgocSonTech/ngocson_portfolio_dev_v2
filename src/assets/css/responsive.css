@@ -23,18 +23,6 @@
 
 /* Tablet & Mobile */
 @media screen and (max-width: 991px) {
-  .project-home__card {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  .project-home__heading {
-    font-size: 4.6rem;
-  }
-
-  .row {
-    row-gap: 30px;
-  }
-
   .atmosphere__media {
     flex-direction: column;
     row-gap: 50px;
@@ -67,19 +55,10 @@
   .show-on-mobile {
     display: none;
   }
-
-  .project-home__desc {
-    width: 350px;
-  }
-
 }
 
 /* Large Tablet (iPad Pro, Surface, etc.) */
 @media screen and (min-width: 1024px) and (max-width: 1200px) {
-  .project-home__card {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
   .atmosphere__media {
     flex-direction: column;
     row-gap: 60px;
@@ -88,57 +67,6 @@
 
 /* Mobile */
 @media screen and (max-width: 767px) {
-  /* Projects */
-  .project-home__content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .project-home__heading {
-    font-size: 3.6rem;
-  }
-
-  .project-home__desc {
-    font-size: 1.6rem;
-    margin-top: 20px;
-  }
-
-  .project-home__card {
-    /* width: 350px; */
-    margin-bottom: 50px;
-  }
-
-  /* .project-home__card-item {
-    width: 100%;
-  } */
-  .project-home__card-wrapper {
-    padding: 20px 15px;
-    gap: 22px;
-  }
-
-  .project-home__card-content {
-    max-width: 176px;
-    /* width: 100%; */
-    /* margin-right: 22px; */
-  }
-
-  .project-home__card-title {
-    font-size: 2.4rem;
-  }
-
-  .project-home__card-desc {
-    font-size: 1.4rem;
-    margin-bottom: 4px;
-  }
-
-  .project-home__card-link {
-    font-size: 1.6rem;
-  }
-
-  .project-home__card-img img {
-    width: 112px;
-  }
-
   /* Feedback */
   .feedback__heading {
     font-size: 3.6rem;
@@ -321,40 +249,6 @@
   .clients {
     margin-top: 150px;
   }
-
-  .navbar--footer {
-    margin-top: 10px;
-    margin-bottom: 40px;
-  }
-
-  .navbar--footer .navbar__list {
-    margin-left: 0;
-  }
-
-  .navbar__link {
-    font-size: 1.4rem;
-  }
-
-  /*
-  .footer__links {
-    margin-left: 20px;
-    width: 100%;
-    border-bottom-width: 100%;
-  } */
-
-  .footer__link {
-    font-size: 1.3rem;
-  }
-
-  .footer__separator {
-    margin-right: 0;
-  }
-
-  .footer__copyright {
-    margin-top: 6px;
-    font-size: 1.4rem;
-  }
-
   .projects-home {
     max-width: 100%;
   }

@@ -125,7 +125,7 @@ a {
   background: #f29764;
   border-radius: 50%;
   padding-top: 6px;
-  overflow: hiddens;
+  overflow: hidden;
 }
 
 .feedback__people-avt {

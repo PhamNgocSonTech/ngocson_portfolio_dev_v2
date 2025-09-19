@@ -19,7 +19,7 @@ defineProps({
       <div class="project__card-wrapper">
         <div class="project__card-img">
           <img :src="project.img" class="project__img"
-               :alt="project.title">
+               :alt="project.title" loading="lazy">
         </div>
         <div class="project__card-content">
           <h3 class="project__card-title">{{project.title}}</h3>

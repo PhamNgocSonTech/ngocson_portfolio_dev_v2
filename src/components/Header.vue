@@ -146,13 +146,11 @@ import { RouterLink } from 'vue-router'
     display: none;
   }
 
-  .navbar__menu,
-  .navbar--footer .navbar__menu {
+  .navbar__menu {
     display: block;
   }
 
-  .navbar__menu,
-  .navbar--footer .navbar__menu {
+  .navbar__menu {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -202,6 +200,7 @@ import { RouterLink } from 'vue-router'
     font-weight: 500;
   }
 }
+
 /* Table */
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .header__inner {
