@@ -27,20 +27,6 @@
 
 /* Tablet & Mobile */
 @media screen and (max-width: 991px) {
-  .hero__heading {
-    line-height: 1.19; /* 119.048% */
-    letter-spacing: -1.68px;
-  }
-
-  .hero__decor-second {
-    display: none;
-  }
-
-  /* .hero__social {
-    justify-content: center;
-    margin-top: 80;
-  } */
-
   .clients {
     margin-top: 200px;
   }
@@ -120,32 +106,6 @@
     margin-left: auto;
   }
 
-  .hero__inner {
-    gap: 20px;
-  }
-  .hero__image-wrap {
-    width: 50%;
-  }
-
-  .hero__content {
-    width: 50%;
-  }
-
-  .hero__heading {
-    font-size: 6rem;
-    line-height: 0.95;
-    letter-spacing: -3.2px;
-    margin-bottom: 15px;
-  }
-
-  .hero__desc {
-    margin-bottom: 25px;
-  }
-
-  .hero__social {
-    margin-top: 80px;
-  }
-
   .show-on-mobile {
     display: none;
   }
@@ -165,14 +125,6 @@
 
 /* Large Tablet (iPad Pro, Surface, etc.) */
 @media screen and (min-width: 1024px) and (max-width: 1200px) {
-  .hero__inner {
-    gap: 50px;
-  }
-
-  .hero__decor-second {
-    display: none;
-  }
-
   .client__list {
     margin-left: 40px;
   }
@@ -189,70 +141,6 @@
 
 /* Mobile */
 @media screen and (max-width: 767px) {
-  .header__menu-drawer {
-    padding: 40px;
-  }
-
-  .header {
-    /* border-width: 377px; */
-    border-bottom: 1px solid #d6d3e2;
-  }
-
-  .hero__inner {
-    flex-direction: column-reverse;
-  }
-
-  .hero__content {
-    width: 100%;
-  }
-
-  .hero__heading {
-    font-size: 4.2rem;
-    /* max-width: 260px; */
-  }
-
-  .hero__desc {
-    font-size: 1.6rem;
-    /* max-width: 318px; */
-  }
-  .hero__social {
-    margin-top: 25px;
-  }
-
-  .hero__image-wrap {
-    width: 100%;
-    /* max-width: 259px; */
-    text-align: center;
-  }
-
-  .hero__image-wrap {
-    text-align: center;
-    /* height: 100%; */
-    overflow: hidden;
-  }
-
-  .hero__portrait {
-    display: inline-block;
-    width: 100%;
-    max-width: 259px;
-    height: auto;
-    margin: 0 auto;
-  }
-
-  .hero__decor-first,
-  .hero__decor-second {
-    display: none;
-  }
-
-  .hero__decor-center {
-    max-width: 543px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-  }
-
   /* Client */
   .client__title {
     margin-bottom: 30px;
@@ -749,10 +637,6 @@
 
 /* Extra Small Mobile */
 @media (max-width: 575px) {
-  .hero__portrait {
-    margin-top: 60px;
-  }
-
   .clients {
     margin-top: 150px;
   }
