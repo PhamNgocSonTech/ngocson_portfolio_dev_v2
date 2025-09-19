@@ -118,34 +118,255 @@
   transition: box-shadow 0.5s ease;
 }
 
-.about-me__play:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.about-me__intro {
-  background-color: var(--second-color);
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-}
-
-.about-me__intro-btn {
-  display: inline-block;
-  color: var(--desc-color);
-  font-size: 1.8rem;
-  font-weight: 700;
-  line-height: 1.67; /* 166.667% */
-  text-transform: uppercase;
-  /* padding: 16px 28px; */
-}
-
-.about-me__intro:hover {
-  background-color: var(--primary-color);
-  opacity: 1;
-}
 
 .about-me__intro.btn:hover .about-me__intro-btn {
   color: var(--second-color);
 }
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+  /* About Me */
+  .about-me {
+    margin-top: 120px;
+  }
+
+  .about-me__title {
+    font-size: 2rem;
+  }
+
+  .about-me__icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .about-me__heading {
+    font-size: 3.6rem;
+    margin-bottom: 20px;
+  }
+
+  .about-me__desc {
+    font-size: 1.6rem;
+    margin-bottom: 50px;
+  }
+
+  .about-me__statistic {
+    flex-direction: row;
+    gap: 50px;
+  }
+
+  .about-me__statistic-detail {
+    font-size: 1.6rem;
+  }
+
+  .about-me__statistic-detail strong {
+    font-size: 3rem;
+  }
+  /* Đảo thứ tự theo thiết kế */
+  .about-me__statistic-detail:nth-child(1) {
+    order: 2;
+  }
+  .about-me__statistic-detail:nth-child(2) {
+    order: 1;
+  }
+  .about-me__statistic-detail:nth-child(3) {
+    order: 3;
+  }
+
+  .about-me__thumb {
+    max-width: 350px;
+    height: 276px;
+  }
+
+  .about-me__play {
+    width: 77px;
+    height: 77px;
+  }
+
+  .about-me__intro.btn {
+    width: 118px;
+    height: 44px;
+  }
+
+  .about-me__intro-btn {
+    font-size: 1.2rem;
+  }
+
+  /* Feedback */
+  .feedback__heading {
+    font-size: 3.6rem;
+  }
+
+  .feedback__desc {
+    font-size: 1.6rem;
+  }
+
+  .feedback__review {
+    margin-top: 40px;
+    font-size: 1.8rem;
+  }
+
+  .feedback__decor-right,
+  .feedback__decor-left {
+    max-width: 98px;
+  }
+
+  .feedback__content,
+  .feedback__detail {
+    width: 100%;
+  }
+
+  /* FAQ */
+  .faq {
+    margin-top: 120px;
+  }
+
+  .faq__heading {
+    font-size: 3.6rem;
+  }
+
+  .faq__group {
+    margin-top: 42px;
+  }
+
+  .faq__question-text {
+    font-size: 2.4rem;
+    margin: 40px 0 15px;
+    max-width: 264px;
+  }
+
+  .faq__answer-text {
+    font-size: 1.6rem;
+    margin: 15px 0 18px;
+  }
+
+  .faq__item input:checked ~ .faq__answer {
+    margin: -15px 0 21px;
+  }
+
+  .faq__button {
+    width: 33px;
+    height: 33px;
+    flex: 0 0 33px;
+  }
+
+  .faq__button img {
+    width: 6px;
+    height: 6px;
+  }
+
+  /* Atmosphere */
+  .atmosphere {
+    margin-top: 120px;
+  }
+
+  .atmosphere__heading {
+    font-size: 3.6rem;
+  }
+
+  .atmosphere__desc {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+
+  .atmosphere__email-link {
+    font-size: 2rem;
+  }
+
+  .atmosphere__email {
+    margin-bottom: 60px;
+  }
+
+  .atmosphere__media {
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    overflow: hidden;
+  }
+  .atmosphere__indicators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 40px;
+  }
+  .atmosphere__dot {
+    /* display: inline-block; */
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #080415;
+    opacity: 0.2;
+  }
+
+  .atmosphere__dot--active {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background: var(--second-color); /* khoảng trắng giữa */
+    border: 1px solid var(--primary-color); /* viền ngoài */
+    border-radius: 50%;
+    opacity: 1;
+  }
+
+  .atmosphere__dot--active::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--primary-color);
+  }
+
+  /* Booking */
+  .booking {
+    width: 100%;
+    margin-top: 120px;
+    padding: 35px 0 35px;
+  }
+
+  .booking__icon-img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .booking__content {
+    max-width: 350px;
+    height: auto;
+  }
+
+  .booking__heading {
+    font-size: 3.6rem;
+    max-width: 225px;
+    margin: 0 auto;
+  }
+
+  .booking__desc {
+    font-size: 1.6rem;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+
+  .booking__cta.btn {
+    width: 147px;
+  }
+
+  .booking__cta-btn {
+    font-size: 1.6rem;
+  }
+
+  .booking__img-left,
+  .booking__img-right,
+  .booking__img-center {
+    display: none;
+  }
+
+  .booking__img-center--mobile {
+    display: block;
+  }
+}
+
 
 </style>

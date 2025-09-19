@@ -12,10 +12,6 @@
     display: none;
   }
 
-  .special__dots {
-    display: none;
-  }
-
   input[type="radio"] {
     display: none;
   }
@@ -27,27 +23,6 @@
 
 /* Tablet & Mobile */
 @media screen and (max-width: 991px) {
-  .clients {
-    margin-top: 200px;
-  }
-
-  .client__inner {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .client__list {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px 40px;
-    margin-left: auto;
-    margin-top: 40px;
-  }
-
-  .client__item {
-    justify-content: center;
-  }
-
   .project-home__card {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -80,23 +55,6 @@
   .booking__img-center {
     width: 100%;
   }
-
-  .special__content {
-    margin-bottom: 20px;
-  }
-
-  .special__item-title {
-    font-size: 3rem;
-  }
-
-  .special__item-desc {
-    font-size: 1.5rem;
-  }
-
-  .footer__copyright,
-  .footer__link {
-    font-size: 1.5rem;
-  }
 }
 
 /* Table */
@@ -114,21 +72,10 @@
     width: 350px;
   }
 
-  .special__dots {
-    display: none;
-  }
-
-  input[type="radio"] {
-    display: none;
-  }
 }
 
 /* Large Tablet (iPad Pro, Surface, etc.) */
 @media screen and (min-width: 1024px) and (max-width: 1200px) {
-  .client__list {
-    margin-left: 40px;
-  }
-
   .project-home__card {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -141,108 +88,7 @@
 
 /* Mobile */
 @media screen and (max-width: 767px) {
-  /* Client */
-  .client__title {
-    margin-bottom: 30px;
-  }
-
-  .client__list {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    margin: 0 auto;
-  }
-
-  .client__item {
-    gap: 12px;
-  }
-
-  .client__group:nth-child(n + 3) {
-    margin-top: 36px;
-  }
-
-  /* Special */
-
-  .special__desc {
-    width: 350px;
-  }
-
-  .special {
-    width: 100%;
-    overflow: hidden;
-  }
-
-  .special__list {
-    transition: transform 0.5s ease;
-    gap: 20px;
-  }
-
-  .special__item {
-    flex: 0 0 100%;
-    /* min-width: 100%; */
-    /* transform: translate(-0%);
-    transition: transform 0.3s ease; */
-  }
-
-  input[type="radio"] {
-    display: none;
-  }
-
-  /* transform dựa trên radio checked */
-  #dot1:checked ~ .special__list {
-    transform: translateX(0%);
-  }
-  #dot2:checked ~ .special__list {
-    transform: translateX(-105%);
-  }
-  #dot3:checked ~ .special__list {
-    transform: translateX(-210%);
-  }
-
-  /* Dots */
-  .special__dots {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-  }
-
-  .special__dots label {
-    width: 20px;
-    height: 20px;
-    border: 1px solid var(--primary-color);
-    border-radius: 50%;
-    background: transparent;
-    display: inline-block;
-    cursor: pointer;
-    margin: 0 4px;
-    position: relative;
-  }
-
-  .special__dots input[type="radio"]:checked +
-
-/* Khi radio checked thì label kế nó được active */
-#dot1:checked ~ .special__dots label[for="dot1"],
-#dot2:checked ~ .special__dots label[for="dot2"],
-#dot3:checked ~ .special__dots label[for="dot3"] {
-    background: var(--second-color);
-  }
-
-  #dot1:checked ~ .special__dots label[for="dot1"]::before,
-  #dot2:checked ~ .special__dots label[for="dot2"]::before,
-  #dot3:checked ~ .special__dots label[for="dot3"]::before {
-    content: "";
-    width: 12px;
-    height: 12px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: var(--primary-color);
-    border-radius: 50%;
-  }
-
   /* Projects */
-
   .project-home__content {
     flex-direction: column;
     text-align: center;
@@ -291,72 +137,6 @@
 
   .project-home__card-img img {
     width: 112px;
-  }
-
-  /* About Me */
-  .about-me {
-    margin-top: 120px;
-  }
-
-  .about-me__title {
-    font-size: 2rem;
-  }
-
-  .about-me__icon {
-    width: 24px;
-    height: 24px;
-  }
-
-  .about-me__heading {
-    font-size: 3.6rem;
-    margin-bottom: 20px;
-  }
-
-  .about-me__desc {
-    font-size: 1.6rem;
-    margin-bottom: 50px;
-  }
-
-  .about-me__statistic {
-    flex-direction: row;
-    gap: 50px;
-  }
-
-  .about-me__statistic-detail {
-    font-size: 1.6rem;
-  }
-
-  .about-me__statistic-detail strong {
-    font-size: 3rem;
-  }
-  /* Đảo thứ tự theo thiết kế */
-  .about-me__statistic-detail:nth-child(1) {
-    order: 2;
-  }
-  .about-me__statistic-detail:nth-child(2) {
-    order: 1;
-  }
-  .about-me__statistic-detail:nth-child(3) {
-    order: 3;
-  }
-
-  .about-me__thumb {
-    max-width: 350px;
-    height: 276px;
-  }
-
-  .about-me__play {
-    width: 77px;
-    height: 77px;
-  }
-
-  .about-me__intro.btn {
-    width: 118px;
-    height: 44px;
-  }
-
-  .about-me__intro-btn {
-    font-size: 1.2rem;
   }
 
   /* Feedback */
@@ -533,105 +313,6 @@
 
   .booking__img-center--mobile {
     display: block;
-  }
-
-  /* Footer */
-
-  .footer {
-    max-width: 392px;
-    margin: 0 auto;
-  }
-
-  .navbar--footer .navbar__list {
-    display: flex;
-    order: 2;
-  }
-
-  .navbar--footer .navbar__menu {
-    display: none;
-  }
-
-  .footer__inner {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .footer__email {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    order: 3;
-    margin-bottom: 57px;
-  }
-
-  .footer__icon {
-    order: 1;
-    margin: 0 auto;
-  }
-
-  .navbar--footer {
-    order: 2;
-    margin-top: 20px;
-    margin-bottom: 58px;
-  }
-
-  .navbar__link {
-    font-size: 1.6rem;
-  }
-
-  .footer-container__email {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 46px;
-    height: 46px;
-    border: 2px solid rgba(93, 59, 238, 0.2);
-    border-radius: 50%;
-    background-color: var(--second-color);
-  }
-
-  .footer__email-link {
-    display: block;
-    color: var(--heading-color);
-    font-size: 2.2rem;
-    font-weight: 500;
-    line-height: 1.36; /* 136.364% */
-    text-decoration-line: underline;
-    text-decoration-style: solid;
-  }
-
-  .footer__bottom {
-    border-top: none;
-  }
-
-  .footer__bottom-inner {
-    flex-direction: column;
-    align-items: center;
-    gap: 36px;
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .footer__links {
-    order: 1;
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-    border-bottom: 1px solid rgba(12, 7, 32, 0.2);
-    padding-bottom: 12px;
-    width: 392px;
-  }
-
-  .footer__copyright {
-    order: 2;
-    text-align: center;
-    margin-top: 8px;
-    font-size: 1.6rem;
-  }
-
-  .footer__link {
-    font-size: 1.8rem;
   }
 }
 
