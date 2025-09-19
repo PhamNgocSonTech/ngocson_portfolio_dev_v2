@@ -28,7 +28,7 @@
                   More</RouterLink>
               </div>
               <div class="project-home__card-img">
-                <img src="../assets/img/project-wally.png" class="project-home__img" alt="">
+                <img src="../assets/img/project-wally.png" class="project-home__img" loading="lazy" alt="Web Application Img">
               </div>
               <!-- <img src="../assets/icons/project-icon/project-decor.svg" class="project-home__card-decor" alt=""> -->
             </div>
@@ -48,7 +48,7 @@
                   More</RouterLink>
               </div>
               <div class="project-home__card-img">
-                <img src="../assets/img/project-bank.png" class="project-home__img" alt="">
+                <img src="../assets/img/project-bank.png" class="project-home__img" loading="lazy" alt="Landing Page Img">
               </div>
               <!-- <img src="../assets/icons/project-icon/project-decor.svg" class="project-home__card-decor" alt=""> -->
             </div>
@@ -197,4 +197,89 @@
 .project-home__cta.btn:hover .project__cta-btn {
   color: var(--second-color);
 }
+
+/* Tablet & Mobile */
+@media screen and (max-width: 991px) {
+  .project-home__card {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .project-home__heading {
+    font-size: 4.6rem;
+  }
+
+  .row {
+    row-gap: 30px;
+  }
+}
+
+/* Table */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .project-home__desc {
+    width: 350px;
+  }
+
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+  /* Projects */
+  .project-home__content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .project-home__heading {
+    font-size: 3.6rem;
+  }
+
+  .project-home__desc {
+    font-size: 1.6rem;
+    margin-top: 20px;
+  }
+
+  .project-home__card {
+    /* width: 350px; */
+    margin-bottom: 50px;
+  }
+
+  /* .project-home__card-item {
+    width: 100%;
+  } */
+  .project-home__card-wrapper {
+    padding: 20px 15px;
+    gap: 22px;
+  }
+
+  .project-home__card-content {
+    max-width: 176px;
+    /* width: 100%; */
+    /* margin-right: 22px; */
+  }
+
+  .project-home__card-title {
+    font-size: 2.4rem;
+  }
+
+  .project-home__card-desc {
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+  }
+
+  .project-home__card-link {
+    font-size: 1.6rem;
+  }
+
+  .project-home__card-img img {
+    width: 112px;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 575px) {
+  .projects-home {
+    max-width: 100%;
+  }
+}
+
 </style>

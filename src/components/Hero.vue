@@ -9,7 +9,7 @@
       <div class="hero__inner">
         <div class="hero__image-wrap">
           <!-- <img src="./assets/img/hero-img.png" alt="" class="hero__portrait"> -->
-          <img src="../assets/img/son-hero.jpg" alt="" class="hero__portrait" />
+          <img src="https://res.cloudinary.com/doapkbncj/image/upload/v1758296370/ngocson_porfolio_v2/son-hero.jpg" alt="" class="hero__portrait" loading="lazy" />
           <!-- Decorators -->
           <!-- <img src="./assets/img/decor-01.svg" alt="" class="hero__decor-first"> -->
           <!-- <img src="./assets/img/decor-02.svg" alt="" class="hero__decor-second"> -->

@@ -48,15 +48,7 @@ import { RouterLink } from 'vue-router'
         </div>
       </div>
       <div class="footer__bottom">
-        <!-- <div class="footer__bottom-inner"> -->
-        <p class="footer__copyright">©2025 Designed & Built with ❤️ by Ngoc Son</p>
-        <!-- <div class="footer__links">
-                <a href="#!" class="footer__link">Github</a>
-                <span class="footer__separator"></span>
-                <a href="#!" class="footer__link">Linked</a>
-                <p class="footer__line"></p>
-            </div> -->
-        <!-- </div> -->
+        <p class="footer__copyright">©2025 Designed & Built with ❤️ by <a href="https://github.com/PhamNgocSonTech" class="footer__link">Ngoc Son</a></p>
       </div>
     </div>
   </footer>
@@ -65,15 +57,62 @@ import { RouterLink } from 'vue-router'
 
 <style scoped>
 
+/* PC */
+@media screen and (min-width: 992px) {
+  .navbar__menu {
+    display: none;
+  }
+}
 
 /* Tablet & Mobile */
 @media screen and (max-width: 991px) {
+  .navbar {
+    order: 3;
+    margin-left: 10px;
+  }
+
+  .navbar__list,
+  .footer__email-link {
+    display: none;
+  }
+
+  /*.navbar__menu {
+    display: block;
+  }*/
+
+  .navbar__menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 46px;
+    height: 46px;
+    border: 2px solid rgba(93, 59, 238, 0.2);
+    border-radius: 50%;
+    background-color: var(--second-color);
+  }
+  .navbar--footer .navbar__menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 46px;
+    height: 46px;
+    border: 2px solid rgba(93, 59, 238, 0.2);
+    border-radius: 50%;
+    background-color: var(--second-color);
+  }
   .footer__copyright,
   .footer__link {
     font-size: 1.5rem;
   }
 }
 
+/* Table */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .navbar {
+    order: 3;
+    margin-left: auto;
+  }
+}
 
 /* Mobile */
 @media screen and (max-width: 767px) {
@@ -179,10 +218,6 @@ import { RouterLink } from 'vue-router'
 
 /* Extra Small Mobile */
 @media (max-width: 575px) {
-  .clients {
-    margin-top: 150px;
-  }
-
   .navbar--footer {
     margin-top: 10px;
     margin-bottom: 40px;
@@ -196,26 +231,14 @@ import { RouterLink } from 'vue-router'
     font-size: 1.4rem;
   }
 
-  /*
-  .footer__links {
-    margin-left: 20px;
-    width: 100%;
-    border-bottom-width: 100%;
-  } */
-
-  .footer__link {
+  .footer__copyright .footer__link {
+    color:var(--primary-color) ;
     font-size: 1.3rem;
-  }
-
-  .footer__separator {
-    margin-right: 0;
   }
 
   .footer__copyright {
     margin-top: 6px;
     font-size: 1.4rem;
   }
-
 }
-
 </style>
