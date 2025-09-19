@@ -298,27 +298,65 @@
   flex-shrink: 0;
 }
 
-/* .client--upwork {
-  background-color: rgba(20, 168, 0, 1);
+
+/* Tablet & Mobile */
+@media screen and (max-width: 991px) {
+  .clients {
+    margin-top: 200px;
+  }
+
+  .client__inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .client__list {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px 40px;
+    margin-left: auto;
+    margin-top: 40px;
+  }
+
+  .client__item {
+    justify-content: center;
+  }
+
 }
 
-.client--wb {
-  background-color: rgba(251, 250, 255, 1);
+/* Large Tablet (iPad Pro, Surface, etc.) */
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+  .client__list {
+    margin-left: 40px;
+  }
 }
 
-.client--cloud {
-  background-color: rgba(255, 255, 255, 1);
+/* Mobile */
+@media screen and (max-width: 767px) {
+  /* Client */
+  .client__title {
+    margin-bottom: 30px;
+  }
+
+  .client__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 0 auto;
+  }
+
+  .client__item {
+    gap: 12px;
+  }
+
+  .client__group:nth-child(n + 3) {
+    margin-top: 36px;
+  }
 }
 
-.client--mail {
-  background-color: rgba(254, 225, 1, 1);
+/* Extra Small Mobile */
+@media (max-width: 575px) {
+  .clients {
+    margin-top: 150px;
+  }
 }
-
-.client--woo {
-  background-color: rgba(127, 84, 179, 1);
-}
-
-.client--adobe {
-  background-color: rgba(255, 0, 0, 1);
-} */
 </style>

@@ -142,4 +142,124 @@
   align-items: flex-start;
 }
 
+/* PC */
+@media screen and (min-width: 992px) {
+  .special__dots {
+    display: none;
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 991px) {
+  .special__content {
+    margin-bottom: 20px;
+  }
+
+  .special__item-title {
+    font-size: 3rem;
+  }
+
+  .special__item-desc {
+    font-size: 1.5rem;
+  }
+}
+
+/* Table */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .special__dots {
+    display: none;
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+
+  /* Special */
+  .special__desc {
+    width: 350px;
+  }
+
+  .special {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .special__list {
+    transition: transform 0.5s ease;
+    gap: 20px;
+  }
+
+  .special__item {
+    flex: 0 0 100%;
+    /* min-width: 100%; */
+    /* transform: translate(-0%);
+    transition: transform 0.3s ease; */
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  /* transform dựa trên radio checked */
+  #dot1:checked ~ .special__list {
+    transform: translateX(0%);
+  }
+  #dot2:checked ~ .special__list {
+    transform: translateX(-105%);
+  }
+  #dot3:checked ~ .special__list {
+    transform: translateX(-210%);
+  }
+
+  /* Dots */
+  .special__dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .special__dots label {
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--primary-color);
+    border-radius: 50%;
+    background: transparent;
+    display: inline-block;
+    cursor: pointer;
+    margin: 0 4px;
+    position: relative;
+  }
+
+  .special__dots input[type="radio"]:checked +
+
+    /* Khi radio checked thì label kế nó được active */
+  #dot1:checked ~ .special__dots label[for="dot1"],
+  #dot2:checked ~ .special__dots label[for="dot2"],
+  #dot3:checked ~ .special__dots label[for="dot3"] {
+    background: var(--second-color);
+  }
+
+  #dot1:checked ~ .special__dots label[for="dot1"]::before,
+  #dot2:checked ~ .special__dots label[for="dot2"]::before,
+  #dot3:checked ~ .special__dots label[for="dot3"]::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--primary-color);
+    border-radius: 50%;
+  }
+}
 </style>

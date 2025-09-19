@@ -64,4 +64,158 @@ import { RouterLink } from 'vue-router'
 </template>
 
 <style scoped>
+
+
+/* Tablet & Mobile */
+@media screen and (max-width: 991px) {
+  .footer__copyright,
+  .footer__link {
+    font-size: 1.5rem;
+  }
+}
+
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+  /* Footer */
+
+  .footer {
+    max-width: 392px;
+    margin: 0 auto;
+  }
+
+  .navbar--footer .navbar__list {
+    display: flex;
+    order: 2;
+  }
+
+  .navbar--footer .navbar__menu {
+    display: none;
+  }
+
+  .footer__inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer__email {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    order: 3;
+    margin-bottom: 57px;
+  }
+
+  .footer__icon {
+    order: 1;
+    margin: 0 auto;
+  }
+
+  .navbar--footer {
+    order: 2;
+    margin-top: 20px;
+    margin-bottom: 58px;
+  }
+
+  .navbar__link {
+    font-size: 1.6rem;
+  }
+
+  .footer-container__email {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 46px;
+    height: 46px;
+    border: 2px solid rgba(93, 59, 238, 0.2);
+    border-radius: 50%;
+    background-color: var(--second-color);
+  }
+
+  .footer__email-link {
+    display: block;
+    color: var(--heading-color);
+    font-size: 2.2rem;
+    font-weight: 500;
+    line-height: 1.36; /* 136.364% */
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+  }
+
+  .footer__bottom {
+    border-top: none;
+  }
+
+  .footer__bottom-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .footer__links {
+    order: 1;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    border-bottom: 1px solid rgba(12, 7, 32, 0.2);
+    padding-bottom: 12px;
+    width: 392px;
+  }
+
+  .footer__copyright {
+    order: 2;
+    text-align: center;
+    margin-top: 8px;
+    font-size: 1.6rem;
+  }
+
+  .footer__link {
+    font-size: 1.8rem;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 575px) {
+  .clients {
+    margin-top: 150px;
+  }
+
+  .navbar--footer {
+    margin-top: 10px;
+    margin-bottom: 40px;
+  }
+
+  .navbar--footer .navbar__list {
+    margin-left: 0;
+  }
+
+  .navbar__link {
+    font-size: 1.4rem;
+  }
+
+  /*
+  .footer__links {
+    margin-left: 20px;
+    width: 100%;
+    border-bottom-width: 100%;
+  } */
+
+  .footer__link {
+    font-size: 1.3rem;
+  }
+
+  .footer__separator {
+    margin-right: 0;
+  }
+
+  .footer__copyright {
+    margin-top: 6px;
+    font-size: 1.4rem;
+  }
+
+}
+
 </style>
