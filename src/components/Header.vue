@@ -230,6 +230,8 @@ import { RouterLink } from 'vue-router'
     margin-left: auto;
   }
 }
+
+/* Mobile */
 @media screen and (max-width: 767px) {
   .header__menu-drawer {
     padding: 40px;
