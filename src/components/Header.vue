@@ -1,5 +1,6 @@
 <script setup>
 import { RouterLink } from 'vue-router'
+import NavLinks from '@/components/NavLinks.vue'
 </script>
 
 <template>
@@ -50,20 +51,21 @@ import { RouterLink } from 'vue-router'
             </svg>
           </label>
           <!-- Navigation -->
-          <ul id="pc-nav" class="navbar__list">
-            <li class="navbar__item">
-              <RouterLink to="/#projects" class="navbar__link">Projects</RouterLink>
-            </li>
-            <li class="navbar__item">
-              <RouterLink to="/#about" class="navbar__link">About</RouterLink>
-            </li>
-            <li class="navbar__item">
-              <RouterLink to="/#skill" class="navbar__link">Skills</RouterLink>
-            </li>
-            <li class="navbar__item">
-              <RouterLink to="/#contact" class="navbar__link">Contact</RouterLink>
-            </li>
-          </ul>
+          <NavLinks/>
+<!--          <ul id="pc-nav" class="navbar__list">-->
+<!--            <li class="navbar__item">-->
+<!--              <RouterLink to="/#projects" class="navbar__link">Projects</RouterLink>-->
+<!--            </li>-->
+<!--            <li class="navbar__item">-->
+<!--              <RouterLink to="/#about" class="navbar__link">About</RouterLink>-->
+<!--            </li>-->
+<!--            <li class="navbar__item">-->
+<!--              <RouterLink to="/#skill" class="navbar__link">Skills</RouterLink>-->
+<!--            </li>-->
+<!--            <li class="navbar__item">-->
+<!--              <RouterLink to="/#contact" class="navbar__link">Contact</RouterLink>-->
+<!--            </li>-->
+<!--          </ul>-->
         </nav>
       </div>
     </div>
@@ -78,7 +80,7 @@ import { RouterLink } from 'vue-router'
       id="header__menu-checkbox"
       hidden
     />
-    <!-- Overlay     -->
+    <!-- Overlay -->
     <label for="header__menu-checkbox" class="header__overlay"></label>
     <!-- Menu Content -->
     <div class="header__menu-drawer">

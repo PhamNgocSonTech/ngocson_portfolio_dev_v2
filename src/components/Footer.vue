@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
+import NavLinks from '@/components/NavLinks.vue'
 </script>
 
 <template>
@@ -30,20 +31,21 @@ import { RouterLink } from 'vue-router'
               </svg>
 
             </label>
-            <ul id="footer-nav" class="navbar__list">
-              <li class="navbar__item">
-                <RouterLink to="/#projects" class="navbar__link">Projects</RouterLink>
-              </li>
-              <li class="navbar__item">
-                <RouterLink to="/#about" class="navbar__link">About</RouterLink>
-              </li>
-              <li class="navbar__item">
-                <RouterLink to="/#skill" class="navbar__link">Skills</RouterLink>
-              </li>
-              <li class="navbar__item">
-                <RouterLink to="/#contact" class="navbar__link">Contact</RouterLink>
-              </li>
-            </ul>
+            <NavLinks/>
+<!--            <ul id="footer-nav" class="navbar__list">-->
+<!--              <li class="navbar__item">-->
+<!--                <RouterLink to="/#projects" class="navbar__link">Projects</RouterLink>-->
+<!--              </li>-->
+<!--              <li class="navbar__item">-->
+<!--                <RouterLink to="/#about" class="navbar__link">About</RouterLink>-->
+<!--              </li>-->
+<!--              <li class="navbar__item">-->
+<!--                <RouterLink to="/#skill" class="navbar__link">Skills</RouterLink>-->
+<!--              </li>-->
+<!--              <li class="navbar__item">-->
+<!--                <RouterLink to="/#contact" class="navbar__link">Contact</RouterLink>-->
+<!--              </li>-->
+<!--            </ul>-->
           </nav>
         </div>
       </div>
