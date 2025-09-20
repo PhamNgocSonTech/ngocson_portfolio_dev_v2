@@ -107,4 +107,82 @@
   top: 0;
   z-index: 1;
 }
+
+/* PC */
+@media screen and (min-width: 992px) {
+  .booking__img-center--mobile {
+    display: none;
+  }
+}
+
+/* Tablet & Mobile */
+@media screen and (max-width: 991px) {
+  .booking__content {
+    width: 100%;
+  }
+
+  .booking__img-right,
+  .booking__img-left {
+    display: none;
+  }
+  .booking__img-center--mobile {
+    display: none;
+  }
+
+  .booking__img-center {
+    width: 100%;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+  /* Booking */
+  .booking {
+    width: 100%;
+    margin-top: 120px;
+    padding: 35px 0 35px;
+  }
+
+  .booking__icon-img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .booking__content {
+    max-width: 350px;
+    height: auto;
+  }
+
+  .booking__heading {
+    font-size: 3.6rem;
+    max-width: 225px;
+    margin: 0 auto;
+  }
+
+  .booking__desc {
+    font-size: 1.6rem;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+
+  .booking__cta.btn {
+    width: 147px;
+  }
+
+  .booking__cta-btn {
+    font-size: 1.6rem;
+  }
+
+  .booking__img-left,
+  .booking__img-right,
+  .booking__img-center {
+    display: none;
+  }
+
+  .booking__img-center--mobile {
+    display: block;
+  }
+}
+
+
 </style>
