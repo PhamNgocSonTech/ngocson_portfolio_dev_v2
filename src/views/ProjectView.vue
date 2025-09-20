@@ -10,6 +10,9 @@ import DreamBlogImg from '@/assets/img/projects/new-dream-diary-blog.png'
 import ChitChatImg from '@/assets/img/projects/chit-chat.png'
 import OnstagramsImg from '@/assets/img/projects/onstagrams-resize.png'
 import PokeGameImg from '@/assets/img/projects/flip-card-poke.png'
+import PortfolioV2Img from '@/assets/img/projects/portfolio-with-vuejs.png'
+import PetsShopImg from '@/assets/img/projects/pet-shop-landing-page.jpg'
+import BankingImg from '@/assets/img/projects/banking-landing-page.jpg'
 import { useRoute } from 'vue-router'
 import router from '@/router/index.js'
 const filter = ref('all')
@@ -29,6 +32,20 @@ watch(
 const projects = [
   //  Web App
   {
+    img: PortfolioV2Img,
+    title: 'Ngoc Son Portfolio V2',
+    desc: 'A modern, responsive portfolio website showcasing full-stack development projects. ' +
+      'Built with Vue.js 3 and featuring dynamic project filtering, interactive status badge and clean UI design. ' +
+      'The portfolio demonstrates expertise in both frontend (Vue ecosystem) and backend (Node.js, Express, MongoDB) technologies, ' +
+      'with projects ranging from social media platforms to real estate landing pages.',
+    techStack: ['VueJS', 'VueRouter', 'Pinia', 'Cloudinary'],
+    github: '#!',
+    liveDemo: '#!',
+    type: 'webapp',
+    status: 'in-development',
+  },
+
+  {
     img: DreamBlogImg,
     title: 'Dream Diary Blogs',
     desc: 'Dream Diary Blogs is personal blog website Admin can create blog on any topic from life. Dream Diary Blogs is personal blog website Admin can create blog on any topic from life.',
@@ -36,6 +53,8 @@ const projects = [
     github: 'https://github.com/PhamNgocSonTech/DreamDiaryBlog/',
     liveDemo: 'https://vueblog-f7532.web.app/',
     type: 'webapp',
+    status: 'completed',
+
   },
 
   {
@@ -46,6 +65,7 @@ const projects = [
     github: 'https://github.com/PhamNgocSonTech/ChitChat/',
     liveDemo: 'https://chit-chat-bay.vercel.app/',
     type: 'webapp',
+    status: 'completed',
   },
 
   {
@@ -56,6 +76,7 @@ const projects = [
     github: 'https://github.com/PhamNgocSonTech/Onstagrams/',
     liveDemo: 'https://onstagrams.vercel.app/',
     type: 'webapp',
+    status: 'completed',
   },
 
   {
@@ -66,9 +87,21 @@ const projects = [
     github: 'https://github.com/PhamNgocSonTech/PokemonFlipCardNewVersion/',
     liveDemo: 'https://flip-card-poke.netlify.app/',
     type: 'webapp',
+    status: 'completed',
   },
 
   // Landing Page
+  {
+    img: PortfolioImg,
+    title: 'Personal Portfolio',
+    desc: 'A responsive landing page built from a Figma design using HTML and CSS. Focused on clean code, pixel-perfect implementation, and cross-device compatibility.',
+    techStack: ['HTML', 'CSS', 'Fully Responsive'],
+    github: 'https://github.com/PhamNgocSonTech/portfolio_template/',
+    liveDemo: 'https://phamngocsontech.github.io/portfolio_template/',
+    type: 'landing',
+    status: 'new',
+  },
+
   {
     img: RealEstateImg,
     title: 'Real Estate',
@@ -77,6 +110,7 @@ const projects = [
     github: 'https://phamngocsontech.github.io/Real-Estate-Landing-Page/',
     liveDemo: 'https://github.com/PhamNgocSonTech/Real-Estate-Landing-Page',
     type: 'landing',
+    status: 'completed',
   },
 
   {
@@ -87,6 +121,7 @@ const projects = [
     github: 'https://github.com/PhamNgocSonTech/Lesson-Landing-Page',
     liveDemo: 'https://phamngocsontech.github.io/Lesson-Landing-Page/',
     type: 'landing',
+    status: 'completed',
   },
 
   {
@@ -97,16 +132,30 @@ const projects = [
     github: 'https://github.com/PhamNgocSonTech/eLearning-Landing-Page/',
     liveDemo: 'https://phamngocsontech.github.io/eLearning-Landing-Page/',
     type: 'landing',
+    status: 'completed',
+  },
+
+
+  {
+    img: PetsShopImg,
+    title: 'Lucy Pet Shop',
+    desc: 'A responsive landing page built from a Figma design using HTML and CSS. Focused on clean code, pixel-perfect implementation, and cross-device compatibility.',
+    techStack: ['HTML', 'CSS', 'Fully Responsive'],
+    github: '#!',
+    liveDemo: '#!',
+    type: 'landing',
+    status: 'coming-soon',
   },
 
   {
-    img: PortfolioImg,
-    title: 'Personal Portfolio',
+    img: BankingImg,
+    title: 'Banking Website',
     desc: 'A responsive landing page built from a Figma design using HTML and CSS. Focused on clean code, pixel-perfect implementation, and cross-device compatibility.',
     techStack: ['HTML', 'CSS', 'Fully Responsive'],
     github: 'https://github.com/PhamNgocSonTech/portfolio_template/',
     liveDemo: 'https://phamngocsontech.github.io/portfolio_template/',
     type: 'landing',
+    status: 'coming-soon',
   },
 ]
 

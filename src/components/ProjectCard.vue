@@ -12,10 +12,41 @@
 defineProps({
   project: Object
 })
+
+
+const getBadgeConfig = (status) => {
+  const configs = {
+    'coming-soon': {
+      text: 'Coming Soon',
+      class: 'badge-coming-soon',
+      color: '#F8463F'
+    },
+
+    'in-development': {
+      text: 'In Development',
+      class: 'badge-development',
+      color: '#FF9800'
+    },
+
+    'new': {
+      text: 'New',
+      class: 'badge-new',
+      color: '#4CAF50'
+    }
+  }
+  return configs[status] || null
+}
 </script>
 
 <template>
+
     <div class="project__card-item">
+      <div v-if="project.status !== 'completed'" class="badge-container">
+            <span class="badge-ultra" :class="getBadgeConfig(project.status).class" :style="{backgroundColor: getBadgeConfig(project.status).color}">
+              <span>{{getBadgeConfig(project.status).text}}</span>
+            </span>
+      </div>
+
       <div class="project__card-wrapper">
         <div class="project__card-img">
           <img :src="project.img" class="project__img"
@@ -70,5 +101,45 @@ defineProps({
 
 <style scoped>
 @import "@/assets/css/project.css";
+
+.badge-container {
+  position: relative;
+  border-radius: 8px;
+}
+
+/* BADGE ULTRA SIMPLE - Cực đơn giản */
+.badge-ultra {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: white;
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  z-index: 10;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  /* Center alignment for rotation */
+  transform: rotate(12deg);
+  transform-origin: center center;
+  min-width: 60px;
+  text-align: center;
+}
+
+/* Disabled Link Styles */
+.project__card-link.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+  filter: grayscale(50%);
+}
+
+.project__card-link.disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
 
 </style>
