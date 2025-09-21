@@ -13,6 +13,8 @@ import PokeGameImg from '@/assets/img/projects/flip-card-poke.png'
 import PortfolioV2Img from '@/assets/img/projects/portfolio-with-vuejs.png'
 import PetsShopImg from '@/assets/img/projects/pet-shop-landing-page.jpg'
 import BankingImg from '@/assets/img/projects/banking-landing-page.jpg'
+import PodcastImg from '@/assets/img/projects/podcad-landing-page.jpg'
+import ecommerceImg from '@/assets/img/projects/ecommerce.jpg'
 import { useRoute } from 'vue-router'
 import router from '@/router/index.js'
 const filter = ref('all')
@@ -33,12 +35,12 @@ const projects = [
   //  Web App
   {
     img: PortfolioV2Img,
-    title: 'Ngoc Son Portfolio V2',
+    title: 'Ngoc Son Portfolio v2.0',
     desc: 'A modern, responsive portfolio website showcasing full-stack development projects. ' +
       'Built with Vue.js 3 and featuring dynamic project filtering, interactive status badge and clean UI design. ' +
       'The portfolio demonstrates expertise in both frontend (Vue ecosystem) and backend (Node.js, Express, MongoDB) technologies, ' +
       'with projects ranging from social media platforms to real estate landing pages.',
-    techStack: ['VueJS', 'VueRouter', 'Pinia', 'Cloudinary'],
+    techStack: ['VueJS', 'VueRouter', 'Pinia', 'NodeJS', 'ExpressJS', 'Dashboard Admin', 'Cloudinary'],
     github: '#!',
     liveDemo: '#!',
     type: 'webapp',
@@ -135,6 +137,16 @@ const projects = [
     status: 'completed',
   },
 
+  {
+    img: ecommerceImg,
+    title: 'Grocery Ecommerce',
+    desc: 'A responsive landing page built from a Figma design using HTML and CSS. Focused on clean code, pixel-perfect implementation, and cross-device compatibility.',
+    techStack: ['HTML', 'CSS', 'SCSS', 'Fully Customizable', '60+ Screens', 'Light & Dark Mode ', 'Multi-Platform', 'Free Google Font'],
+    github: '#!',
+    liveDemo: '#!',
+    type: 'landing',
+    status: 'coming-soon',
+  },
 
   {
     img: PetsShopImg,
@@ -152,8 +164,19 @@ const projects = [
     title: 'Banking Website',
     desc: 'A responsive landing page built from a Figma design using HTML and CSS. Focused on clean code, pixel-perfect implementation, and cross-device compatibility.',
     techStack: ['HTML', 'CSS', 'Fully Responsive'],
-    github: 'https://github.com/PhamNgocSonTech/portfolio_template/',
-    liveDemo: 'https://phamngocsontech.github.io/portfolio_template/',
+    github: '#!',
+    liveDemo: '#!',
+    type: 'landing',
+    status: 'coming-soon',
+  },
+
+  {
+    img: PodcastImg,
+    title: 'Podcast Website',
+    desc: 'A responsive landing page built from a Figma design using HTML and CSS. Focused on clean code, pixel-perfect implementation, and cross-device compatibility.',
+    techStack: ['HTML', 'CSS', 'Fully Responsive'],
+    github: '#!',
+    liveDemo: '#!',
     type: 'landing',
     status: 'coming-soon',
   },
