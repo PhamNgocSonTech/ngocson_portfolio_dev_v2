@@ -36,6 +36,10 @@ const getBadgeConfig = (status) => {
   }
   return configs[status] || null
 }
+
+const isAccessible = (status) => {
+  return status === 'completed' || status === 'new'
+}
 </script>
 
 <template>
@@ -62,8 +66,11 @@ const getBadgeConfig = (status) => {
             </div>
           </div>
           <div class="project__card-actions">
-            <a :href="project.github"
-               class="project__card-link github-link" target="_blank">
+            <a :href="isAccessible(project.status) ? 'project.github' : '#!'"
+               :class="['project__card-link github-link', {'disabled': !isAccessible(project.status)}]"
+               :target="isAccessible(project.status) ? '_blank' : ''"
+               @click="isAccessible(project.status) && $event.preventDefault()"
+            >
               <svg class="icon" width="24" height="24" viewBox="0 0 100 100"
                    fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="github">
@@ -77,10 +84,14 @@ const getBadgeConfig = (status) => {
                   </g>
                 </g>
               </svg>
-              Github
+              {{!isAccessible(project.status) ? 'Coming Soon' : 'GitHub'}}
             </a>
-            <a :href="project.liveDemo"
-               class="project__card-link demo-link" target="_blank">
+            <a
+              :href="isAccessible(project.status) ? 'project.liveDemo' : '#!' "
+              :class="['project__card-link demo-link', {'disabled': !isAccessible(project.status)}]"
+              :target="isAccessible(project.status) ? '_blank' : ''"
+            @click="isAccessible(project.status) && $event.preventDefault()"
+            >
               <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24"
                    height="24" viewBox="0 0 48 48">
                 <path fill="#c8e6c9"
@@ -90,7 +101,7 @@ const getBadgeConfig = (status) => {
                       d="M34.586,14.586l-13.57,13.586l-5.602-5.586l-2.828,2.828l8.434,8.414l16.395-16.414L34.586,14.586z">
                 </path>
               </svg>
-              Live Demo
+              {{!isAccessible(project.status) ? 'Coming Soon' : 'Live Demo'}}
             </a>
           </div>
         </div>
