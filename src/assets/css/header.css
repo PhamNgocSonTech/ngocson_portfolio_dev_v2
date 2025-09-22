@@ -82,10 +82,16 @@
 .navbar__link {
   color: var(--desc-color);
   font-size: 1.8rem;
-  padding: 10px 0px;
+  padding: 10px 0;
 }
 
 .navbar__link:hover {
   text-decoration: underline;
   text-decoration-color: var(--primary-color);
+}
+
+/* Override Button style.css */
+
+.navbar__menu {
+  pointer-events: auto;
 }
