@@ -1,4 +1,35 @@
-<script setup lang="ts"></script>
+<script setup>
+// import { ref } from 'vue'
+//
+// const currentSlide = ref(0);
+// const totalSlides = 3;
+//
+// const nextSlide = () => {
+//   currentSlide.value = (currentSlide.value + 1) % totalSlides
+// }
+//
+// const goToSlide = (index) => {
+//   currentSlide.value = index;
+// }
+//
+// let startX = 0;
+// const handleTouchStart = (e) => {
+//   startX = e.touches[0].clientX;
+// }
+//
+// const handleTouchEnd = (e) => {
+//   const endX = e.changedTouches[0].clientX;
+//   const diff = startX - endX;
+//
+//   if(Math.abs(diff) > 50) {
+//     if(diff > 0) {
+//       nextSlide()
+//     }else {
+//       currentSlide.value = currentSlide.value > 0 ? currentSlide - 1 : totalSlides - 1;
+//     }
+//   }
+// }
+</script>
 
 <template>
   <!-- Special -->
