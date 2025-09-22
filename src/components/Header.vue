@@ -1,6 +1,13 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import NavLinks from '@/components/NavLinks.vue'
+import { ref } from 'vue'
+const isOpen = ref(false);
+
+const toggleMenu = () => {
+  isOpen.value = !isOpen.value;
+}
+
 </script>
 
 <template>
@@ -26,7 +33,7 @@ import NavLinks from '@/components/NavLinks.vue'
         <!-- Navbar -->
         <nav class="navbar">
           <!-- Header Menu Toggle Tablet/Mobile  -->
-          <label for="header__menu-checkbox" class="navbar__menu">
+          <button class="navbar__menu" @click="toggleMenu">
             <svg
               width="17"
               height="8"
@@ -49,50 +56,30 @@ import NavLinks from '@/components/NavLinks.vue'
                 stroke-linejoin="round"
               />
             </svg>
-          </label>
+          </button>
           <!-- Navigation -->
           <NavLinks/>
-<!--          <ul id="pc-nav" class="navbar__list">-->
-<!--            <li class="navbar__item">-->
-<!--              <RouterLink to="/#projects" class="navbar__link">Projects</RouterLink>-->
-<!--            </li>-->
-<!--            <li class="navbar__item">-->
-<!--              <RouterLink to="/#about" class="navbar__link">About</RouterLink>-->
-<!--            </li>-->
-<!--            <li class="navbar__item">-->
-<!--              <RouterLink to="/#skill" class="navbar__link">Skills</RouterLink>-->
-<!--            </li>-->
-<!--            <li class="navbar__item">-->
-<!--              <RouterLink to="/#contact" class="navbar__link">Contact</RouterLink>-->
-<!--            </li>-->
-<!--          </ul>-->
         </nav>
       </div>
     </div>
   </header>
 
   <!-- Tablet/Mobile Header -->
-  <header class="header header--mobile">
-    <input
-      class="header__menu-checkbox"
-      type="checkbox"
-      name=""
-      id="header__menu-checkbox"
-      hidden
-    />
+  <div class="header header--mobile">
     <!-- Overlay -->
-    <label for="header__menu-checkbox" class="header__overlay"></label>
-    <!-- Menu Content -->
-    <div class="header__menu-drawer">
+    <div v-if="isOpen" class="header__overlay" @click="toggleMenu"></div>
+
+    <!-- Menu Drawer (Mobile/Tablet) -->
+    <div class="header__menu-drawer" :class="{'is-open': isOpen}">
       <!-- Logo -->
       <div class="header__menu-icon">
-        <a href="index.html#home" class="header__menu-icon-link">
+        <RouterLink to="/" class="header__menu-icon-link">
           <img src="../assets/icons/header-icon.svg" alt="" class="header__menu-icon-img" />
-        </a>
-        <ul id="mobile-nav"></ul>
+        </RouterLink>
+          <NavLinks class="navbar--drawer"/>
       </div>
     </div>
-  </header>
+  </div>
   <!-- End Header -->
 </template>
 
@@ -168,8 +155,8 @@ import NavLinks from '@/components/NavLinks.vue'
     inset: 0;
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 5;
-    opacity: 0;
-    visibility: hidden;
+    opacity: 1;
+    visibility: visible;
     transition: 0.5s ease;
   }
 
@@ -182,6 +169,20 @@ import NavLinks from '@/components/NavLinks.vue'
     transition: 0.4s ease;
     padding: 60px;
   }
+
+  .header__menu-drawer.is-open {
+    transform: translateX(0);
+  }
+
+  .navbar .navbar__list,
+  .header__email-link {
+    display: none;
+  }
+
+  .header__menu-drawer .navbar__list {
+    display: block;
+  }
+
 
   .header__menu-checkbox:checked ~ .header__overlay {
     opacity: 1;
