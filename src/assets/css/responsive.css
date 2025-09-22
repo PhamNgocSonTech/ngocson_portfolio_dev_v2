@@ -1,0 +1,188 @@
+/* PC */
+@media screen and (min-width: 992px) {
+  .show-on-mobile {
+    display: none;
+  }
+
+  .navbar__menu {
+    display: none;
+  }
+
+  .header__menu-drawer {
+    display: none;
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+}
+
+/* Tablet & Mobile */
+@media screen and (max-width: 991px) {
+  .atmosphere__media {
+    flex-direction: column;
+    row-gap: 50px;
+  }
+}
+
+/* Table */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .navbar {
+    order: 3;
+    margin-left: auto;
+  }
+
+  .show-on-mobile {
+    display: none;
+  }
+}
+
+/* Large Tablet (iPad Pro, Surface, etc.) */
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+  .atmosphere__media {
+    flex-direction: column;
+    row-gap: 60px;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+  /* Feedback */
+  .feedback__heading {
+    font-size: 3.6rem;
+  }
+
+  .feedback__desc {
+    font-size: 1.6rem;
+  }
+
+  .feedback__review {
+    margin-top: 40px;
+    font-size: 1.8rem;
+  }
+
+  .feedback__decor-right,
+  .feedback__decor-left {
+    max-width: 98px;
+  }
+
+  .feedback__content,
+  .feedback__detail {
+    width: 100%;
+  }
+
+  /* FAQ */
+  .faq {
+    margin-top: 120px;
+  }
+
+  .faq__heading {
+    font-size: 3.6rem;
+  }
+
+  .faq__group {
+    margin-top: 42px;
+  }
+
+  .faq__question-text {
+    font-size: 2.4rem;
+    margin: 40px 0 15px;
+    max-width: 264px;
+  }
+
+  .faq__answer-text {
+    font-size: 1.6rem;
+    margin: 15px 0 18px;
+  }
+
+  .faq__item input:checked ~ .faq__answer {
+    margin: -15px 0 21px;
+  }
+
+  .faq__button {
+    width: 33px;
+    height: 33px;
+    flex: 0 0 33px;
+  }
+
+  .faq__button img {
+    width: 6px;
+    height: 6px;
+  }
+
+  /* Atmosphere */
+  .atmosphere {
+    margin-top: 120px;
+  }
+
+  .atmosphere__heading {
+    font-size: 3.6rem;
+  }
+
+  .atmosphere__desc {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+
+  .atmosphere__email-link {
+    font-size: 2rem;
+  }
+
+  .atmosphere__email {
+    margin-bottom: 60px;
+  }
+
+  .atmosphere__media {
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    overflow: hidden;
+  }
+  .atmosphere__indicators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 40px;
+  }
+  .atmosphere__dot {
+    /* display: inline-block; */
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #080415;
+    opacity: 0.2;
+  }
+
+  .atmosphere__dot--active {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background: var(--second-color); /* khoảng trắng giữa */
+    border: 1px solid var(--primary-color); /* viền ngoài */
+    border-radius: 50%;
+    opacity: 1;
+  }
+
+  .atmosphere__dot--active::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--primary-color);
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 575px) {
+  .clients {
+    margin-top: 150px;
+  }
+  .projects-home {
+    max-width: 100%;
+  }
+}
