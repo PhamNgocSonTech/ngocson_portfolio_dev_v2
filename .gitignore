@@ -28,8 +28,3 @@ coverage
 *.sw?
 
 *.tsbuildinfo
-/src/components/DynamicProps.vue
-/src/components/ChangingProps.vue
-/src/components/FallbackContent.vue
-/src/components/SlotComponent.vue
-/src/components/StaticProps.vue
