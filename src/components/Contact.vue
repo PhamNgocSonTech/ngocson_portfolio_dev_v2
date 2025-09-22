@@ -23,7 +23,7 @@
         <img src="../assets/icons/booking-icon/booking-decor-center-mobile.svg" alt=""
              class="booking__img-center booking__img-center--mobile">
 
-        <img src="../assets/img/booking-decor-right.svg" alt="" class="booking__img-right">
+<!--        <img src="../assets/img/booking-decor-right.svg" alt="" class="booking__img-right">-->
       </div>
     </div>
   </section>
