@@ -2,12 +2,22 @@
 import { RouterLink } from 'vue-router'
 import NavLinks from '@/components/NavLinks.vue'
 import { ref } from 'vue'
+import MenuDrawer from '@/components/MenuDrawer.vue'
+import LogoMenuDrawer from '@/assets/icons/header-icon.svg'
+
 const isOpen = ref(false);
 
-const toggleMenu = () => {
+const toggleMenuHeader = () => {
   isOpen.value = !isOpen.value;
+  console.log("Toggle Menu Header")
+
 }
 
+const closeMenuHeader = () => {
+  isOpen.value = false;
+  console.log("Close Menu Header")
+
+}
 </script>
 
 <template>
@@ -33,7 +43,7 @@ const toggleMenu = () => {
         <!-- Navbar -->
         <nav class="navbar">
           <!-- Header Menu Toggle Tablet/Mobile  -->
-          <button class="navbar__menu" @click="toggleMenu">
+          <button class="navbar__menu" @click="toggleMenuHeader">
             <svg
               width="17"
               height="8"
@@ -64,22 +74,14 @@ const toggleMenu = () => {
     </div>
   </header>
 
-  <!-- Tablet/Mobile Header -->
-  <div class="header header--mobile">
-    <!-- Overlay -->
-    <div v-if="isOpen" class="header__overlay" @click="toggleMenu"></div>
-
-    <!-- Menu Drawer (Mobile/Tablet) -->
-    <div class="header__menu-drawer" :class="{'is-open': isOpen}">
-      <!-- Logo -->
-      <div class="header__menu-icon">
-        <RouterLink to="/" class="header__menu-icon-link">
-          <img src="../assets/icons/header-icon.svg" alt="" class="header__menu-icon-img" />
-        </RouterLink>
-          <NavLinks class="navbar--drawer"/>
-      </div>
-    </div>
-  </div>
+<!--  Menu Drawer Tablet/Mobile-->
+<MenuDrawer
+  :is-open="isOpen"
+  logo-alt="Logo Menu Drawer"
+  logo-link="/"
+  :logo-src="LogoMenuDrawer"
+  @close="closeMenuHeader"
+/>
   <!-- End Header -->
 </template>
 
@@ -87,7 +89,8 @@ const toggleMenu = () => {
 
 /* PC */
 @media screen and (min-width: 992px) {
-  .show-on-mobile {
+  /*
+   .show-on-mobile {
     display: none;
   }
 
@@ -97,7 +100,8 @@ const toggleMenu = () => {
 
   .header__menu-drawer {
     display: none;
-  }
+  }*/
+
 }
 
 @media screen and (max-width: 991px) {
@@ -130,7 +134,6 @@ const toggleMenu = () => {
     margin-left: 10px;
   }
 
-  .navbar__list,
   .header__email-link {
     display: none;
   }
@@ -174,12 +177,11 @@ const toggleMenu = () => {
     transform: translateX(0);
   }
 
-  .navbar .navbar__list,
   .header__email-link {
     display: none;
   }
 
-  .header__menu-drawer .navbar__list {
+  .header__menu-drawer {
     display: block;
   }
 

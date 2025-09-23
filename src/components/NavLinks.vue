@@ -22,5 +22,17 @@ import { RouterLink } from 'vue-router'
     padding: 18px 0;
     font-weight: 500;
   }
+
+  .navbar__list {
+    display: none;
+  }
+
+  .navbar .navbar__list{
+    display: none;
+  }
+
+  .header__menu-drawer .navbar__list {
+    display: block;
+  }
 }
 </style>
