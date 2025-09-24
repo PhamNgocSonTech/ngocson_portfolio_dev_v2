@@ -1,6 +1,22 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import NavLinks from '@/components/NavLinks.vue'
+import MenuDrawer from '@/components/MenuDrawer.vue'
+import LogoMenuDrawer from '@/assets/icons/header-icon.svg'
+import { ref } from 'vue'
+
+const isOpen = ref(false)
+
+const toggleMenuFooter = () => {
+  isOpen.value = !isOpen.value
+  console.log("Toggle Menu Footer")
+}
+
+const closeMenuFooter = () => {
+  isOpen.value = false
+  console.log("Close Menu Footer")
+}
+
 </script>
 
 <template>
@@ -20,17 +36,32 @@ import NavLinks from '@/components/NavLinks.vue'
               <img src="../assets/icons/footer-icon.svg" alt="" class="footer-img__icon">
             </RouterLink>
           </div>
-          <nav class="navbar navbar--footer">
+          <nav class="navbar">
             <!-- Footer Menu Toggle Tablet/Mobile  -->
-            <label for="header__menu-checkbox" class="navbar__menu">
-              <svg width="17" height="8" viewBox="0 0 17 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 7H16" stroke="#5D3BEE" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                <path d="M1 1H16" stroke="#5D3BEE" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
+            <button class="navbar__menu" @click="toggleMenuFooter">
+              <svg
+                width="17"
+                height="8"
+                viewBox="0 0 17 8"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 7H16"
+                  stroke="#5D3BEE"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M1 1H16"
+                  stroke="#5D3BEE"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
-
-            </label>
+            </button>
             <NavLinks/>
 <!--            <ul id="footer-nav" class="navbar__list">-->
 <!--              <li class="navbar__item">-->
@@ -54,6 +85,15 @@ import NavLinks from '@/components/NavLinks.vue'
       </div>
     </div>
   </footer>
+  <!--  Menu Drawer Tablet/Mobile-->
+  <MenuDrawer
+    :is-open="isOpen"
+    logo-alt="Footer Logo"
+    logo-link="/"
+    :logo-src="LogoMenuDrawer"
+    @close="closeMenuFooter"
+
+  />
   <!-- End Footer -->
 </template>
 

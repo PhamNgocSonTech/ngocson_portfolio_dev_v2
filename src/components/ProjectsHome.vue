@@ -1,4 +1,6 @@
-<script setup lang="ts">
+<script setup>
+import { useImageKit } from '@/composables/useImageKit.js'
+const { getImageUrl } = useImageKit()
 </script>
 
 <template>
@@ -25,10 +27,11 @@
                   focusing on performance and clean, maintainable code.
                 </p>
                 <RouterLink :to="{name: 'projects', query:{type: 'webapp'}}" class="project-home__card-link">See
-                  More</RouterLink>
+                  More
+                </RouterLink>
               </div>
               <div class="project-home__card-img">
-                <img src="../assets/img/project-wally.png" class="project-home__img" loading="lazy" alt="Web Application Img">
+                <img :src="getImageUrl('Portfolio-V2/HomePage/project-oculus.jpg')" class="project-home__img" loading="lazy" alt="Web Application Img">
               </div>
               <!-- <img src="../assets/icons/project-icon/project-decor.svg" class="project-home__card-decor" alt=""> -->
             </div>
@@ -48,7 +51,7 @@
                   More</RouterLink>
               </div>
               <div class="project-home__card-img">
-                <img src="../assets/img/project-bank.png" class="project-home__img" loading="lazy" alt="Landing Page Img">
+                <img :src="getImageUrl('Portfolio-V2/HomePage/project-web.jpg')" class="project-home__img" loading="lazy" alt="Landing Page Img">
               </div>
               <!-- <img src="../assets/icons/project-icon/project-decor.svg" class="project-home__card-decor" alt=""> -->
             </div>
@@ -159,10 +162,11 @@
   font-weight: 700;
   line-height: 1.67; /* 166.667% */
   margin-top: auto;
+  transition: color 0.2s ease;
 }
 
 .project-home__card-link:hover {
-  text-decoration: underline;
+  color: var(--primary-color);
 }
 
 .project-home__card-img img {
