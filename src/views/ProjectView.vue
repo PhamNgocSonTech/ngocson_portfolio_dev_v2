@@ -1,20 +1,6 @@
 <script setup>
 import { computed, ref, watch } from 'vue'
 import ProjectCard from '@/components/ProjectCard.vue'
-// Import Imgs
-import RealEstateImg from '@/assets/img/projects/new-real-estate.png'
-import LessonPageImg from '@/assets/img/projects/new-lesson-landing-page.png'
-import eLearningImg from '@/assets/img/projects/new-eLearning-landing-page.png'
-import PortfolioImg from '@/assets/img/projects/portfolio-template.png'
-import DreamBlogImg from '@/assets/img/projects/new-dream-diary-blog.png'
-import ChitChatImg from '@/assets/img/projects/chit-chat.png'
-import OnstagramsImg from '@/assets/img/projects/onstagrams-resize.png'
-import PokeGameImg from '@/assets/img/projects/flip-card-poke.png'
-import PortfolioV2Img from '@/assets/img/projects/portfolio-with-vuejs.png'
-import PetsShopImg from '@/assets/img/projects/pet-shop-landing-page.jpg'
-import BankingImg from '@/assets/img/projects/banking-landing-page.jpg'
-import PodcastImg from '@/assets/img/projects/podcad-landing-page.jpg'
-import ecommerceImg from '@/assets/img/projects/ecommerce.jpg'
 import { useRoute } from 'vue-router'
 import router from '@/router/index.js'
 const filter = ref('all')
@@ -34,7 +20,7 @@ watch(
 const projects = [
   //  Web App
   {
-    img: PortfolioV2Img,
+    img: 'Portfolio-V2/Projects/ngoc-son-portfolio-with-vuejs.jpg',
     title: 'Ngoc Son Portfolio v2.0',
     desc: 'A modern, responsive portfolio website showcasing full-stack development projects. ' +
       'Built with Vue.js 3 and featuring dynamic project filtering, interactive status badge and clean UI design. ' +
@@ -48,7 +34,7 @@ const projects = [
   },
 
   {
-    img: DreamBlogImg,
+    img: 'Portfolio-V2/Projects/dream-diary-blog.jpg',
     title: 'Dream Diary Blogs',
     desc: 'Dream Diary Blogs is personal blog website Admin can create blog on any topic from life. Dream Diary Blogs is personal blog website Admin can create blog on any topic from life.',
     techStack: ['VueJS', 'Vuex', 'VueRouter', ' Firebase'],
@@ -60,7 +46,7 @@ const projects = [
   },
 
   {
-    img: ChitChatImg,
+    img: 'Portfolio-V2/Projects/chit-chat.jpg',
     title: 'Chit Chat',
     desc: 'Chit Chat is a group chat website. Create chat room and can invite friends to join it.',
     techStack: ['VueJS', 'NodeJS', 'ExpressJS', 'Socket.io', 'MongoDB', 'JWT'],
@@ -71,7 +57,7 @@ const projects = [
   },
 
   {
-    img: OnstagramsImg,
+    img: 'Portfolio-V2/Projects/onstagrams-resize.jpg',
     title: 'Onstagrams (Team Project)',
     desc: 'Onstagrams is social app a place that connects everyone. All users can puslish status and interact it.',
     techStack: ['NodeJS', 'ExpressJS', 'MongoDB', 'ReactJS', 'Redux', 'Cloudinary', 'Nodemailer'],
@@ -82,7 +68,7 @@ const projects = [
   },
 
   {
-    img: PokeGameImg,
+    img: 'Portfolio-V2/Projects/flip-card-poke.jpg',
     title: 'Pokemon Flip Card (Web Game)',
     desc: 'Pokemon Flip Card is a simple game with two identical cards that will be score. There are different difficulty modes 4x4 6x6 8x8 10x10 which will have different number of cards displayed..',
     techStack: ['VueJS'],
@@ -94,7 +80,7 @@ const projects = [
 
   // Landing Page
   {
-    img: PortfolioImg,
+    img: 'Portfolio-V2/Projects/portfolio-template.jpg',
     title: 'Personal Portfolio',
     desc: 'A responsive landing page built from a Figma design using HTML and CSS. Focused on clean code, pixel-perfect implementation, and cross-device compatibility.',
     techStack: ['HTML', 'CSS', 'Fully Responsive'],
@@ -105,7 +91,7 @@ const projects = [
   },
 
   {
-    img: RealEstateImg,
+    img: 'Portfolio-V2/Projects/real-estate.jpg',
     title: 'Real Estate',
     desc: 'A responsive landing page built from a Figma design using HTML and CSS. Focused on clean code, pixel-perfect implementation, and cross-device compatibility.',
     techStack: ['HTML', 'CSS', 'Fully Responsive'],
@@ -116,7 +102,7 @@ const projects = [
   },
 
   {
-    img: LessonPageImg,
+    img: 'Portfolio-V2/Projects/lesson-landing-page.jpg',
     title: 'Lesson Page',
     desc: 'A responsive landing page built from a Figma design using HTML and CSS. Focused on clean code, pixel-perfect implementation, and cross-device compatibility.',
     techStack: ['HTML', 'CSS', 'Fully Responsive'],
@@ -127,7 +113,7 @@ const projects = [
   },
 
   {
-    img: eLearningImg,
+    img: 'Portfolio-V2/Projects/eLearning-landing-page.jpg',
     title: 'eLearning',
     desc: 'A responsive landing page built from a Figma design using HTML and CSS. Focused on clean code, pixel-perfect implementation, and cross-device compatibility.',
     techStack: ['HTML', 'CSS', 'Fully Responsive'],
@@ -138,7 +124,7 @@ const projects = [
   },
 
   {
-    img: ecommerceImg,
+    img: 'Portfolio-V2/Projects/ecommerce.jpg',
     title: 'Grocery Ecommerce',
     desc: 'A responsive landing page built from a Figma design using HTML and CSS. Focused on clean code, pixel-perfect implementation, and cross-device compatibility.',
     techStack: ['HTML', 'CSS', 'SCSS', 'Fully Customizable', '60+ Screens', 'Light & Dark Mode ', 'Multi-Platform', 'Free Google Font'],
@@ -149,7 +135,7 @@ const projects = [
   },
 
   {
-    img: PetsShopImg,
+    img: 'Portfolio-V2/Projects/pet-shop-landing-page.jpg',
     title: 'Lucy Pet Shop',
     desc: 'A responsive landing page built from a Figma design using HTML and CSS. Focused on clean code, pixel-perfect implementation, and cross-device compatibility.',
     techStack: ['HTML', 'CSS', 'Fully Responsive'],
@@ -160,7 +146,7 @@ const projects = [
   },
 
   {
-    img: BankingImg,
+    img: 'Portfolio-V2/Projects/banking-landing-page.jpg',
     title: 'Banking Website',
     desc: 'A responsive landing page built from a Figma design using HTML and CSS. Focused on clean code, pixel-perfect implementation, and cross-device compatibility.',
     techStack: ['HTML', 'CSS', 'Fully Responsive'],
@@ -171,7 +157,7 @@ const projects = [
   },
 
   {
-    img: PodcastImg,
+    img: 'Portfolio-V2/Projects/podcast-landing-page.jpg',
     title: 'Podcast Website',
     desc: 'A responsive landing page built from a Figma design using HTML and CSS. Focused on clean code, pixel-perfect implementation, and cross-device compatibility.',
     techStack: ['HTML', 'CSS', 'Fully Responsive'],
@@ -212,6 +198,8 @@ const currentHeading = computed(() => {
       return 'Coming Soon...😓'
   }
 })
+
+console.log("https://ik.imagekit.io/ngocsondev/tr:w-400,q-80/Porfolio-V2/Projects/portfolio-template.jpg?updatedAt=1758703298496")
 </script>
 
 <template>

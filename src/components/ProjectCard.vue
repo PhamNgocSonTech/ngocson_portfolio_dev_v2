@@ -1,4 +1,6 @@
 <script setup>
+import { useImageKit } from '@/composables/useImageKit.js'
+const { getImageUrl } = useImageKit()
 // const projectProps = defineProps({
 //   img: String,
 //   title: String,
@@ -53,7 +55,7 @@ const isAccessible = (status) => {
 
       <div class="project__card-wrapper">
         <div class="project__card-img">
-          <img :src="project.img" class="project__img"
+          <img :src="getImageUrl(project.img, 'w-800,q-80,f-webp')" class="project__img"
                :alt="project.title" loading="lazy">
         </div>
         <div class="project__card-content">

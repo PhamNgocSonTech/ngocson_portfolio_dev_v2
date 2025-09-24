@@ -1,5 +1,7 @@
 <script setup lang="ts">
 // import 'animate.css';
+import { useImageKit } from '@/composables/useImageKit.js'
+const { getImageUrl } = useImageKit()
 </script>
 
 <template>
@@ -9,7 +11,13 @@
       <div class="hero__inner">
         <div class="hero__image-wrap">
           <!-- <img src="./assets/img/hero-img.png" alt="" class="hero__portrait"> -->
-          <img src="https://res.cloudinary.com/doapkbncj/image/upload/v1758296370/ngocson_porfolio_v2/son-hero.jpg" alt="" class="hero__portrait" loading="lazy" />
+          <img
+            :src="getImageUrl('Portfolio-V2/HomePage/ngocson.jpg')"
+            alt="Hero Image"
+            class="hero__portrait"
+            loading="lazy"
+            @contextmenu.prevent
+          />
           <!-- Decorators -->
           <!-- <img src="./assets/img/decor-01.svg" alt="" class="hero__decor-first"> -->
           <!-- <img src="./assets/img/decor-02.svg" alt="" class="hero__decor-second"> -->
