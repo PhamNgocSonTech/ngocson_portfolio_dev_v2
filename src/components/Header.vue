@@ -86,6 +86,9 @@ const closeMenuHeader = () => {
 </template>
 
 <style scoped>
+@import "../assets/css/header.css";
+@import "../assets/css/footer.css";
+
 
 /* PC */
 @media screen and (min-width: 992px) {
@@ -225,8 +228,6 @@ const closeMenuHeader = () => {
     align-items: center;
     /* gap: 0px; */
     order: 1;
-    /* margin-right: auto; */
-    margin: 0;
   }
 
   .navbar {
