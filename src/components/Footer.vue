@@ -98,9 +98,6 @@ const closeMenuFooter = () => {
 </template>
 
 <style scoped>
-@import "../assets/css/header.css";
-@import "../assets/css/footer.css";
-
 /* PC */
 @media screen and (min-width: 992px) {
   .navbar__menu {
