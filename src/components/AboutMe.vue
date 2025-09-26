@@ -1,17 +1,19 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+</script>
 
 <template>
   <section id="about" class="about-me">
     <div class="main__container">
       <div class="about-me__content">
-                    <span class="about-me__title">Hey,,,,It’s Son
-                        <img class="about-me__icon" src="../assets/icons/about-me-icon/about-me-icon.svg" alt="">
-                    </span>
-        <h2 class="about-me__heading heading">Frontend Developer</h2>
+          <span class="about-me__title">Hey,,,,It’s Son
+            <img class="about-me__icon" src="../assets/icons/about-me-icon/about-me-icon.svg" alt="">
+          </span>
+        <h2 class="about-me__heading">Frontend Developer</h2>
         <p class="about-me__desc">I design and build modern, responsive web interfaces with clean code and
           attention to detail. My focus is on creating
           user-friendly experiences and maintaining scalable, maintainable front-end architectures that
-          bring ideas to life.</p>
+          bring ideas to life.
+        </p>
       </div>
     </div>
   </section>
@@ -47,6 +49,12 @@
   line-height: 1.18; /* 117.857% */
   letter-spacing: -2.24px;
   margin-bottom: 15px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 .about-me__desc {
@@ -142,6 +150,7 @@
   .about-me__heading {
     font-size: 3.6rem;
     margin-bottom: 20px;
+
   }
 
   .about-me__desc {

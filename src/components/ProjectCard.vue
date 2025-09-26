@@ -68,10 +68,10 @@ const isAccessible = (status) => {
             </div>
           </div>
           <div class="project__card-actions">
-            <a :href="isAccessible(project.status) ? 'project.github' : '#!'"
+            <a :href="isAccessible(project.status) ? project.github : '#!'"
                :class="['project__card-link github-link', {'disabled': !isAccessible(project.status)}]"
                :target="isAccessible(project.status) ? '_blank' : ''"
-               @click="isAccessible(project.status) && $event.preventDefault()"
+               @click="!isAccessible(project.status) && $event.preventDefault()"
             >
               <svg class="icon" width="24" height="24" viewBox="0 0 100 100"
                    fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -89,10 +89,10 @@ const isAccessible = (status) => {
               {{!isAccessible(project.status) ? 'Coming Soon' : 'GitHub'}}
             </a>
             <a
-              :href="isAccessible(project.status) ? 'project.liveDemo' : '#!' "
+              :href="isAccessible(project.status) ? project.liveDemo : '#!' "
               :class="['project__card-link demo-link', {'disabled': !isAccessible(project.status)}]"
               :target="isAccessible(project.status) ? '_blank' : ''"
-            @click="isAccessible(project.status) && $event.preventDefault()"
+            @click="!isAccessible(project.status) && $event.preventDefault()"
             >
               <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24"
                    height="24" viewBox="0 0 48 48">
