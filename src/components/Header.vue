@@ -86,7 +86,6 @@ const closeMenuHeader = () => {
 </template>
 
 <style scoped>
-
 /* PC */
 @media screen and (min-width: 992px) {
   /*
@@ -105,23 +104,30 @@ const closeMenuHeader = () => {
 }
 
 @media screen and (max-width: 991px) {
-  .header__inner {
+  /*
+   .header__inner {
     display: flex;
-    /* justify-content: space-between; */
     align-items: center;
+  */
+
+  .header__inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 10px;
   }
 
   .header__icon {
-    order: 1;
-    flex: 0 0 auto;
+    order: 2;
+    justify-self: center;
+    flex: none;
   }
 
   .header__email {
     display: flex;
     align-items: center;
-    /* gap: 0px; */
-    order: 2;
-    margin-left: auto;
+    justify-self: start;
+    order: 1;
   }
 
   .header__menu-icon-img {
@@ -131,17 +137,19 @@ const closeMenuHeader = () => {
 
   .navbar {
     order: 3;
-    margin-left: 10px;
+    margin-left: 0;
+    justify-self: end;
   }
 
   .header__email-link {
     display: none;
   }
 
+  /*
   .navbar__menu {
     display: block;
   }
-
+*/
   .navbar__menu {
     display: flex;
     justify-content: center;
@@ -208,13 +216,15 @@ const closeMenuHeader = () => {
 
 /* Table */
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .header__inner {
+  /*.header__inner {
     display: flex;
     justify-content: center;
-  }
+  } */
+
   .header__email-link {
-    display: block;
+    display: none;
   }
+
   .header__icon {
     order: 2;
     margin: 0 auto;
@@ -225,8 +235,6 @@ const closeMenuHeader = () => {
     align-items: center;
     /* gap: 0px; */
     order: 1;
-    /* margin-right: auto; */
-    margin: 0;
   }
 
   .navbar {

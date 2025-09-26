@@ -214,19 +214,19 @@ console.log("https://ik.imagekit.io/ngocsondev/tr:w-400,q-80/Porfolio-V2/Project
       </button>
 
       <button
-        :class="{ active: filter === 'landing' }"
-        @click="setFilter('landing')"
-        class="btn filter-btn"
-      >
-        Landing Pages
-      </button>
-
-      <button
         :class="{ active: filter === 'webapp' }"
         @click="setFilter('webapp')"
         class="btn filter-btn"
       >
         Web Apps
+      </button>
+
+      <button
+        :class="{ active: filter === 'landing' }"
+        @click="setFilter('landing')"
+        class="btn filter-btn"
+      >
+        Landing Pages
       </button>
     </div>
     <div class="project">

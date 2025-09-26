@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 </script>
 
 <template>
@@ -16,8 +16,9 @@
             <ul class="skill__list">
               <li class="skill__item">HTML/CSS</li>
               <li class="skill__item">Javascript</li>
-              <li class="skill__item">Sass</li>
               <li class="skill__item">VueJS</li>
+              <li class="skill__item">Responsive Design</li>
+              <li class="skill__item">SCSS/SASS</li>
             </ul>
           </div>
         </div>
@@ -27,8 +28,9 @@
             <ul class="skill__list">
               <li class="skill__item">NodeJS</li>
               <li class="skill__item">ExpressJS</li>
-              <li class="skill__item">MongoDB</li>
-              <li class="skill__item">SQL</li>
+              <li class="skill__item">REST API</li>
+              <li class="skill__item">MongoDB, SQL</li>
+              <li class="skill__item">JWT</li>
             </ul>
           </div>
         </div>
@@ -36,10 +38,11 @@
           <div class="skill__column skill__column--tool">
             <h3 class="skill__title">Tools</h3>
             <ul class="skill__list">
+              <li class="skill__item">Git (GitHub, GitLab)</li>
               <li class="skill__item">Postman</li>
-              <li class="skill__item">Vercel</li>
-              <li class="skill__item">Cloudinary</li>
-              <li class="skill__item">AI</li>
+              <li class="skill__item">Vercel, Netlify, Render</li>
+              <li class="skill__item">Cloudinary, Imagekit</li>
+              <li class="skill__item">AI Tool (Github Copilot...)</li>
             </ul>
           </div>
         </div>
@@ -61,6 +64,7 @@
 .skill {
   margin-top: 160px;
 }
+
 
 .skill__content {
   max-width: 528px;
@@ -84,6 +88,12 @@
   margin-bottom: 30px;
 }
 
+.skill__columns {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
 
 .skill__column {
   padding: 30px 20px;
@@ -92,6 +102,7 @@
   box-shadow: 0 4px 20px rgba(93, 59, 238, 0.08);
   transition: all 0.3s ease;
   border: 1px solid rgba(93, 59, 238, 0.06);
+  height: 100%;
 }
 
 .skill__column:hover {

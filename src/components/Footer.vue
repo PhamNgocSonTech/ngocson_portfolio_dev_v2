@@ -36,7 +36,7 @@ const closeMenuFooter = () => {
               <img src="../assets/icons/footer-icon.svg" alt="" class="footer-img__icon">
             </RouterLink>
           </div>
-          <nav class="navbar">
+          <nav class="navbar navbar--footer">
             <!-- Footer Menu Toggle Tablet/Mobile  -->
             <button class="navbar__menu" @click="toggleMenuFooter">
               <svg
@@ -98,7 +98,6 @@ const closeMenuFooter = () => {
 </template>
 
 <style scoped>
-
 /* PC */
 @media screen and (min-width: 992px) {
   .navbar__menu {
