@@ -120,7 +120,6 @@ const isAccessible = (status) => {
   border-radius: 8px;
 }
 
-/* BADGE ULTRA SIMPLE - Cực đơn giản */
 .badge-ultra {
   position: absolute;
   top: 15px;

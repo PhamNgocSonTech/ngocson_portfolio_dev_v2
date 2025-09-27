@@ -5,79 +5,133 @@ const techStack = ref([
   {
     id: 'html',
     name: 'HTML',
-    icon: 'https://img.icons8.com/color/48/html-5--v1.png',
+    icon: 'https://cdn.simpleicons.org/html5',
   },
 
   {
     id: 'css',
     name: 'CSS',
-    icon: 'https://img.icons8.com/color/48/css3.png',
+    icon: 'https://www.vectorlogo.zone/logos/w3_css/w3_css-icon~old.svg',
   },
 
   {
     id: 'scss',
     name: 'SCSS/SASS',
-    icon: 'https://img.icons8.com/color/48/sass.png',
+    icon: 'https://cdn.simpleicons.org/sass',
   },
 
   {
     id: 'js',
     name: 'Javascript',
-    icon: 'https://img.icons8.com/color/48/javascript--v1.png',
+    icon: 'https://cdn.simpleicons.org/javascript',
+  },
+
+  {
+    id: 'vue',
+    name: 'VueJS',
+    icon: 'https://www.vectorlogo.zone/logos/vuejs/vuejs-icon.svg',
   },
 
   {
     id: 'node',
     name: 'NodeJS',
-    icon: 'https://img.icons8.com/color/48/nodejs.png',
+    icon: 'https://cdn.simpleicons.org/nodedotjs',
+  },
+
+  {
+    id: 'npm',
+    name: 'NPM',
+    icon: 'https://cdn.simpleicons.org/npm',
   },
 
   {
     id: 'ex',
     name: 'ExpressJS',
-    icon: 'https://img.icons8.com/color/48/express-js.png',
+    icon: 'https://cdn.simpleicons.org/express',
   },
 
   {
     id: 'mongo',
     name: 'MongoDB',
-    icon: 'https://img.icons8.com/color/48/mongodb.png',
+    icon: 'https://cdn.simpleicons.org/mongodb',
   },
 
   {
     id: 'mysql',
     name: 'MySQL',
-    icon: 'https://img.icons8.com/color/48/mysql-logo.png',
+    icon: 'https://www.vectorlogo.zone/logos/mysql/mysql-official.svg',
   },
 
   {
     id: 'jwt',
     name: 'JWT',
-    icon: 'https://img.icons8.com/color/48/java-web-token.png',
+    icon: 'https://www.jwt.io/img/pic_logo.svg',
   },
 
   {
     id: 'postman',
     name: 'Postman',
-    icon: 'https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/external-postman-is-the-only-complete-api-development-environment-logo-color-tal-revivo.png',
+    icon: 'https://cdn.simpleicons.org/postman',
+  },
+
+  {
+    id: 'cloudinary',
+    name: 'Cloudinary',
+    icon: 'https://cdn.simpleicons.org/cloudinary',
   },
 
   {
     id: 'gpt',
     name: 'Chat GPT',
-    icon: 'https://img.icons8.com/pulsar-line/48/chatgpt.png',
+    icon: 'https://cdn.simpleicons.org/nodedotjs',
   },
 
   {
     id: 'github',
     name: 'Github',
-    icon: 'https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/48/external-github-social-media-tanah-basah-glyph-tanah-basah.png',
+    icon: 'https://cdn.simpleicons.org/github',
+  },
+
+  {
+    id: 'gitlab',
+    name: 'Gitlab',
+    icon: 'https://cdn.simpleicons.org/gitlab',
   },
 
   {
     id: 'git-copilot',
     name: 'Github Copilot',
-    icon: 'https://img.icons8.com/fluency/48/github-copilot.png',
+    icon: 'https://cdn.simpleicons.org/githubcopilot',
+  },
+
+  {
+    id: 'git-page',
+    name: 'Github Pages',
+    icon: 'https://cdn.simpleicons.org/githubpages',
+  },
+
+  {
+    id: 'vercel',
+    name: 'Vercel',
+    icon: 'https://cdn.simpleicons.org/vercel',
+  },
+
+  {
+    id: 'render',
+    name: 'Render',
+    icon: 'https://cdn.simpleicons.org/render',
+  },
+
+  {
+    id: 'netlify',
+    name: 'Netlify',
+    icon: 'https://cdn.simpleicons.org/netlify',
+  },
+
+  {
+    id: 'odoo',
+    name: 'Odoo ERP',
+    icon: 'https://cdn.simpleicons.org/odoo',
   },
 ])
 
@@ -117,9 +171,7 @@ const duplicatedTech = ref([...techStack.value, ...techStack.value])
   text-align: center;
 }
 
-
 /* CSS Carousel */
-
 .client__list {
   margin-top: 60px;
   overflow: hidden;
@@ -147,12 +199,12 @@ const duplicatedTech = ref([...techStack.value, ...techStack.value])
 .tech__track {
   display: flex;
   gap: 40px;
-  animation: scroll 25s linear infinite;
+  animation: scroll 50s linear infinite;
   width: fit-content;
 }
 
 /* Pause khi hover */
-.client__list:hover .tech__track {
+.tech__track:hover {
   animation-play-state: paused;
 }
 
@@ -161,7 +213,7 @@ const duplicatedTech = ref([...techStack.value, ...techStack.value])
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }
 
@@ -178,6 +230,11 @@ const duplicatedTech = ref([...techStack.value, ...techStack.value])
   transition: all 0.3s ease;
   min-width: 120px;
   flex-shrink: 0;
+}
+
+.tech-item__logo {
+  width: 80px;
+  height: 80px;
 }
 
 
