@@ -82,6 +82,14 @@ const closeMenuFooter = () => {
       </div>
       <div class="footer__bottom">
         <p class="footer__copyright">©2025 Designed & Built with ❤️ by <a href="https://github.com/PhamNgocSonTech" class="footer__link">Ngoc Son</a></p>
+        <div class="footer__credits">Icons 😍 by
+          <a href="https://simpleicons.org/" class="footer-credits__link" target="_blank">Simple Icons</a>
+          <a href="https://www.vectorlogo.zone/" class="footer-credits__link" target="_blank">VectorLogo.Zone</a>
+          <a href="https://www.svgrepo.com/" class="footer-credits__link" target="_blank">SVG Repo</a>
+          and official brand assets from
+          <a href="https://www.jwt.io/" class="footer-credits__link" target="_blank">JWT.io</a>
+          <a href="https://devtools.vuejs.org/" class="footer-credits__link" target="_blank">Vue Devtools</a>
+        </div>
       </div>
     </div>
   </footer>
@@ -98,6 +106,29 @@ const closeMenuFooter = () => {
 </template>
 
 <style scoped>
+
+.footer__credits {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: #525771;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.67;
+  opacity: 0.6;
+}
+
+.footer-credits__link {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.footer-credits__link:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--primary-color);
+}
 /* PC */
 @media screen and (min-width: 992px) {
   .navbar__menu {

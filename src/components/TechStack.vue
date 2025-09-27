@@ -41,7 +41,7 @@ const techStack = ref([
   {
     id: 'vue-dev-tool',
     name: 'Vue Dev Tool',
-    icon: 'https://devtools-v6.vuejs.org/logo.svg',
+    icon: 'https://devtools.vuejs.org/logo-mini.svg',
   },
 
   {
