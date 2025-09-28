@@ -29,6 +29,7 @@
   gap: 0;
 }
 
+.footer__credits,
 .footer__copyright{
   color: #525771;
   font-size: 1.8rem;

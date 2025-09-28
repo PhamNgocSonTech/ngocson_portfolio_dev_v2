@@ -151,6 +151,12 @@
   flex-shrink: 0;
 }
 
+.special__item-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
 .special__item-title {
   color: var(--heading-color);
   font-size: 3.2rem;
