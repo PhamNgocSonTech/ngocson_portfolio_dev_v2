@@ -1,8 +1,8 @@
 import { defineStore } from 'pinia'
+import { computed, ref } from 'vue'
 
-export const useProjectStore = defineStore('projects', {
-  state: () => ({
-    projects: [
+export const useProjectStore = defineStore('projects', () => {
+    const projects = ref([
       //  Web App
       {
         img: 'Portfolio-V2/Projects/ngoc-son-portfolio-with-vuejs.jpg',
@@ -151,26 +151,41 @@ export const useProjectStore = defineStore('projects', {
         type: 'landing',
         status: 'coming-soon',
       },
-    ],
-    loading: false,
-    error: null,
-  }),
+    ])
+    const loading = ref(false)
+    const error = ref(null)
 
-  getters: {
-    getProjectsByType: (state) => (type) => {
-      if(type === 'all') return state.projects
-      return state.projects.filter(p => p.type === type)
-    },
+//   GETTERS
 
-    projectCount: (state) => (type) => {
-      return state.getProjectsByType(type).length
+  const getProjects = computed(() => projects.value)
+
+  const getProjectsByType = computed(() => {
+    return (type) => {
+      if(type === 'all') return projects.value
+      return projects.value.filter(project => project.type === type)
     }
-  },
+  })
 
-  actions: {
-    // API
-    async fetchProjects() {
-    //   Call API
+  // const getProjectById = computed(() => {
+  //   return (id) => projects.value.find(project => project.id === id)
+  // })
+
+  const projectCount = computed(() => {
+    return (type) => {
+      return getProjectsByType.value(type).length
     }
-  }
+  })
+return {
+  //State
+  projects,
+  loading,
+  error,
+
+  // Getters
+  getProjects,
+  getProjectsByType,
+  projectCount,
+}
 })
+
+
