@@ -67,7 +67,7 @@ const githubLink = computed(() => ({
 const liveDemo = computed(() => ({
   href:isAccessible.value ? projectProps.project.liveDemo : '#!',
   target:isAccessible.value ? '_blank' : '',
-  text: !isAccessible.value ? 'Coming Soon' : 'GitHub',
+  text: !isAccessible.value ? 'Coming Soon' : 'Live Demo',
   disabled: !isAccessible.value
 }))
 
@@ -102,6 +102,7 @@ const handleDisabledClick = (e) => {
           class="project__img"
           :alt="`Screenshot of ${project.title} project`"
           loading="lazy"
+          decoding="async"
         />
       </div>
       <div class="project__card-content">
@@ -217,4 +218,10 @@ const handleDisabledClick = (e) => {
   transform: none;
   box-shadow: none;
 }
+
+/* Hover effect for badge */
+.project__card-item:hover .badge-ultra {
+  transform: rotate(5deg) scale(1.1);
+}
+
 </style>
