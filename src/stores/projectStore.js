@@ -5,6 +5,7 @@ export const useProjectStore = defineStore('projects', () => {
     const projects = ref([
       //  Web App
       {
+        id: 1,
         img: 'Portfolio-V2/Projects/ngoc-son-portfolio-with-vuejs.jpg',
         title: 'Ngoc Son Portfolio v2.0',
         desc: 'A modern, responsive portfolio website showcasing full-stack development projects. ' +
@@ -19,6 +20,7 @@ export const useProjectStore = defineStore('projects', () => {
       },
 
       {
+        id: 2,
         img: 'Portfolio-V2/Projects/dream-diary-blog.jpg',
         title: 'Dream Diary Blogs',
         desc: 'Dream Diary Blogs is personal blog website Admin can create blog on any topic from life. Dream Diary Blogs is personal blog website Admin can create blog on any topic from life.',
@@ -31,6 +33,7 @@ export const useProjectStore = defineStore('projects', () => {
       },
 
       {
+        id: 3,
         img: 'Portfolio-V2/Projects/chit-chat.jpg',
         title: 'Chit Chat',
         desc: 'Chit Chat is a group chat website. Create chat room and can invite friends to join it.',
@@ -42,6 +45,7 @@ export const useProjectStore = defineStore('projects', () => {
       },
 
       {
+        id: 4,
         img: 'Portfolio-V2/Projects/onstagrams-resize.jpg',
         title: 'Onstagrams (Team Project)',
         desc: 'Onstagrams is social app a place that connects everyone. All users can puslish status and interact it.',
@@ -53,6 +57,7 @@ export const useProjectStore = defineStore('projects', () => {
       },
 
       {
+        id: 5,
         img: 'Portfolio-V2/Projects/flip-card-poke.jpg',
         title: 'Pokemon Flip Card (Web Game)',
         desc: 'Pokemon Flip Card is a simple game with two identical cards that will be score. There are different difficulty modes 4x4 6x6 8x8 10x10 which will have different number of cards displayed..',
@@ -65,6 +70,7 @@ export const useProjectStore = defineStore('projects', () => {
 
       // Landing Page
       {
+        id: 6,
         img: 'Portfolio-V2/Projects/portfolio-template.jpg',
         title: 'Personal Portfolio',
         desc: 'A responsive landing page built from a Figma design using HTML and CSS. Focused on clean code, pixel-perfect implementation, and cross-device compatibility.',
@@ -76,6 +82,7 @@ export const useProjectStore = defineStore('projects', () => {
       },
 
       {
+        id: 7,
         img: 'Portfolio-V2/Projects/real-estate.jpg',
         title: 'Real Estate',
         desc: 'A responsive landing page built from a Figma design using HTML and CSS. Focused on clean code, pixel-perfect implementation, and cross-device compatibility.',
@@ -87,6 +94,7 @@ export const useProjectStore = defineStore('projects', () => {
       },
 
       {
+        id: 8,
         img: 'Portfolio-V2/Projects/lesson-landing-page.jpg',
         title: 'Lesson Page',
         desc: 'A responsive landing page built from a Figma design using HTML and CSS. Focused on clean code, pixel-perfect implementation, and cross-device compatibility.',
@@ -98,6 +106,7 @@ export const useProjectStore = defineStore('projects', () => {
       },
 
       {
+        id: 9,
         img: 'Portfolio-V2/Projects/eLearning-landing-page.jpg',
         title: 'eLearning',
         desc: 'A responsive landing page built from a Figma design using HTML and CSS. Focused on clean code, pixel-perfect implementation, and cross-device compatibility.',
@@ -109,6 +118,7 @@ export const useProjectStore = defineStore('projects', () => {
       },
 
       {
+        id: 10,
         img: 'Portfolio-V2/Projects/ecommerce.jpg',
         title: 'Grocery Ecommerce',
         desc: 'A responsive landing page built from a Figma design using HTML and CSS. Focused on clean code, pixel-perfect implementation, and cross-device compatibility.',
@@ -120,6 +130,7 @@ export const useProjectStore = defineStore('projects', () => {
       },
 
       {
+        id: 11,
         img: 'Portfolio-V2/Projects/pet-shop-landing-page.jpg',
         title: 'Lucy Pet Shop',
         desc: 'A responsive landing page built from a Figma design using HTML and CSS. Focused on clean code, pixel-perfect implementation, and cross-device compatibility.',
@@ -131,6 +142,7 @@ export const useProjectStore = defineStore('projects', () => {
       },
 
       {
+        id: 12,
         img: 'Portfolio-V2/Projects/banking-landing-page.jpg',
         title: 'Banking Website',
         desc: 'A responsive landing page built from a Figma design using HTML and CSS. Focused on clean code, pixel-perfect implementation, and cross-device compatibility.',
@@ -142,6 +154,7 @@ export const useProjectStore = defineStore('projects', () => {
       },
 
       {
+        id: 13,
         img: 'Portfolio-V2/Projects/podcast-landing-page.jpg',
         title: 'Podcast Website',
         desc: 'A responsive landing page built from a Figma design using HTML and CSS. Focused on clean code, pixel-perfect implementation, and cross-device compatibility.',
@@ -166,6 +179,15 @@ export const useProjectStore = defineStore('projects', () => {
     }
   })
 
+
+  const completedProjects = computed(() => {
+    return projects.value.filter(project => project.status === 'completed')
+  })
+
+  const inDevelopmentProjects = computed(() => {
+    return projects.value.filter(project => project.status === 'in-development')
+  })
+
   // const getProjectById = computed(() => {
   //   return (id) => projects.value.find(project => project.id === id)
   // })
@@ -175,6 +197,40 @@ export const useProjectStore = defineStore('projects', () => {
       return getProjectsByType.value(type).length
     }
   })
+
+//   ACTIONS
+  const fetchProjects = async () => {
+      loading.value = true;
+      error.value = null;
+
+      try {
+        // Simulate API call delay
+        await new Promise(resolve => setTimeout(resolve, 500))
+        loading.value = false
+        return projects.value
+      } catch (e) {
+        error.value = e.message
+        loading.value = false
+        throw e
+      }
+  }
+
+//   Future CRUD API
+  const addProject = async( newProject) => {
+      // API POST /api/projects
+      projects.value.unshift(newProject)
+  }
+
+  const updateProject = async(id, update) => {
+      const index = projects.value.findIndex(project =>  project.id === id)
+    if(index !== -1) {
+      projects.value[index] = { ...projects[index], ...update }
+    }
+  }
+
+  const deleteProject = async(id) => {
+      projects.value = projects.value.filter(project => project.id !== id)
+  }
 return {
   //State
   projects,
@@ -185,6 +241,11 @@ return {
   getProjects,
   getProjectsByType,
   projectCount,
+
+//   ACTIONS
+  addProject,
+  updateProject,
+  deleteProject,
 }
 })
 
