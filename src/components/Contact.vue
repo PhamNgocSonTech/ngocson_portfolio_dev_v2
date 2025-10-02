@@ -14,7 +14,20 @@
           collaborate.
           Let’s connect and bring your project to life.
         </p>
-        <div class="booking__cta btn wow animate__pulse animate__infinite">
+        <div
+          v-motion="{
+            initial: { scale: 1, rotate: 0 },
+            visible: {
+              scale: [1, 1.1, 1],
+              rotate: [0, 5, 0, -5, 0],
+              transition: {
+                duration: 2000,
+                repeat: Infinity,
+                ease: 'easeInOut'
+              }
+            }
+          }"
+          class="booking__cta btn">
           <a href="mailto:phamngocson7a1@gmail.com" class="booking__cta-btn">Contact me</a>
         </div>
 

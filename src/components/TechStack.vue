@@ -158,7 +158,16 @@ const duplicatedTech = ref([...techStack.value, ...techStack.value])
           <div class="tech__line"></div>
           <h2 class="tech__title">What I Build With</h2>
         </div>
-        <div class="tech__list wow animate__bounceInRight">
+        <div
+          v-motion="{
+            initial: { opacity: 0, y: 50 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { duration: 800, ease: 'easeOut' }
+            }
+          }"
+          class="tech__list">
           <!--  Tech Item With Carousel-->
           <div class="tech__carousel">
             <div class="tech__track">

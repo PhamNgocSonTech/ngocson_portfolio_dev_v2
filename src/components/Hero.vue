@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 // import 'animate.css';
 import { useImageKit } from '@/composables/useImageKit.js'
 const { getImageUrl } = useImageKit()
@@ -12,6 +12,19 @@ const { getImageUrl } = useImageKit()
         <div class="hero__image-wrap">
           <!-- <img src="./assets/img/hero-img.png" alt="" class="hero__portrait"> -->
           <img
+            v-motion="{
+              initial: { opacity: 0, x: 100, scale: 0.9 },
+              visible: {
+                opacity: 1,
+                x: 0,
+                scale: 1,
+                transition: {
+                  duration: 1000,
+                  ease: [0.22, 1, 0.36, 1], // Smooth
+                  delay: 200 // Sau text
+                }
+              }
+            }"
             :src="getImageUrl('Portfolio-V2/HomePage/ngocson.jpg')"
             alt="Hero Image"
             class="hero__portrait"
@@ -23,16 +36,41 @@ const { getImageUrl } = useImageKit()
           <!-- <img src="./assets/img/decor-02.svg" alt="" class="hero__decor-second"> -->
           <!-- <img src="./assets/img/decor-01.svg" alt="" class="hero__decor-center show-on-mobile"> -->
         </div>
-        <div class="hero__content">
+        <div v-motion-slide-visible-left class="hero__content">
           <span class="hero__title"
             >Hey, I'm Ngoc Son
             <img
+              v-motion="{
+                initial: { rotate: 0 },
+                visible: {
+                  rotate: [0, 14, -8, 14, -4, 10, 0],
+                  transition: {
+                    duration: 2500,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                    delay: 1000 // Delay 1s
+                  }
+                }
+              }"
               class="hero__title-icon"
               src="../assets/icons/about-me-icon/about-me-icon.svg"
               alt=""
             />
           </span>
-          <h1 class="hero__heading heading wow animate__backInRight">
+          <h1
+            v-motion="{
+              initial: { opacity: 0, scale: 0.8 },
+              enter: {
+                opacity: 1,
+                scale: 1,
+                transition: {
+                  duration: 800,
+                  ease: [0.68, -0.6, 0.32, 1.6],
+                  delay: 200
+                }
+              }
+            }"
+            class="hero__heading heading">
             <strong class="hero__heading-name">Front</strong>end Developer
           </h1>
           <p class="hero__desc">
@@ -41,8 +79,15 @@ const { getImageUrl } = useImageKit()
           </p>
           <div class="hero__row">
             <a
+              v-motion="{
+                initial: { scale: 1.1 },
+                enter: {
+                  scale: [1, 1.2, 1],
+                  transition: { duration: 2000, repeat: Infinity, ease: 'easeInOut' }
+                },
+              }"
               href="mailto:phamngocson7a1@gmail.com"
-              class="hero__cta-btn btn wow animate__pulse animate__infinite"
+              class="hero__cta-btn btn"
               >Contact Me</a
             >
             <a href="#projects" class="hero__cta-link">My Projects</a>
