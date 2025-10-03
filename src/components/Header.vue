@@ -3,7 +3,7 @@ import { RouterLink } from 'vue-router'
 import NavLinks from '@/components/NavLinks.vue'
 import { ref } from 'vue'
 import MenuDrawer from '@/components/MenuDrawer.vue'
-import LogoMenuDrawer from '@/assets/icons/header-icon.svg'
+import LogoMenuDrawer from '@/assets/icons/ngoc-son-logo.svg'
 
 const isOpen = ref(false);
 
@@ -37,7 +37,7 @@ const closeMenuHeader = () => {
         <!-- Logo -->
         <div class="header__icon">
           <RouterLink to="/">
-            <img src="../assets/icons/header-icon.svg" alt="" class="header-img__icon" />
+            <img src="https://ik.imagekit.io/ngocsondev/Portfolio-V2/NgocSonLogo/NgocSonLogo.svg" alt="" class="header-img__icon" />
           </RouterLink>
         </div>
         <!-- Navbar -->
