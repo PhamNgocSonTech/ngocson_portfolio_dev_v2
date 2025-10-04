@@ -12,21 +12,21 @@ const duplicatedTech = computed(() => [
 <template>
   <section class="techs">
     <div class="main__container">
-      <div class="tech__inner">
+      <div
+        v-motion="{
+            initial: { opacity: 0, y: 100 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { duration: 800, delay: 200, ease: 'easeOut' }
+            }
+          }"
+        class="tech__inner">
         <div class="tech__content">
           <div class="tech__line"></div>
           <h2 class="tech__title">What I Build With</h2>
         </div>
-        <div
-          v-motion="{
-            initial: { opacity: 0, y: 50 },
-            visible: {
-              opacity: 1,
-              y: 0,
-              transition: { duration: 800, ease: 'easeOut' }
-            }
-          }"
-          class="tech__list">
+        <div class="tech__list">
           <!--  Tech Item With Carousel-->
           <div class="tech__carousel">
             <div class="tech__track">

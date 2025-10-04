@@ -4,7 +4,17 @@
 <template>
   <section id="about" class="about-me">
     <div class="main__container">
-      <div class="about-me__content">
+      <div
+        v-motion="{
+          initial: {opacity: 0, x: 100},
+          visible: {
+            opacity: 1,
+            x: 0,
+            transition: {delay: 100, ease: 'easeInOut'},
+
+          },
+      }"
+           class="about-me__content">
           <span class="about-me__title">Hey,,,,It’s Son
             <img class="about-me__icon" src="../assets/icons/about-me-icon/about-me-icon.svg" alt="">
           </span>
