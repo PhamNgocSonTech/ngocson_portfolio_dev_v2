@@ -81,12 +81,19 @@ const { getImageUrl } = useImageKit()
           <div class="hero__row">
             <a
               v-motion="{
-                initial: { scale: 1.1 },
-                enter: {
-                  scale: [1, 1.2, 1],
-                  transition: { duration: 2000, repeat: Infinity, ease: 'easeInOut' }
-                },
-              }"
+              initial: {
+                scale: 1,
+                backgroundColor: '#4f46e5',
+                color: '#fff',
+                boxShadow: '0 0 0 rgba(99, 102, 241, 0)'
+              },
+              hovered: {
+                scale: 1.05,
+                backgroundColor: '#6366f1',
+                boxShadow: '0 0 15px rgba(99, 102, 241, 0.5)',
+                transition: { duration: 300, ease: 'easeOut' }
+              }
+            }"
               href="mailto:phamngocson7a1@gmail.com"
               class="hero__cta-btn btn"
               >Contact Me</a
@@ -229,12 +236,11 @@ const { getImageUrl } = useImageKit()
   font-size: 1.8rem;
   font-weight: 700;
   line-height: 0.66; /* 166.667% */
-  /* padding: 16px 37px; */
   margin-right: 30px;
-  /* cursor: pointer; */
   position: relative;
   z-index: 1;
 }
+
 
 .hero__cta-link {
   color: var(--heading-color);

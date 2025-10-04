@@ -33,9 +33,18 @@
 
 <template>
   <!-- Special -->
-  <section class="special">
+  <section
+    v-motion="{
+    initial: { opacity: 0, y: 80 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 800, ease: 'easeOut' }
+    }
+  }"
+    class="special">
     <div class="main__container">
-      <div class="special__content">
+      <div  class="special__content">
         <h2 class="special__heading heading">My Focus</h2>
         <p class="special__desc">I build websites that look clean, work smoothly, and leave a creative
           touch.
@@ -47,9 +56,28 @@
       <input type="radio" name="special" id="dot3">
       <div class="special__list">
         <!-- Special Item 1 -->
-        <div class="special__item">
+        <div
+          v-motion="{
+          initial: { opacity: 0, y: 50 },
+          visibleOnce: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 600, ease: 'easeOut', delay: 200 }
+          }
+        }"
+          class="special__item">
           <div class="special__icon-wrapper">
-            <img src="../assets/icons/special-icon/special-icon-1.svg" alt="" class="special__item-icon">
+            <img
+              v-motion="{
+              initial: { scale: 1 },
+              visibleOnce: {
+                scale: [1, 1.1, 1],
+                transition: { duration: 2500, repeat: Infinity, ease: 'easeInOut' }
+              }
+            }"
+              src="../assets/icons/special-icon/special-icon-1.svg"
+              alt=""
+              class="special__item-icon">
           </div>
           <h3 class="special__item-title">Code & Craft</h3>
           <p class="special__item-desc">Clean, thoughtful code that turns ideas into polished products.
@@ -57,9 +85,28 @@
         </div>
 
         <!-- Special Item 2 -->
-        <div class="special__item">
+        <div
+          v-motion="{
+          initial: { opacity: 0, y: 50 },
+          visibleOnce: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 600, ease: 'easeOut', delay: 400 }
+          }
+        }"
+          class="special__item">
           <div class="special__icon-wrapper">
-            <img src="../assets/icons/special-icon/special-icon-2.svg" alt="" class="special__item-icon">
+            <img
+              v-motion="{
+              initial: { scale: 1 },
+              visibleOnce: {
+                scale: [1, 1.1, 1],
+                transition: { duration: 2500, repeat: Infinity, ease: 'easeInOut' }
+              }
+            }"
+              src="../assets/icons/special-icon/special-icon-2.svg"
+              alt=""
+              class="special__item-icon">
           </div>
           <h3 class="special__item-title">Design Systems</h3>
           <p class="special__item-desc">Scalable frameworks that keep UI and UX consistent and efficient.
@@ -67,9 +114,28 @@
         </div>
 
         <!-- Special Item 3 -->
-        <div class="special__item">
+        <div
+          v-motion="{
+          initial: { opacity: 0, y: 50 },
+          visibleOnce: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 600, ease: 'easeOut', delay: 600 }
+          }
+        }"
+          class="special__item">
           <div class="special__icon-wrapper">
-            <img src="../assets/icons/special-icon/special-icon-3.svg" alt="" class="special__item-icon">
+            <img
+              v-motion="{
+              initial: { scale: 1 },
+              visibleOnce: {
+                scale: [1, 1.1, 1],
+                transition: { duration: 2500, repeat: Infinity, ease: 'easeInOut' }
+              }
+            }"
+              src="../assets/icons/special-icon/special-icon-3.svg"
+              alt=""
+              class="special__item-icon">
           </div>
           <h3 class="special__item-title">Creative Coding</h3>
           <p class="special__item-desc">Intuitive interfaces and seamless experiences that engage users.
