@@ -63,20 +63,6 @@ const closeMenuFooter = () => {
               </svg>
             </button>
             <NavLinks/>
-<!--            <ul id="footer-nav" class="navbar__list">-->
-<!--              <li class="navbar__item">-->
-<!--                <RouterLink to="/#projects" class="navbar__link">Projects</RouterLink>-->
-<!--              </li>-->
-<!--              <li class="navbar__item">-->
-<!--                <RouterLink to="/#about" class="navbar__link">About</RouterLink>-->
-<!--              </li>-->
-<!--              <li class="navbar__item">-->
-<!--                <RouterLink to="/#skill" class="navbar__link">Skills</RouterLink>-->
-<!--              </li>-->
-<!--              <li class="navbar__item">-->
-<!--                <RouterLink to="/#contact" class="navbar__link">Contact</RouterLink>-->
-<!--              </li>-->
-<!--            </ul>-->
           </nav>
         </div>
       </div>
@@ -89,6 +75,7 @@ const closeMenuFooter = () => {
           and official brand assets from
           <a href="https://www.jwt.io/" class="footer-credits__link" target="_blank">JWT.io</a>
           <a href="https://devtools.vuejs.org/" class="footer-credits__link" target="_blank">Vue Devtools</a>
+          <a href="https://pinia.vuejs.org/" class="footer-credits__link" target="_blank">Pinia</a>
         </div>
       </div>
     </div>
@@ -229,10 +216,6 @@ const closeMenuFooter = () => {
     margin-bottom: 58px;
   }
 
-  .navbar__link {
-    font-size: 1.6rem;
-  }
-
   .footer-container__email {
     display: flex;
     justify-content: center;
@@ -276,7 +259,7 @@ const closeMenuFooter = () => {
     width: 392px;
   }
 
-  .footer__copyright {
+  .footer__copyright, .footer__credits {
     order: 2;
     text-align: center;
     margin-top: 8px;
@@ -295,20 +278,16 @@ const closeMenuFooter = () => {
     margin-bottom: 40px;
   }
 
-  .navbar--footer .navbar__list {
+  .navbar--footer {
     margin-left: 0;
   }
 
-  .navbar__link {
-    font-size: 1.4rem;
-  }
-
   .footer__copyright .footer__link {
-    color:var(--primary-color) ;
+    color: var(--primary-color);
     font-size: 1.3rem;
   }
 
-  .footer__copyright {
+  .footer__copyright, .footer__credits {
     margin-top: 6px;
     font-size: 1.4rem;
   }

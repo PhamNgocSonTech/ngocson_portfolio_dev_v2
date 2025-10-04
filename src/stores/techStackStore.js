@@ -40,6 +40,12 @@ export const useTechStackStore = defineStore('techStacks',() => {
     },
 
     {
+      id: 'pinia',
+      name: 'Pinia',
+      icon: 'https://pinia.vuejs.org/logo.svg',
+    },
+
+    {
       id: 'vue-dev-tool',
       name: 'Vue Dev Tool',
       icon: 'https://devtools.vuejs.org/logo-mini.svg',
@@ -151,7 +157,6 @@ export const useTechStackStore = defineStore('techStacks',() => {
   const error = ref(null)
 
 //   GETTERS
-
   const getTechs = computed(() => techs.value)
 
   const getTechById = (id) => {
