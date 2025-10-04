@@ -7,7 +7,16 @@ const { getImageUrl } = useImageKit()
   <!-- Projects -->
   <section id="projects" class="projects-home">
     <div class="main__container">
-      <div class="project-home__content">
+      <div
+        v-motion="{
+          initial: { opacity: 0, y: 80 },
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 800, ease: 'easeOut' }
+          }
+        }"
+        class="project-home__content">
         <h2 class="project-home__heading heading">Take a look at <br> my recent projects</h2>
         <p class="project-home__desc">
           I build both <strong>Web Applications</strong> and
@@ -17,7 +26,17 @@ const { getImageUrl } = useImageKit()
       </div>
       <!-- <div class="project-home__card"> -->
       <div class="row">
-        <div class="col-12 col-lg-6">
+        <!-- Project Card Item 1 -->
+        <div
+          v-motion="{
+          initial: { opacity: 0, x: -50 },
+          visible: {
+            opacity: 1,
+            x: 0,
+            transition: { duration: 600, ease: 'easeOut', delay: 400 }
+          }
+        }"
+          class="col-12 col-lg-6">
           <div class="project-home__card-item">
             <div class="project-home__card-wrapper">
               <div class="project-home__card-content">
@@ -38,7 +57,16 @@ const { getImageUrl } = useImageKit()
           </div>
         </div>
         <!-- Project Card Item 2 -->
-        <div class="col-12 col-lg-6">
+        <div
+          v-motion="{
+          initial: { opacity: 0, x: 50 },
+          visible: {
+            opacity: 1,
+            x: 0,
+            transition: { duration: 600, ease: 'easeOut', delay: 400 }
+          }
+        }"
+          class="col-12 col-lg-6">
           <div class="project-home__card-item">
             <div class="project-home__card-wrapper">
               <div class="project-home__card-content">

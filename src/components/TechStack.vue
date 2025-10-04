@@ -1,164 +1,32 @@
 <script setup>
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
+import { useTechStackStore } from '@/stores/techStackStore.js'
 
-const techStack = ref([
-  {
-    id: 'html',
-    name: 'HTML',
-    icon: 'https://cdn.simpleicons.org/html5',
-  },
-
-  {
-    id: 'css',
-    name: 'CSS',
-    icon: 'https://www.vectorlogo.zone/logos/w3_css/w3_css-icon~old.svg',
-  },
-
-  {
-    id: 'scss',
-    name: 'SCSS/SASS',
-    icon: 'https://cdn.simpleicons.org/sass',
-  },
-
-  {
-    id: 'js',
-    name: 'Javascript',
-    icon: 'https://cdn.simpleicons.org/javascript',
-  },
-
-  {
-    id: 'vue',
-    name: 'VueJS',
-    icon: 'https://www.vectorlogo.zone/logos/vuejs/vuejs-icon.svg',
-  },
-
-  {
-    id: 'vite',
-    name: 'Vite',
-    icon: 'https://www.vectorlogo.zone/logos/vitejsdev/vitejsdev-icon.svg',
-  },
-
-  {
-    id: 'vue-dev-tool',
-    name: 'Vue Dev Tool',
-    icon: 'https://devtools.vuejs.org/logo-mini.svg',
-  },
-
-  {
-    id: 'node',
-    name: 'NodeJS',
-    icon: 'https://cdn.simpleicons.org/nodedotjs',
-  },
-
-  {
-    id: 'npm',
-    name: 'NPM',
-    icon: 'https://cdn.simpleicons.org/npm',
-  },
-
-  {
-    id: 'ex',
-    name: 'ExpressJS',
-    icon: 'https://cdn.simpleicons.org/express',
-  },
-
-  {
-    id: 'mongo',
-    name: 'MongoDB',
-    icon: 'https://cdn.simpleicons.org/mongodb',
-  },
-
-  {
-    id: 'mysql',
-    name: 'MySQL',
-    icon: 'https://www.vectorlogo.zone/logos/mysql/mysql-official.svg',
-  },
-
-  {
-    id: 'jwt',
-    name: 'JWT',
-    icon: 'https://www.jwt.io/img/pic_logo.svg',
-  },
-
-  {
-    id: 'postman',
-    name: 'Postman',
-    icon: 'https://cdn.simpleicons.org/postman',
-  },
-
-  {
-    id: 'cloudinary',
-    name: 'Cloudinary',
-    icon: 'https://cdn.simpleicons.org/cloudinary',
-  },
-
-  {
-    id: 'gpt',
-    name: 'Chat GPT',
-    icon: 'https://cdn.simpleicons.org/openai/080808',
-  },
-
-  {
-    id: 'github',
-    name: 'Github',
-    icon: 'https://cdn.simpleicons.org/github',
-  },
-
-  {
-    id: 'gitlab',
-    name: 'Gitlab',
-    icon: 'https://cdn.simpleicons.org/gitlab',
-  },
-
-  {
-    id: 'git-copilot',
-    name: 'Github Copilot',
-    icon: 'https://cdn.simpleicons.org/githubcopilot',
-  },
-
-  {
-    id: 'git-page',
-    name: 'Github Pages',
-    icon: 'https://cdn.simpleicons.org/githubpages',
-  },
-
-  {
-    id: 'vercel',
-    name: 'Vercel',
-    icon: 'https://cdn.simpleicons.org/vercel',
-  },
-
-  {
-    id: 'render',
-    name: 'Render',
-    icon: 'https://cdn.simpleicons.org/render',
-  },
-
-  {
-    id: 'netlify',
-    name: 'Netlify',
-    icon: 'https://cdn.simpleicons.org/netlify',
-  },
-
-  {
-    id: 'odoo',
-    name: 'Odoo ERP',
-    icon: 'https://cdn.simpleicons.org/odoo',
-  },
+const techStackStore = useTechStackStore()
+const duplicatedTech = computed(() => [
+  ...techStackStore.getTechs,
+  ...techStackStore.getTechs,
 ])
-
-const duplicatedTech = ref([...techStack.value, ...techStack.value])
 </script>
 
 <template>
   <section class="techs">
     <div class="main__container">
-      <div class="tech__inner">
+      <div
+        v-motion="{
+            initial: { opacity: 0, y: 100 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { duration: 800, delay: 200, ease: 'easeOut' }
+            }
+          }"
+        class="tech__inner">
         <div class="tech__content">
           <div class="tech__line"></div>
           <h2 class="tech__title">What I Build With</h2>
         </div>
-        <div class="tech__list wow animate__bounceInRight">
+        <div class="tech__list">
           <!--  Tech Item With Carousel-->
           <div class="tech__carousel">
             <div class="tech__track">

@@ -1,10 +1,20 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+</script>
 
 <template>
   <!-- Booking -->
   <section id="contact" class="booking">
     <div class="main__container">
-      <div class="booking__content">
+      <div
+        v-motion="{
+          initial: {opacity: 0, x: -100},
+          visible: {
+            opacity: 1,
+            x: 0,
+            transition: {delay: 200, ease: [0.11, 0, 0.5, 0]},
+          },
+      }"
+        class="booking__content">
         <div class="booking__icon">
           <img src="../assets/icons/booking-icon/booking-icon.svg" alt="" class="booking__icon-img">
 
@@ -14,7 +24,21 @@
           collaborate.
           Let’s connect and bring your project to life.
         </p>
-        <div class="booking__cta btn wow animate__pulse animate__infinite">
+        <div
+          v-motion="{
+           initial: { scale: 1, rotate: 0 },
+           visible: {
+              scale: [1, 1.05, 1],
+              rotate: [0, 3, 0, -3, 0],
+              transition: {
+                duration: 2000,
+                repeat: Infinity,
+                repeatType: 'mirror',
+                ease: 'easeInOut'
+              }
+            }
+          }"
+          class="booking__cta btn">
           <a href="mailto:phamngocson7a1@gmail.com" class="booking__cta-btn">Contact me</a>
         </div>
 

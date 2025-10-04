@@ -57,9 +57,9 @@ a {
   border-radius: 20px;
 }
 
-.btn:hover {
-  opacity: 0.75;
-}
+/*.btn:hover {*/
+/*  opacity: 0.75;*/
+/*}*/
 
 .heading {
   color: var(--heading-color);

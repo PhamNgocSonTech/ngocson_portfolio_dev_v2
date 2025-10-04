@@ -5,12 +5,30 @@
   <!-- My Skill -->
   <section id="skill" class="skill">
     <div class="main__container">
-      <div class="skill__content">
+      <div
+        v-motion="{
+          initial: { opacity: 0, y: 100 },
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 400, ease: 'easeOut', delay: 100 }
+          }
+        }"
+        class="skill__content">
         <h2 class="skill__heading heading">My Skills</h2>
         <p class="skill__desc">Technologies and frameworks I use in development.</p>
       </div>
       <div class="row skill__columns">
-        <div class="col-12 col-md-6 col-lg-3">
+        <div
+           v-motion="{
+          initial: { opacity: 0, y: 50 },
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 600, ease: 'easeOut', delay: 200 }
+          }
+        }"
+          class="col-12 col-md-6 col-lg-3">
           <div class="skill__column skill__column--frontend">
             <h3 class="skill__title">Frontend</h3>
             <ul class="skill__list">
@@ -22,7 +40,16 @@
             </ul>
           </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-3">
+        <div
+           v-motion="{
+          initial: { opacity: 0, y: 50 },
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 600, ease: 'easeOut', delay: 400 }
+          }
+        }"
+          class="col-12 col-md-6 col-lg-3">
           <div class="skill__column skill__column--backend">
             <h3 class="skill__title">Backend</h3>
             <ul class="skill__list">
@@ -34,7 +61,16 @@
             </ul>
           </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-3">
+        <div
+           v-motion="{
+          initial: { opacity: 0, y: 50 },
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 600, ease: 'easeOut', delay: 600 }
+          }
+        }"
+          class="col-12 col-md-6 col-lg-3">
           <div class="skill__column skill__column--tool">
             <h3 class="skill__title">Tools</h3>
             <ul class="skill__list">
@@ -46,7 +82,16 @@
             </ul>
           </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-3">
+        <div
+           v-motion="{
+          initial: { opacity: 0, y: 50 },
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 600, ease: 'easeOut', delay: 800 }
+          }
+        }"
+          class="col-12 col-md-6 col-lg-3">
           <div class="skill__column skill__column--erp">
             <h3 class="skill__title">ERP</h3>
             <ul class="skill__list">
