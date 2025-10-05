@@ -15,8 +15,6 @@ html {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  /* overflow-x: hidden; */
-
   /* -webkit-tap-highlight-color: transparent; */
 }
 
@@ -24,7 +22,6 @@ body {
   font-size: 1.6rem;
   font-family: "DM Sans", sans-serif;
   -webkit-tap-highlight-color: transparent; /* for removing the highlight */
-  /* overflow-x: hidden; */
 }
 
 /* =============================Common============================= */

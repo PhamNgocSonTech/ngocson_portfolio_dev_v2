@@ -32,10 +32,6 @@ const { getImageUrl } = useImageKit()
             loading="lazy"
             @contextmenu.prevent
           />
-          <!-- Decorators -->
-          <!-- <img src="./assets/img/decor-01.svg" alt="" class="hero__decor-first"> -->
-          <!-- <img src="./assets/img/decor-02.svg" alt="" class="hero__decor-second"> -->
-          <!-- <img src="./assets/img/decor-01.svg" alt="" class="hero__decor-center show-on-mobile"> -->
         </div>
         <div v-motion-slide-visible-left class="hero__content">
           <span class="hero__title"
@@ -167,21 +163,6 @@ const { getImageUrl } = useImageKit()
   object-fit: cover;
   z-index: 2;
   border-radius: 20px;
-}
-
-.hero__decor-first {
-  position: absolute;
-  /* top: -80px; */
-  bottom: 0;
-
-  left: -200px;
-  z-index: 1;
-}
-
-.hero__decor-second {
-  position: absolute;
-  bottom: 0;
-  left: 950px;
 }
 
 .hero__content {
