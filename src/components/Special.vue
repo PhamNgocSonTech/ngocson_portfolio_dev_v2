@@ -256,8 +256,10 @@
 @media screen and (max-width: 767px) {
 
   /* Special */
+
   .special__desc {
-    width: 350px;
+    width: 100%;
+    max-width: 350px;
   }
 
   .special {
