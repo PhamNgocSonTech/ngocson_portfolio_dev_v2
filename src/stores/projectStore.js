@@ -6,7 +6,7 @@ export const useProjectStore = defineStore('projects', () => {
       //  Web App
       {
         id: 1,
-        img: 'Portfolio-V2/Projects/ngoc-son-portfolio-with-vuejs.jpg',
+        img: 'Portfolio-V2/Projects/ngoc-son-portfolio-v2.jpg',
         title: 'Ngoc Son Portfolio v2.0',
         desc: 'A modern, responsive portfolio website showcasing full-stack development projects. ' +
           'Built with Vue.js 3 and featuring dynamic project filtering, interactive status badge and clean UI design. ' +

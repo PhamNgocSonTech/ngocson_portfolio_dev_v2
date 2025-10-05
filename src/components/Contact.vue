@@ -11,7 +11,7 @@
           visible: {
             opacity: 1,
             x: 0,
-            transition: {delay: 200, ease: [0.11, 0, 0.5, 0]},
+            transition: {delay: 400, ease: [0.11, 0, 0.5, 0]},
           },
       }"
         class="booking__content">

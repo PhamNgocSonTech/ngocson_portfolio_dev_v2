@@ -100,6 +100,7 @@ const { getImageUrl } = useImageKit()
   margin-top: 140px;
   background: #7189ff;
   padding: 86px 0;
+  overflow: hidden;
 }
 
 .project-home__content {
