@@ -1,7 +1,8 @@
 <script setup>
 import { useImageKit } from '@/composables/useImageKit.js'
 import { computed } from 'vue'
-import {Github, BadgeCheck} from 'lucide-vue-next'
+import Icon from '@/components/Icon.vue'
+// import {Github, BadgeCheck} from 'lucide-vue-next'
 const { getImageUrl } = useImageKit()
 // const projectProps = defineProps({
 //   img: String,
@@ -122,7 +123,7 @@ const handleDisabledClick = (e) => {
             :target=" githubLink.target"
             @click="handleDisabledClick"
           >
-            <Github />
+            <Icon name="github"/>
             {{ githubLink.text }}
           </a>
           <a
@@ -131,7 +132,7 @@ const handleDisabledClick = (e) => {
             :target="liveDemo.target"
             @click="handleDisabledClick"
           >
-            <BadgeCheck color="green"/>
+            <Icon name="badgeCheck" color="green"/>
             {{ liveDemo.text }}
           </a>
         </div>

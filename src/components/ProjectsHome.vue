@@ -1,5 +1,6 @@
 <script setup>
 import { useImageKit } from '@/composables/useImageKit.js'
+import Icon from '@/components/Icon.vue'
 const { getImageUrl } = useImageKit()
 </script>
 
@@ -47,6 +48,7 @@ const { getImageUrl } = useImageKit()
                 </p>
                 <RouterLink :to="{name: 'projects', query:{type: 'webapp'}}" class="project-home__card-link">See
                   More
+                  <Icon name="arrowRight"/>
                 </RouterLink>
               </div>
               <div class="project-home__card-img">
@@ -76,7 +78,9 @@ const { getImageUrl } = useImageKit()
                   optimized for accessibility and cross-device experience.
                 </p>
                 <RouterLink :to="{name: 'projects', query:{type: 'landing'}}" class="project-home__card-link">See
-                  More</RouterLink>
+                  More
+                <Icon name="arrowRight" s/>
+                </RouterLink>
               </div>
               <div class="project-home__card-img">
                 <img :src="getImageUrl('Portfolio-V2/HomePage/project-web.jpg')" class="project-home__img" loading="lazy" alt="Landing Page Img">
@@ -186,6 +190,9 @@ const { getImageUrl } = useImageKit()
 }
 
 .project-home__card-link {
+  display: flex;
+  align-items: center;
+  gap: 2px;
   color: var(--heading-color);
   font-size: 1.8rem;
   font-weight: 700;
