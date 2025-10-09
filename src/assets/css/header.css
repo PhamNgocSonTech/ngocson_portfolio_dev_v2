@@ -1,11 +1,40 @@
 /* =============================HEADER============================= */
 
-.header.fixed {
-  position: sticky;
-  top: -10px;
-  /* background-color: var(--background-color); */
+/*.header.fixed {*/
+/*  position: sticky;*/
+/*  top: -10px;*/
+/*  !* background-color: var(--background-color); *!*/
+/*  backdrop-filter: blur(18px);*/
+/*  z-index: 5;*/
+/*}*/
+
+.header {
+  position: fixed;
+  left: 50%;
+  inset-inline: 0; /* left: 0; right: 0; */
+  margin-inline: auto;
+  max-width: 1200px;
+  /*background: rgba(255, 255, 255, 0.75);*/
+  z-index: 1000;
+  transition: all 0.4s ease;
+}
+
+.header--attached {
+  width: 100%;
+  top: 0;
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  box-shadow: none;
+}
+
+.header--detached {
+  width: calc(100% - 48px);
+  top: 20px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   backdrop-filter: blur(18px);
-  z-index: 5;
 }
 
  .header__inner {

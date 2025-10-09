@@ -1,11 +1,13 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import NavLinks from '@/components/NavLinks.vue'
-import { ref } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 import MenuDrawer from '@/components/MenuDrawer.vue'
 import LogoMenuDrawer from '@/assets/icons/ngoc-son-logo.svg'
 
-const isOpen = ref(false);
+const isOpen = ref(false)
+
+const isScrolled = ref(false)
 
 const toggleMenuHeader = () => {
   isOpen.value = !isOpen.value;
@@ -18,11 +20,19 @@ const closeMenuHeader = () => {
   console.log("Close Menu Header")
 
 }
+
+onMounted(() => {
+  const handleScroll = () => {
+    isScrolled.value = window.scrollY > 30
+  }
+  window.addEventListener('scroll', handleScroll)
+  onUnmounted(() => window.removeEventListener('scroll', handleScroll))
+})
 </script>
 
 <template>
   <!-- PC Header -->
-  <header class="header fixed">
+  <header :class="['header', isScrolled ? 'header--detached' : 'header--attached']">
     <div class="main__container">
       <div class="header__inner">
         <!-- Email -->
@@ -37,7 +47,11 @@ const closeMenuHeader = () => {
         <!-- Logo -->
         <div class="header__icon">
           <RouterLink to="/">
-            <img src="https://ik.imagekit.io/ngocsondev/Portfolio-V2/NgocSonLogo/NgocSonLogo.svg" alt="" class="header-img__icon" />
+            <img
+              src="https://ik.imagekit.io/ngocsondev/Portfolio-V2/NgocSonLogo/NgocSonLogo.svg"
+              alt=""
+              class="header-img__icon"
+            />
           </RouterLink>
         </div>
         <!-- Navbar -->
@@ -68,20 +82,23 @@ const closeMenuHeader = () => {
             </svg>
           </button>
           <!-- Navigation -->
-          <NavLinks/>
+          <NavLinks />
         </nav>
       </div>
     </div>
   </header>
 
-<!--  Menu Drawer Tablet/Mobile-->
-<MenuDrawer
-  :is-open="isOpen"
-  logo-alt="Logo Menu Drawer"
-  logo-link="/"
-  :logo-src="LogoMenuDrawer"
-  @close="closeMenuHeader"
-/>
+  <!--  Menu Drawer Tablet/Mobile-->
+  <teleport to="body">
+    <MenuDrawer
+      :is-open="isOpen"
+      logo-alt="Logo Menu Drawer"
+      logo-link="/"
+      :logo-src="LogoMenuDrawer"
+      @close="closeMenuHeader"
+    />
+  </teleport>
+
   <!-- End Header -->
 </template>
 
@@ -100,7 +117,6 @@ const closeMenuHeader = () => {
   .header__menu-drawer {
     display: none;
   }*/
-
 }
 
 @media screen and (max-width: 991px) {
@@ -192,7 +208,6 @@ const closeMenuHeader = () => {
   .header__menu-drawer {
     display: block;
   }
-
 
   .header__menu-checkbox:checked ~ .header__overlay {
     opacity: 1;
