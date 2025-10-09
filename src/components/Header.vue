@@ -30,7 +30,7 @@ const closeMenuHeader = () => {
           <div class="header-container__email">
             <img src="../assets/img/email-logo.svg" alt="" class="header-img__email" />
           </div>
-          <a href="mailto:phamngocson7a1@gmail.com" class="header__email-link"
+          <a href="mailto:phamngocson7a1@gmail.com" class="header__email-link" target="_blank"
             >phamngocson7a1@gmail.com</a
           >
         </div>

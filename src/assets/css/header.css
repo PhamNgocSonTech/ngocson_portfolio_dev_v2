@@ -53,7 +53,7 @@
   color: var(--heading-color);
   font-size: 2.2rem;
   font-weight: 500;
-  text-decoration-line: underline;
+  transition: color 0.3s ease;
 }
 
 .header__email-link:hover,

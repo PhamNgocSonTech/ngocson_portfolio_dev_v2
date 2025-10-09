@@ -1,35 +1,40 @@
-# ./
+ # Ngoc Son Portfolio v2.0 🚀
 
-This template should help get you started developing with Vue 3 in Vite.
+>_A modern, responsive portfolio website built with Vue 3, Vite, Pinia, and Vue Router, featuring smooth animations, clean UI, and optimized performance._
 
-## Recommended IDE Setup
+<p align="center">
+    <a href="https://ngocson-portfolio-dev-v2.vercel.app">
+        <img src="https://ik.imagekit.io/ngocsondev/Portfolio-V2/NgocSonLogo/NgocSonLogo.svg" alt="Logo" width="200"/>    
+    </a>
+</p>
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+🧠 **Tech Stack**
+- Frontend: Vue 3 + Vite 
+- State Management: Pinia 
+- Routing: Vue Router (SPA)
+- Animation: VueUse Motion 
+- Icon System: Custom Icon component with Lucide 
+- Deployment: Vercel
 
-## Customize configuration
+---
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+⚡ **Features**
+- Responsive design for all devices 
+- Smooth transitions using VueUse Motion 
+- Reusable components (Icon, Section, etc.)
+- Pinia store for tech stacks and projects 
+- Clean architecture and modular setup 
+- Deployed via Vercel
 
-## Project Setup
+---
 
-```sh
-npm install
-```
+🖼️ **Preview**
 
-### Compile and Hot-Reload for Development
+Coming soon...
 
-```sh
-npm run dev
-```
+---
 
-### Compile and Minify for Production
 
-```sh
-npm run build
-```
+📜 **License**
 
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+MIT © [Pham Ngoc Son](https://github.com/PhamNgocSonTech)

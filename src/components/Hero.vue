@@ -1,7 +1,7 @@
 <script setup>
 // import 'animate.css';
 import { useImageKit } from '@/composables/useImageKit.js'
-import {Github, Facebook, Instagram} from 'lucide-vue-next'
+import Icon from '@/components/Icon.vue'
 const { getImageUrl } = useImageKit()
 </script>
 
@@ -94,7 +94,10 @@ const { getImageUrl } = useImageKit()
               class="hero__cta-btn btn"
               >Contact Me</a
             >
-            <a href="#projects" class="hero__cta-link">My Projects</a>
+            <a href="#projects" class="hero__cta-link">
+              My Projects
+              <Icon name="link2"/>
+            </a>
           </div>
           <div class="hero__social">
             <p class="hero__social-title">Follow me on:</p>
@@ -104,7 +107,7 @@ const { getImageUrl } = useImageKit()
                 class="hero__social-icon"
                 target="_blank"
               >
-              <Github/>
+              <Icon name="github"/>
               </a>
 
               <a
@@ -112,7 +115,7 @@ const { getImageUrl } = useImageKit()
                 class="hero__social-icon"
                 target="_blank"
               >
-              <Facebook/>
+              <Icon name="facebook"/>
               </a>
 
               <a
@@ -120,7 +123,7 @@ const { getImageUrl } = useImageKit()
                 class="hero__social-icon"
                 target="_blank"
               >
-              <Instagram/>
+              <Icon name="instagram"/>
               </a>
             </div>
           </div>
@@ -224,14 +227,18 @@ const { getImageUrl } = useImageKit()
 
 
 .hero__cta-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
   color: var(--heading-color);
   font-size: 1.8rem;
   font-style: normal;
   font-weight: 700;
   line-height: 1.66; /* 166.667% */
+  transition: color 0.3s ease;
 }
 .hero__cta-link:hover {
-  text-decoration: underline;
+  color: var(--primary-color);
 }
 
 .hero__social {

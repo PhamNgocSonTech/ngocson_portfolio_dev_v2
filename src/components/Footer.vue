@@ -29,7 +29,7 @@ const closeMenuFooter = () => {
             <div class="footer-container__email">
               <img src="../assets/img/email-logo.svg" alt="" class="footer-img__email">
             </div>
-            <a href="mailto:phamngocson7a1@gmail.com" class="footer__email-link">phamngocson7a1@gmail.com</a>
+            <a href="mailto:phamngocson7a1@gmail.com" class="footer__email-link" target="_blank">phamngocson7a1@gmail.com</a>
           </div>
           <div class="footer__icon">
             <RouterLink to="/">
