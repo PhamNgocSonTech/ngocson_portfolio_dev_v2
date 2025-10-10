@@ -137,7 +137,7 @@ const { getImageUrl } = useImageKit()
 <style scoped>
 /* =============================HERO============================= */
 .hero {
-  padding: 24px 0 0;
+  padding: 120px 0 0;
   background: var(--background-color);
 }
 .hero__row {
