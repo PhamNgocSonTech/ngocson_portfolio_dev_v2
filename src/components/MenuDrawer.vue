@@ -36,7 +36,7 @@ const closeMenu = () => {
   <div class="header header--mobile">
 
   <!-- Overlay -->
-  <div v-if="isOpen" class="header__overlay" @click="closeMenu"></div>
+  <div v-if="isOpen" class="header__overlay" :class="{'is-active': isOpen}" @click="closeMenu"></div>
 
   <!-- Menu Drawer (Mobile/Tablet) -->
   <div class="header__menu-drawer" :class="{ 'is-open': props.isOpen }">
@@ -66,21 +66,35 @@ const closeMenu = () => {
 .header__overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.15);
   z-index: 5;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+
+}
+
+.header__overlay.is-active {
   opacity: 1;
   visibility: visible;
-  transition: 0.5s ease;
+  pointer-events: auto;
 }
 
 .header__menu-drawer {
   position: fixed;
   inset: 0 0 0 40%;
-  background-color: var(--background-color);
   z-index: 5;
   transform: translateX(100%);
-  transition: 0.4s ease;
   padding: 60px;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Glass morphism effect */
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(40px) saturate(200%);
+  -webkit-backdrop-filter: blur(40px) saturate(200%);
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 .header__menu-drawer.is-open {
