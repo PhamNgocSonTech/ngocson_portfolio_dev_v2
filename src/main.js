@@ -10,6 +10,9 @@ import './assets/css/grid.css'
 import  './assets/css/styles.css'
 import  './assets/css/responsive.css'
 
+// TailwindCSS
+import './assets/css/main.css'
+
 // Header and Footer CSS
 import './assets/css/header.css'
 import './assets/css/footer.css'
