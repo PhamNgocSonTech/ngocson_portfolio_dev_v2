@@ -5,12 +5,12 @@ export const navLinks = [
   {to: '/#contact', label:'Contact' },
 
   {
-    label: 'Hub',
+    label: 'Hubs',
     children: [
-      {to:'/hubs/blogs', label: 'Blog'},
+      {to:'/hubs/blogs', label: 'Blogs'},
       {to:'/hubs/AI', label: 'AI'},
       {to:'/hubs/learning', label: 'Learning'},
-      {to:'/hubs/Tools', label: 'Tools'},
+      {to:'/hubs/tools', label: 'Tools'},
     ]
 
   },
