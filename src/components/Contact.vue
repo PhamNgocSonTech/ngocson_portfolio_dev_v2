@@ -71,8 +71,12 @@
 }
 
 .booking__icon {
-  /* margin: 0 auto; */
   margin-bottom: 10px;
+}
+
+.booking__icon-img {
+  display: block;
+  margin: 0 auto;
 }
 
 .booking__heading {
