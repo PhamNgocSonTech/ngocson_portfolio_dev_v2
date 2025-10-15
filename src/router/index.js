@@ -4,6 +4,7 @@ import HomeView from '@/views/HomeView.vue'
 import ProjectView from '@/views/ProjectView.vue'
 import BlogList from '@/components/blogs/BlogList.vue'
 import BlogDetail from '@/components/blogs/BlogDetail.vue'
+import NotFound from '@/views/NotFound.vue'
 
 const routes = [
   {path: '/', name:'home', component: HomeView},
@@ -15,7 +16,10 @@ const routes = [
       {path: 'blog', name: 'blog', component: BlogList},
       {path: 'blog/:id', name: 'blog-details', component: BlogDetail},
     ]
-  }
+  },
+
+//   Route catch all
+  {path: '/:pathMatch(.*)*', name: 'not-found', component: NotFound}
 ]
 
 const router = createRouter({
