@@ -4,6 +4,7 @@ import NavLinks from '@/components/NavLinks.vue'
 import MenuDrawer from '@/components/MenuDrawer.vue'
 import LogoMenuDrawer from '@/assets/icons/ngoc-son-logo.svg'
 import { ref } from 'vue'
+import Icon from '@/components/Icon.vue'
 
 const isOpen = ref(false)
 
@@ -38,31 +39,34 @@ const closeMenuFooter = () => {
           </div>
           <nav class="navbar navbar--footer">
             <!-- Footer Menu Toggle Tablet/Mobile  -->
-            <button class="navbar__menu" @click="toggleMenuFooter">
-              <svg
-                width="17"
-                height="8"
-                viewBox="0 0 17 8"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+            <p class="footer__social-title">Follow me on:</p>
+
+            <div class="footer__social-icons">
+              <a
+                href="https://github.com/PhamNgocSonTech"
+                class="footer__social-icon"
+                target="_blank"
               >
-                <path
-                  d="M1 7H16"
-                  stroke="#5D3BEE"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M1 1H16"
-                  stroke="#5D3BEE"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </button>
-            <NavLinks/>
+                <Icon name="github"/>
+              </a>
+
+              <a
+                href="https://www.facebook.com/PhamNgocSonBB/"
+                class="footer__social-icon"
+                target="_blank"
+              >
+                <Icon name="facebook"/>
+              </a>
+
+              <a
+                href="https://www.instagram.com/genjikaze/"
+                class="footer__social-icon"
+                target="_blank"
+              >
+                <Icon name="instagram"/>
+              </a>
+            </div>
+
           </nav>
         </div>
       </div>
@@ -116,6 +120,37 @@ const closeMenuFooter = () => {
   text-decoration: underline;
   text-decoration-color: var(--primary-color);
 }
+
+.footer__social-title {
+  margin-right: 10px;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.footer__social-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer__social-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(8, 4, 21, 0.1);
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.footer__social-icon:hover {
+  color: var(--primary-color);
+  transform: translateY(-4px);
+  border-color: var(--primary-color);
+}
+
 /* PC */
 @media screen and (min-width: 992px) {
   .navbar__menu {

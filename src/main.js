@@ -4,11 +4,14 @@ import { MotionPlugin } from "@vueuse/motion";
 import App from './App.vue'
 import router from './router'
 
+// TailwindCSS
+import './assets/css/main.css'
+
 // Import CSS
-import './assets/css/reset.css'
 import './assets/css/grid.css'
 import  './assets/css/styles.css'
 import  './assets/css/responsive.css'
+
 
 // Header and Footer CSS
 import './assets/css/header.css'
