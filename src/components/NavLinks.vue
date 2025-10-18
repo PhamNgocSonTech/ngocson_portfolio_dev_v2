@@ -111,6 +111,13 @@ onUnmounted(() => {
                   class="navbar__submenu--link"
                 >
                   {{ child.label }}
+                  <span
+                    v-if="child.badge"
+                    class="navbar__badge"
+                    :class="`navbar__badge--${child.badge.toLowerCase()}`"
+                  >
+                  {{child.badge}}
+                  </span>
                 </RouterLink>
               </li>
             </ul>
