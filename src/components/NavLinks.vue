@@ -79,13 +79,17 @@ onUnmounted(() => {
               >
                 <RouterLink
                   :to="child.to"
-                  class="block px-4 py-2 rounded-md"
+                  class="block px-4 py-2 rounded-md "
                 >
                   {{ child.label }}
                   <span
                     v-if="child.badge"
                     class="navbar__badge"
-                    :class="`navbar__badge--${child.badge.toLowerCase()}`"
+                    :class="{
+                      'bg-green-50 text-green-500 border-green-200':child.badge.toLowerCase() === 'new',
+                      'bg-rose-50 text-rose-500 border-rose-200':child.badge.toLowerCase() === 'beta',
+                      'bg-cyan-50 text-cyan-500 border-cyan-200':child.badge.toLowerCase() === 'coming soon',
+                    }"
                   >
                   {{child.badge}}
                   </span>
@@ -114,7 +118,11 @@ onUnmounted(() => {
                   <span
                     v-if="child.badge"
                     class="navbar__badge"
-                    :class="`navbar__badge--${child.badge.toLowerCase()}`"
+                    :class="{
+                      'bg-green-50 text-green-500 border-green-200':child.badge.toLowerCase() === 'new',
+                      'bg-rose-50 text-rose-500 border-rose-200':child.badge.toLowerCase() === 'beta',
+                      'bg-cyan-50 text-cyan-500 border-cyan-200':child.badge.toLowerCase() === 'coming soon',
+                    }"
                   >
                   {{child.badge}}
                   </span>
