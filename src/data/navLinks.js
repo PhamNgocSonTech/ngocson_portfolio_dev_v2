@@ -8,7 +8,7 @@ export const navLinks = [
     label: 'Hubs',
     children: [
       {to:'/hubs/blogs', label: 'Blogs'},
-      {to:'/hubs/AI', label: 'AI'},
+      {to:'/hubs/ai', label: 'AI'},
       {to:'/hubs/learning', label: 'Learning'},
       {to:'/hubs/tools', label: 'Tools'},
     ]
