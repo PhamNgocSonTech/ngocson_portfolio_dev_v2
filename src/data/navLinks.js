@@ -7,10 +7,10 @@ export const navLinks = [
   {
     label: 'Hubs',
     children: [
-      {to:'/hubs/blogs', label: 'Blogs'},
-      {to:'/hubs/ai', label: 'AI'},
-      {to:'/hubs/learning', label: 'Learning'},
-      {to:'/hubs/tools', label: 'Tools'},
+      {to:'/hubs/blogs', label: 'Blogs', badge: 'New'},
+      {to:'/hubs/ai', label: 'AI', badge: 'Coming Soon'},
+      {to:'/hubs/learning', label: 'Learning', badge: 'Coming Soon'},
+      {to:'/hubs/tools', label: 'Tools', badge: 'Coming Soon'},
     ]
 
   },

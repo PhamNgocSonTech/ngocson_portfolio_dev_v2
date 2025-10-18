@@ -82,6 +82,13 @@ onUnmounted(() => {
                   class="block px-4 py-2 rounded-md"
                 >
                   {{ child.label }}
+                  <span
+                    v-if="child.badge"
+                    class="navbar__badge"
+                    :class="`navbar__badge--${child.badge.toLowerCase()}`"
+                  >
+                  {{child.badge}}
+                  </span>
                 </RouterLink>
               </li>
             </ul>
@@ -240,6 +247,53 @@ onUnmounted(() => {
   opacity: 1;
 }
 
+/* Badge Styles - Minimalist Design */
+.navbar__badge {
+  display: inline-block;
+  padding: 2px 6px;
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: lowercase;
+  border-radius: 3px;
+  border: 1px solid;
+}
+
+/* Badge variants - Minimalist with borders */
+.navbar__badge--new {
+  background: rgba(102, 126, 234, 0.1);
+  color: #667eea;
+  border-color: rgba(102, 126, 234, 0.3);
+}
+
+.navbar__badge--beta {
+  background: rgba(245, 87, 108, 0.1);
+  color: #f5576c;
+  border-color: rgba(245, 87, 108, 0.3);
+}
+
+.navbar__badge--hot {
+  background: rgba(250, 112, 154, 0.1);
+  color: #fa709a;
+  border-color: rgba(250, 112, 154, 0.3);
+}
+
+.navbar__badge--coming {
+  background: rgba(48, 207, 208, 0.1);
+  color: #30cfd0;
+  border-color: rgba(48, 207, 208, 0.3);
+}
+
+@keyframes badge-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
 @media screen and (max-width: 991px) {
   .navbar__list.navbar--drawer {
     margin-top: 30px;
@@ -273,7 +327,7 @@ onUnmounted(() => {
   .navbar__submenu--mobile {
     display: block;
     padding: 0;
-    background-color: rgba(0, 0, 0, 0.02);
+    background-color: transparent;
     border-radius: 6px;
     margin: 0;
   }
@@ -295,7 +349,6 @@ onUnmounted(() => {
     font-size: 1.8rem;
   }
 
-  .navbar__submenu--link:hover,
   .navbar__submenu--link.router-link-active {
     background-color: rgba(93, 59, 238, 0.08);
     color: var(--primary-color);
