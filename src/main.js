@@ -9,7 +9,6 @@ import './assets/css/main.css'
 
 // Import CSS
 import './assets/css/grid.css'
-import  './assets/css/styles.css'
 import  './assets/css/responsive.css'
 
 
