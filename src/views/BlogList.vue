@@ -11,110 +11,118 @@ import Icon from '@/components/Icon.vue'
       </p>
     </div>
     <div class="blog__list">
-      <div class="blog__item">
-        <div class="blog__item-content">
-          <img src="../assets/img/demo-cover-blog.webp" alt="" class="blog__item-cover" />
-          <span class="blog__item-title">Boost your conversion rate</span>
-          <p class="blog__item-desc">
-            Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non
-            aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla
-            deserunt vel. Iusto corrupti dicta.
-          </p>
-        </div>
-        <div class="blog__item-media">
-          <div class="blog__item-info">
-            <img src="../assets/img/uifaces-cartoon-avatar.jpg" alt="" class="blog__item-avatar" />
-            <div class="blog__item-text">
-              <p class="blog__item-author">Michael Foster</p>
-              <p class="blog__item-date">Posted on: 21/10/2025</p>
-            </div>
+      <a href="#" class="blog__item-link">
+        <article class="blog__item">
+          <div class="blog__item-content">
+            <img src="../assets/img/demo-cover-blog.webp" alt="" class="blog__item-cover" />
+            <span class="blog__item-title">Boost your conversion rate</span>
+            <p class="blog__item-desc">
+              Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non
+              aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla
+              deserunt vel. Iusto corrupti dicta.
+            </p>
           </div>
-          <div class="blog__item-read">
-            <Icon name="bookOpenCheck" size="20" color="green"/>
-            <span class="blog__item-time">
+          <div class="blog__item-media">
+            <div class="blog__item-info">
+              <img src="../assets/img/uifaces-cartoon-avatar.jpg" alt="" class="blog__item-avatar" />
+              <div class="blog__item-text">
+                <p class="blog__item-author">Michael Foster</p>
+                <p class="blog__item-date">Posted on: 21/10/2025</p>
+              </div>
+            </div>
+            <div class="blog__item-read">
+              <Icon name="bookOpenCheck" size="20" color="green"/>
+              <span class="blog__item-time">
             5 min read
           </span>
-          </div>
-        </div>
-      </div>
-      <div class="blog__item">
-        <div class="blog__item-content">
-          <img src="../assets/img/demo-cover-blog.webp" alt="" class="blog__item-cover" />
-          <span class="blog__item-title">Boost your conversion rate</span>
-          <p class="blog__item-desc">
-            Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non
-            aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla
-            deserunt vel. Iusto corrupti dicta.
-          </p>
-        </div>
-        <div class="blog__item-media">
-          <div class="blog__item-info">
-            <img src="../assets/img/uifaces-cartoon-avatar.jpg" alt="" class="blog__item-avatar" />
-            <div class="blog__item-text">
-              <p class="blog__item-author">Michael Foster</p>
-              <p class="blog__item-date">Posted on: 21/10/2025</p>
             </div>
           </div>
-          <div class="blog__item-read">
-            <Icon name="bookOpenCheck" size="20" color="green"/>
-            <span class="blog__item-time">
+        </article>
+      </a>
+      <a href="#" class="blog__item-link">
+        <article class="blog__item">
+          <div class="blog__item-content">
+            <img src="../assets/img/demo-cover-blog.webp" alt="" class="blog__item-cover" />
+            <span class="blog__item-title">Boost your conversion rate</span>
+            <p class="blog__item-desc">
+              Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non
+              aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla
+              deserunt vel. Iusto corrupti dicta.
+            </p>
+          </div>
+          <div class="blog__item-media">
+            <div class="blog__item-info">
+              <img src="../assets/img/uifaces-cartoon-avatar.jpg" alt="" class="blog__item-avatar" />
+              <div class="blog__item-text">
+                <p class="blog__item-author">Michael Foster</p>
+                <p class="blog__item-date">Posted on: 21/10/2025</p>
+              </div>
+            </div>
+            <div class="blog__item-read">
+              <Icon name="bookOpenCheck" size="20" color="green"/>
+              <span class="blog__item-time">
             5 min read
           </span>
-          </div>
-        </div>
-      </div>
-      <div class="blog__item">
-        <div class="blog__item-content">
-          <img src="../assets/img/demo-cover-blog.webp" alt="" class="blog__item-cover" />
-          <span class="blog__item-title">Boost your conversion rate</span>
-          <p class="blog__item-desc">
-            Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non
-            aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla
-            deserunt vel. Iusto corrupti dicta.
-          </p>
-        </div>
-        <div class="blog__item-media">
-          <div class="blog__item-info">
-            <img src="../assets/img/uifaces-cartoon-avatar.jpg" alt="" class="blog__item-avatar" />
-            <div class="blog__item-text">
-              <p class="blog__item-author">Michael Foster</p>
-              <p class="blog__item-date">Posted on: 21/10/2025</p>
             </div>
           </div>
-          <div class="blog__item-read">
-            <Icon name="bookOpenCheck" size="20" color="green"/>
-            <span class="blog__item-time">
+        </article>
+      </a>
+      <a href="#" class="blog__item-link">
+        <article class="blog__item">
+          <div class="blog__item-content">
+            <img src="../assets/img/demo-cover-blog.webp" alt="" class="blog__item-cover" />
+            <span class="blog__item-title">Boost your conversion rate</span>
+            <p class="blog__item-desc">
+              Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non
+              aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla
+              deserunt vel. Iusto corrupti dicta.
+            </p>
+          </div>
+          <div class="blog__item-media">
+            <div class="blog__item-info">
+              <img src="../assets/img/uifaces-cartoon-avatar.jpg" alt="" class="blog__item-avatar" />
+              <div class="blog__item-text">
+                <p class="blog__item-author">Michael Foster</p>
+                <p class="blog__item-date">Posted on: 21/10/2025</p>
+              </div>
+            </div>
+            <div class="blog__item-read">
+              <Icon name="bookOpenCheck" size="20" color="green"/>
+              <span class="blog__item-time">
             5 min read
           </span>
-          </div>
-        </div>
-      </div>
-      <div class="blog__item">
-        <div class="blog__item-content">
-          <img src="../assets/img/demo-cover-blog.webp" alt="" class="blog__item-cover" />
-          <span class="blog__item-title">Boost your conversion rate</span>
-          <p class="blog__item-desc">
-            Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non
-            aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla
-            deserunt vel. Iusto corrupti dicta.
-          </p>
-        </div>
-        <div class="blog__item-media">
-          <div class="blog__item-info">
-            <img src="../assets/img/uifaces-cartoon-avatar.jpg" alt="" class="blog__item-avatar" />
-            <div class="blog__item-text">
-              <p class="blog__item-author">Michael Foster</p>
-              <p class="blog__item-date">Posted on: 21/10/2025</p>
             </div>
           </div>
-          <div class="blog__item-read">
-            <Icon name="bookOpenCheck" size="20" color="green"/>
-            <span class="blog__item-time">
+        </article>
+      </a>
+      <a href="#" class="blog__item-link">
+        <article class="blog__item">
+          <div class="blog__item-content">
+            <img src="../assets/img/demo-cover-blog.webp" alt="" class="blog__item-cover" />
+            <span class="blog__item-title">Boost your conversion rate</span>
+            <p class="blog__item-desc">
+              Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non
+              aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla
+              deserunt vel. Iusto corrupti dicta.
+            </p>
+          </div>
+          <div class="blog__item-media">
+            <div class="blog__item-info">
+              <img src="../assets/img/uifaces-cartoon-avatar.jpg" alt="" class="blog__item-avatar" />
+              <div class="blog__item-text">
+                <p class="blog__item-author">Michael Foster</p>
+                <p class="blog__item-date">Posted on: 21/10/2025</p>
+              </div>
+            </div>
+            <div class="blog__item-read">
+              <Icon name="bookOpenCheck" size="20" color="green"/>
+              <span class="blog__item-time">
             5 min read
           </span>
+            </div>
           </div>
-        </div>
-      </div>
+        </article>
+      </a>
     </div>
   </div>
 </template>
@@ -123,14 +131,20 @@ import Icon from '@/components/Icon.vue'
 .blog__list {
   margin-top: 60px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 20px;
 }
 
 .blog__item {
-  background-color: #d6d3e2;
+  background-color: #eae6ff;
   border-radius: 10px;
   padding: 20px;
+}
+
+.blog__item-cover {
+  width: 100%;
+  border-radius: 6px;
+  object-fit: cover;
 }
 
 .blog__item-title {
