@@ -139,6 +139,12 @@ import Icon from '@/components/Icon.vue'
   background-color: #eae6ff;
   border-radius: 10px;
   padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.blog__item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 .blog__item-cover {
