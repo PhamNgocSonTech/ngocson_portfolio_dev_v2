@@ -1,5 +1,55 @@
 <script setup>
 import Icon from '@/components/Icon.vue'
+import { ref } from 'vue'
+import demoCoverBlog from '../assets/img/demo-cover-blog.webp'
+const blogs = ref([
+  {
+    id: 1,
+    title: 'Boost your conversion rate',
+    desc:
+      'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+    coverImg: demoCoverBlog,
+  },
+  {
+    id: 2,
+    title: 'Boost your conversion rate 2',
+    desc:
+      'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+    coverImg: demoCoverBlog,
+  },
+
+  {
+    id: 3,
+    title: 'Boost your conversion rate 3',
+    desc:
+      'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+    coverImg: demoCoverBlog,
+  },
+
+  {
+    id: 4,
+    title: 'Boost your conversion rate 4',
+    desc:
+      'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+    coverImg: demoCoverBlog,
+  },
+
+  {
+    id: 5,
+    title: 'Boost your conversion rate 5',
+    desc:
+      'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+    coverImg: demoCoverBlog,
+  },
+
+  {
+    id: 6,
+    title: 'Boost your conversion rate 6',
+    desc:
+      'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+    coverImg: demoCoverBlog,
+  },
+])
 </script>
 
 <template>
@@ -11,17 +61,13 @@ import Icon from '@/components/Icon.vue'
       </p>
     </div>
     <div class="row blog__list">
-       <div class="col-12 col-md-6 col-lg-4">
-         <a href="#" class="blog__item-link">
+      <div v-for="blog in blogs" :key="blog.id" class="col-12 col-md-6 col-lg-4">
+         <a href="#"  class="blog__item-link">
            <article class="blog__item">
              <div class="blog__item-content">
-               <img src="../assets/img/demo-cover-blog.webp" alt="" class="blog__item-cover" />
-               <span class="blog__item-title line-clamp-1 leading-tight">Boost your conversion rate</span>
-               <p class="blog__item-desc line-clamp-3 leading-relaxed">
-                 Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non
-                 aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla
-                 deserunt vel. Iusto corrupti dicta.
-               </p>
+               <img :src="blog.coverImg" alt="" class="blog__item-cover" />
+               <span class="blog__item-title line-clamp-1 leading-tight">{{blog.title}}</span>
+               <p class="blog__item-desc line-clamp-3 leading-relaxed">{{blog.desc}}</p>
              </div>
              <div class="blog__item-media">
                <div class="blog__item-info">
@@ -41,156 +87,6 @@ import Icon from '@/components/Icon.vue'
            </article>
          </a>
        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <a href="#" class="blog__item-link">
-            <article class="blog__item">
-              <div class="blog__item-content">
-                <img src="../assets/img/demo-cover-blog.webp" alt="" class="blog__item-cover" />
-                <span class="blog__item-title line-clamp-1 leading-tight">Boost your conversion rate</span>
-                <p class="blog__item-desc line-clamp-3 leading-relaxed">
-                  Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non
-                  aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla
-                  deserunt vel. Iusto corrupti dicta.
-                </p>
-              </div>
-              <div class="blog__item-media">
-                <div class="blog__item-info">
-                  <img src="../assets/img/uifaces-cartoon-avatar.jpg" alt="" class="blog__item-avatar" />
-                  <div class="blog__item-text">
-                    <p class="blog__item-author">Michael Foster</p>
-                    <p class="blog__item-date">Posted on: 21/10/2025</p>
-                  </div>
-                </div>
-                <div class="blog__item-read">
-                  <Icon name="bookOpenCheck" size="20" color="green"/>
-                  <span class="blog__item-time">
-            5 min read
-          </span>
-                </div>
-              </div>
-            </article>
-          </a>
-        </div>
-      <div class="col-12 col-md-6 col-lg-4">
-        <a href="#" class="blog__item-link">
-          <article class="blog__item">
-            <div class="blog__item-content">
-              <img src="../assets/img/demo-cover-blog.webp" alt="" class="blog__item-cover" />
-              <span class="blog__item-title line-clamp-1 leading-tight">Boost your conversion rate</span>
-              <p class="blog__item-desc line-clamp-3 leading-relaxed">
-                Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non
-                aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla
-                deserunt vel. Iusto corrupti dicta.
-              </p>
-            </div>
-            <div class="blog__item-media">
-              <div class="blog__item-info">
-                <img src="../assets/img/uifaces-cartoon-avatar.jpg" alt="" class="blog__item-avatar" />
-                <div class="blog__item-text">
-                  <p class="blog__item-author">Michael Foster</p>
-                  <p class="blog__item-date">Posted on: 21/10/2025</p>
-                </div>
-              </div>
-              <div class="blog__item-read">
-                <Icon name="bookOpenCheck" size="20" color="green"/>
-                <span class="blog__item-time">
-            5 min read
-          </span>
-              </div>
-            </div>
-          </article>
-        </a>
-      </div>
-      <div class="col-12 col-md-6 col-lg-4">
-        <a href="#" class="blog__item-link">
-          <article class="blog__item">
-            <div class="blog__item-content">
-              <img src="../assets/img/demo-cover-blog.webp" alt="" class="blog__item-cover" />
-              <span class="blog__item-title line-clamp-1 leading-tight">Boost your conversion rate</span>
-              <p class="blog__item-desc line-clamp-3 leading-relaxed">
-                Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non
-                aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla
-                deserunt vel. Iusto corrupti dicta.
-              </p>
-            </div>
-            <div class="blog__item-media">
-              <div class="blog__item-info">
-                <img src="../assets/img/uifaces-cartoon-avatar.jpg" alt="" class="blog__item-avatar" />
-                <div class="blog__item-text">
-                  <p class="blog__item-author">Michael Foster</p>
-                  <p class="blog__item-date">Posted on: 21/10/2025</p>
-                </div>
-              </div>
-              <div class="blog__item-read">
-                <Icon name="bookOpenCheck" size="20" color="green"/>
-                <span class="blog__item-time">
-            5 min read
-          </span>
-              </div>
-            </div>
-          </article>
-        </a>
-      </div>
-      <div class="col-12 col-md-6 col-lg-4">
-        <a href="#" class="blog__item-link">
-          <article class="blog__item">
-            <div class="blog__item-content">
-              <img src="../assets/img/demo-cover-blog.webp" alt="" class="blog__item-cover" />
-              <span class="blog__item-title line-clamp-1 leading-tight">Boost your conversion rate</span>
-              <p class="blog__item-desc line-clamp-3 leading-relaxed">
-                Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non
-                aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla
-                deserunt vel. Iusto corrupti dicta.
-              </p>
-            </div>
-            <div class="blog__item-media">
-              <div class="blog__item-info">
-                <img src="../assets/img/uifaces-cartoon-avatar.jpg" alt="" class="blog__item-avatar" />
-                <div class="blog__item-text">
-                  <p class="blog__item-author">Michael Foster</p>
-                  <p class="blog__item-date">Posted on: 21/10/2025</p>
-                </div>
-              </div>
-              <div class="blog__item-read">
-                <Icon name="bookOpenCheck" size="20" color="green"/>
-                <span class="blog__item-time">
-            5 min read
-          </span>
-              </div>
-            </div>
-          </article>
-        </a>
-      </div>
-      <div class="col-12 col-md-6 col-lg-4">
-        <a href="#" class="blog__item-link">
-          <article class="blog__item">
-            <div class="blog__item-content">
-              <img src="../assets/img/demo-cover-blog.webp" alt="" class="blog__item-cover" />
-              <span class="blog__item-title line-clamp-1 leading-tight">Boost your conversion rate</span>
-              <p class="blog__item-desc line-clamp-3 leading-relaxed">
-                Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non
-                aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla
-                deserunt vel. Iusto corrupti dicta.
-              </p>
-            </div>
-            <div class="blog__item-media">
-              <div class="blog__item-info">
-                <img src="../assets/img/uifaces-cartoon-avatar.jpg" alt="" class="blog__item-avatar" />
-                <div class="blog__item-text">
-                  <p class="blog__item-author">Michael Foster</p>
-                  <p class="blog__item-date">Posted on: 21/10/2025</p>
-                </div>
-              </div>
-              <div class="blog__item-read">
-                <Icon name="bookOpenCheck" size="20" color="green"/>
-                <span class="blog__item-time">
-            5 min read
-          </span>
-              </div>
-            </div>
-          </article>
-        </a>
-      </div>
     </div>
   </div>
 </template>

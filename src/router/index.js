@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import ProjectView from '@/views/ProjectView.vue'
 import BlogList from '@/views/BlogList.vue'
-import BlogDetail from '@/components/blogs/BlogDetail.vue'
+import BlogDetail from '@/views/BlogDetail.vue'
 import NotFound from '@/views/NotFound.vue'
 
 const routes = [
