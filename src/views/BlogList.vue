@@ -1,56 +1,62 @@
 <script setup>
 import Icon from '@/components/Icon.vue'
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import demoCoverBlog from '../assets/img/demo-cover-blog.webp'
 import BlogCard from '@/components/blogs/BlogCard.vue'
-const blogs = ref([
-  {
-    id: 1,
-    title: 'Boost your conversion rate',
-    desc:
-      'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-    coverImg: demoCoverBlog,
-  },
-  {
-    id: 2,
-    title: 'Boost your conversion rate 2',
-    desc:
-      'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-    coverImg: demoCoverBlog,
-  },
+import { useBlogStore } from '@/stores/blogStore'
+const blogStore = useBlogStore()
 
-  {
-    id: 3,
-    title: 'Boost your conversion rate 3',
-    desc:
-      'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-    coverImg: demoCoverBlog,
-  },
-
-  {
-    id: 4,
-    title: 'Boost your conversion rate 4',
-    desc:
-      'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-    coverImg: demoCoverBlog,
-  },
-
-  {
-    id: 5,
-    title: 'Boost your conversion rate 5',
-    desc:
-      'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-    coverImg: demoCoverBlog,
-  },
-
-  {
-    id: 6,
-    title: 'Boost your conversion rate 6',
-    desc:
-      'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-    coverImg: demoCoverBlog,
-  },
-])
+onMounted(() => {
+  blogStore.fetchBlogs()
+})
+// const blogs = ref([
+//   {
+//     id: 1,
+//     title: 'Boost your conversion rate',
+//     desc:
+//       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+//     coverImg: demoCoverBlog,
+//   },
+//   {
+//     id: 2,
+//     title: 'Boost your conversion rate 2',
+//     desc:
+//       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+//     coverImg: demoCoverBlog,
+//   },
+//
+//   {
+//     id: 3,
+//     title: 'Boost your conversion rate 3',
+//     desc:
+//       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+//     coverImg: demoCoverBlog,
+//   },
+//
+//   {
+//     id: 4,
+//     title: 'Boost your conversion rate 4',
+//     desc:
+//       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+//     coverImg: demoCoverBlog,
+//   },
+//
+//   {
+//     id: 5,
+//     title: 'Boost your conversion rate 5',
+//     desc:
+//       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+//     coverImg: demoCoverBlog,
+//   },
+//
+//   {
+//     id: 6,
+//     title: 'Boost your conversion rate 6',
+//     desc:
+//       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+//     coverImg: demoCoverBlog,
+//   },
+// ])
 </script>
 
 <template>
@@ -61,8 +67,11 @@ const blogs = ref([
         Learn how to grow your business with our expert advice.
       </p>
     </div>
+    <div v-if="blogStore.isLoading" class="text-center mt-10 text-3xl text-gray-500">
+      Loading blogs...
+    </div>
     <div class="row blog__list">
-      <div v-for="blog in blogs" :key="blog.id" class="col-12 col-md-6 col-lg-4">
+      <div v-for="blog in blogStore.blogs" :key="blog.id" class="col-12 col-md-6 col-lg-4">
         <BlogCard :blog="blog" />
        </div>
     </div>

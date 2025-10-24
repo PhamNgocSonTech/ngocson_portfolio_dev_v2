@@ -12,22 +12,22 @@ defineProps({
   <RouterLink to="`/blog/${blog.id}`" class="blog__item-link">
     <article class="blog__item">
       <div class="blog__item-content">
-        <img :src="blog.coverImg" alt="" class="blog__item-cover" />
-        <span class="blog__item-title line-clamp-1 leading-tight">{{blog.title}}</span>
-        <p class="blog__item-desc line-clamp-3 leading-relaxed">{{blog.desc}}</p>
+        <img :src="blog.cover_image" alt="" class="blog__item-cover" />
+        <span class="blog__item-title block line-clamp-2 leading-tight">{{blog.title}}</span>
+        <p class="blog__item-desc line-clamp-3 leading-relaxed">{{blog.description}}</p>
       </div>
       <div class="blog__item-media">
         <div class="blog__item-info">
-          <img :src="DemoAvatar" alt="" class="blog__item-avatar" />
+          <img :src="blog.user.profile_image" alt="" class="blog__item-avatar" />
           <div class="blog__item-text">
-            <p class="blog__item-author">Michael Foster</p>
-            <p class="blog__item-date">Posted on: 21/10/2025</p>
+            <p class="blog__item-author">{{blog.user.name}}</p>
+            <p class="blog__item-date">Posted on: {{blog.readable_publish_date}}</p>
           </div>
         </div>
         <div class="blog__item-read">
           <Icon name="bookOpenCheck" size="20" color="green"/>
           <span class="blog__item-time">
-            5 min read
+            {{blog.reading_time_minutes}} min read
           </span>
         </div>
       </div>
