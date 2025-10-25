@@ -71,8 +71,8 @@ onMounted(() => {
       Loading blogs...
     </div>
     <div class="row blog__list">
-      <div v-for="blog in blogStore.blogs" :key="blog.id" class="col-12 col-md-6 col-lg-4">
-        <BlogCard :blog="blog" />
+      <div v-for="blog in blogStore.blogs" :key="blog.id" class="col-12 col-md-6 col-lg-4 blog__col">
+        <BlogCard :blogProps="blog" />
        </div>
     </div>
   </div>
@@ -81,6 +81,18 @@ onMounted(() => {
 <style scoped>
 .blog__list {
   margin-top: 60px;
+}
+
+/* Quan trọng: làm cho col có chiều cao full */
+.blog__col {
+  display: flex;
+  margin-bottom: 20px; /* Khoảng cách giữa các hàng */
+}
+
+@media (max-width: 768px) {
+  .blog__col {
+    margin-bottom: 16px;
+  }
 }
 /*
 .blog__list {
