@@ -4,6 +4,7 @@ import { onMounted, ref } from 'vue'
 import demoCoverBlog from '../assets/img/demo-cover-blog.webp'
 import BlogCard from '@/components/blogs/BlogCard.vue'
 import { useBlogStore } from '@/stores/blogStore'
+import Loader from '@/components/ui/Loader.vue'
 const blogStore = useBlogStore()
 
 onMounted(() => {
@@ -67,9 +68,10 @@ onMounted(() => {
         Learn how to grow your business with our expert advice.
       </p>
     </div>
-    <div v-if="blogStore.isLoading" class="text-center mt-10 text-3xl text-gray-500">
-      Loading blogs...
-    </div>
+<!--    <div v-if="blogStore.isLoading" class="text-center mt-10 text-3xl text-gray-500">-->
+<!--      Loading blogs...-->
+<!--    </div>-->
+    <Loader v-if="blogStore.isLoading"/>
     <div class="row blog__list">
       <div v-for="blog in blogStore.blogs" :key="blog.id" class="col-12 col-md-6 col-lg-4 blog__col">
         <BlogCard :blogProps="blog" />

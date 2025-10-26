@@ -12,7 +12,7 @@ export const useBlogStore = defineStore('blogs', () => {
     if(blogs.value.length) return
     isLoading.value = true
     try {
-      const res = await fetch('https://dev.to/api/articles?top=6?tags=javascript, css, html')
+      const res = await fetch('https://dev.to/api/articles?top=6')
       if(!res.ok) throw new Error('Failed to fetch blogs')
       blogs.value =  await res.json()
     }catch (e) {
