@@ -14,7 +14,7 @@ const routes = [
     name: 'hub',
     children: [
       {path: 'blogs', name: 'blogs', component: BlogList},
-      {path: 'blogs/:id', name: 'blog-details', component: BlogDetail},
+      {path: 'blogs/id', name: 'blog-details', component: BlogDetail},
     ]
   },
 
