@@ -12,7 +12,7 @@ export const useBlogStore = defineStore('blogs', () => {
     if(blogs.value.length) return
     isLoading.value = true
     try {
-      const res = await fetch('https://dev.to/api/articles?top=6')
+      const res = await fetch('https://dev.to/api/articles?per_page=12?top=week')
       if(!res.ok) throw new Error('Failed to fetch blogs')
       blogs.value =  await res.json()
     }catch (e) {
@@ -22,10 +22,23 @@ export const useBlogStore = defineStore('blogs', () => {
     }
   }
 
+  const fetchBlogById = async(id) => {
+      isLoading.value = true;
+      try {
+        const res = await fetch(`https://dev.to/api/articles/${id}`);
+        return await res.json();
+      }catch (e) {
+        error.value = e.message
+      }finally {
+        isLoading.value = false;
+      }
+  }
+
   return {
     blogs,
     isLoading,
     error,
-    fetchBlogs
+    fetchBlogs,
+    fetchBlogById
   }
 })

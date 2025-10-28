@@ -10,54 +10,7 @@ const blogStore = useBlogStore()
 onMounted(() => {
   blogStore.fetchBlogs()
 })
-// const blogs = ref([
-//   {
-//     id: 1,
-//     title: 'Boost your conversion rate',
-//     desc:
-//       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-//     coverImg: demoCoverBlog,
-//   },
-//   {
-//     id: 2,
-//     title: 'Boost your conversion rate 2',
-//     desc:
-//       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-//     coverImg: demoCoverBlog,
-//   },
-//
-//   {
-//     id: 3,
-//     title: 'Boost your conversion rate 3',
-//     desc:
-//       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-//     coverImg: demoCoverBlog,
-//   },
-//
-//   {
-//     id: 4,
-//     title: 'Boost your conversion rate 4',
-//     desc:
-//       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-//     coverImg: demoCoverBlog,
-//   },
-//
-//   {
-//     id: 5,
-//     title: 'Boost your conversion rate 5',
-//     desc:
-//       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-//     coverImg: demoCoverBlog,
-//   },
-//
-//   {
-//     id: 6,
-//     title: 'Boost your conversion rate 6',
-//     desc:
-//       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-//     coverImg: demoCoverBlog,
-//   },
-// ])
+
 </script>
 
 <template>
