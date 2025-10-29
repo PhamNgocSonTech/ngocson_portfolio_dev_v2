@@ -10,7 +10,8 @@ defineProps({
 </script>
 
 <template>
-  <RouterLink to="`/blogs/${blogProps.id}`" class="blog__item-link">
+<!--  <RouterLink :to="`/hubs/blogs/${blogProps.id}`" class="blog__item-link">-->
+  <RouterLink :to="{name: 'blog-detail', params: {id: `${blogProps.id}`}}" class="blog__item-link">
     <article class="blog__item">
       <div class="blog__item-content">
         <img :src="blogProps.cover_image || defaultCover" alt="" class="blog__item-cover" />
