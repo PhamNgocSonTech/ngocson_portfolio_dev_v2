@@ -14,11 +14,12 @@ onMounted(() => {
 </script>
 
 <template>
+
   <div class="blog main__container">
     <div class="mt-60 text-center">
       <h2 class="font-bold text-8xl text-(--primary-color)">From the blog</h2>
       <p class="text-4xl mt-4 text-(--desc-color)">
-        Learn how to grow your business with our expert advice.
+        Learning, building, and sharing powered by <a class="text-(--primary-color) hover:underline" href="https://dev.to/" target="_blank">Dev.to</a> — made by devs, for devs 👩‍💻👨‍💻
       </p>
     </div>
 <!--    <div v-if="blogStore.isLoading" class="text-center mt-10 text-3xl text-gray-500">-->

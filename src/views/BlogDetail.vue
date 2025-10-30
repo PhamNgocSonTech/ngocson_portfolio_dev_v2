@@ -1,12 +1,14 @@
 <script setup>
 import defaultCover from '/src/assets/img/image-not-found.svg'
-
+import dayjs from 'dayjs'
 import { useBlogStore } from '@/stores/blogStore.js'
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import Loader from '@/components/ui/Loader.vue'
 import Icon from '@/components/Icon.vue'
 const route = useRoute()
+import relativeTime from 'dayjs/plugin/relativeTime'
+dayjs.extend(relativeTime)
 
 const blogStore = useBlogStore()
 const blog = ref(null)
@@ -18,6 +20,7 @@ onMounted(async () => {
     console.error('Error fetching blog:', e)
   }
 })
+
 </script>
 
 <template>
@@ -28,7 +31,8 @@ onMounted(async () => {
     <article v-else-if="blog" class="blog-detail__article">
       <div class="blog-detail__header">
         <img class="blog-detail__cover" :src="blog.cover_image || defaultCover" alt="cover image" />
-        <p class="blog-detail__date">Posted on: {{ blog.readable_publish_date }}</p>
+        <p class="blog-detail__date"> Posted on: {{ dayjs(blog.published_at).format('MMM D, YYYY') }}
+          ({{ dayjs(blog.published_at).fromNow() }})</p>
         <h1 class="blog-detail__title">{{ blog.title }}</h1>
         <div class="blog-detail__meta">
           <div class="blog-detail__author">
@@ -57,6 +61,11 @@ onMounted(async () => {
                prose-ul:list-disc prose-ol:list-decimal
                prose-li:text-gray-700"
         ></div>
+      </div>
+      <div class="flex align-center justify-center gap-2 mt-20">
+        <Icon name="heartHandshake" size="24" color="red"/>
+        <p>Thanks to <a class="text-sky-600 hover:text-(--primary-color)" href="https://dev.to" target="_blank">Dev.to</a>
+          — original post <a class="text-sky-600 hover:text-(--primary-color)" :href="blog.url" target="_blank">here</a>.</p>
       </div>
     </article>
     <div v-else class="blog-detail__notfound text-center text-2xl text-red-500 mt-10">
@@ -102,8 +111,8 @@ onMounted(async () => {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
-  border-top: 1px solid #e3dede;
-  border-bottom: 1px solid #e3dede;
+  border-top: 1px solid #a5dff9;
+  border-bottom: 1px solid #a5dff9;
   padding: 10px;
 }
 
