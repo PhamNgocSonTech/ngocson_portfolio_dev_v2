@@ -27,7 +27,7 @@ defineProps({
           </div>
         </div>
         <div class="blog__item-read">
-          <Icon name="bookOpenCheck" size="20" color="green"/>
+          <Icon name="clock" size="20" color="green"/>
           <span class="blog__item-time">
             {{blogProps.reading_time_minutes}} min read
           </span>
