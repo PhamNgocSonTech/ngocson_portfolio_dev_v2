@@ -1,8 +1,9 @@
 <script setup>
 import Icon from '@/components/Icon.vue'
-import { onMounted, ref } from 'vue'
+import { defineAsyncComponent, onMounted, ref } from 'vue'
 import demoCoverBlog from '../assets/img/demo-cover-blog.webp'
-import BlogCard from '@/components/blogs/BlogCard.vue'
+// import BlogCard from '@/components/blogs/BlogCard.vue'
+const BlogCard = defineAsyncComponent(() => import('@/components/blogs/BlogCard.vue'))
 import { useBlogStore } from '@/stores/blogStore'
 import Loader from '@/components/ui/Loader.vue'
 const blogStore = useBlogStore()

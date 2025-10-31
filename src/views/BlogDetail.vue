@@ -61,14 +61,15 @@ onMounted(async () => {
                prose-ul:list-disc prose-ol:list-decimal
                prose-li:text-gray-700"
         ></div>
+        <div class="flex align-center justify-center gap-2 mt-20 ">
+          <Icon name="heartHandshake" size="24" color="red"/>
+          <p>Thanks to <a class="text-sky-600 hover:text-(--primary-color)" href="https://dev.to" target="_blank">Dev.to</a>
+            — original post <a class="text-sky-600 hover:text-(--primary-color)" :href="blog.url" target="_blank">here</a>.</p>
+        </div>
       </div>
-      <div class="flex align-center justify-center gap-2 mt-20">
-        <Icon name="heartHandshake" size="24" color="red"/>
-        <p>Thanks to <a class="text-sky-600 hover:text-(--primary-color)" href="https://dev.to" target="_blank">Dev.to</a>
-          — original post <a class="text-sky-600 hover:text-(--primary-color)" :href="blog.url" target="_blank">here</a>.</p>
-      </div>
+
     </article>
-    <div v-else class="blog-detail__notfound text-center text-2xl text-red-500 mt-10">
+    <div v-else class="blog-detail__notfound text-center text-8xl text-red-500 mt-10">
       Blog not found.
     </div>
   </div>
@@ -142,10 +143,20 @@ onMounted(async () => {
   color: gray;
 }
 
+.blog-detail__content {
+  font-family: "Comic Sans MS", sans-serif;
+}
+
 /* Blog Body - Custom overrides cho Dev.to content */
 .blog-body {
   line-height: 1.8;
   font-size: 18px;
+}
+
+.blog-body :deep(h1),
+.blog-body :deep(h2),
+.blog-body :deep(h3) {
+  font-family: "DM Sans", sans-serif;
 }
 
 /* Fix cho code blocks từ Dev.to */
@@ -195,8 +206,5 @@ onMounted(async () => {
 .blog-body :deep(a):hover {
   color: var(--primary-color);
 }
-
-
-
 
 </style>

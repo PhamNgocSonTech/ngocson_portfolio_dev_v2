@@ -7,6 +7,21 @@ defineProps({
     type: Object,
   }
 })
+
+function truncateName(name) {
+  // Tách chuỗi theo khoảng trắng hoặc dấu gạch nối
+  const parts = name.trim().split(/[\s-]+/)
+
+  // Nếu có từ 3 cụm trở lên → chỉ giữ 2 cụm đầu
+  if (parts.length >= 3) {
+    const match = name.match(/^[^\s-]+(?:[\s-][^\s-]+){1}/)
+    return match ? match[0] + '...' : name
+  }
+
+  // Nếu ít hơn → giữ nguyên
+  return name
+}
+
 </script>
 
 <template>
@@ -22,7 +37,7 @@ defineProps({
         <div class="blog__item-info">
           <img :src="blogProps.user.profile_image" alt="" class="blog__item-avatar" />
           <div class="blog__item-text">
-            <p class="blog__item-author line-clamp-2">{{blogProps.user.name}}</p>
+            <p class="blog__item-author line-clamp-2">{{ truncateName(blogProps.user.name) }}</p>
             <p class="blog__item-date">Posted on: {{blogProps.readable_publish_date}}</p>
           </div>
         </div>

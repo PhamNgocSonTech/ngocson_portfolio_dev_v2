@@ -1,25 +1,19 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import HomeView from '@/views/HomeView.vue'
-import ProjectView from '@/views/ProjectView.vue'
-import BlogList from '@/views/BlogList.vue'
-import BlogDetail from '@/views/BlogDetail.vue'
-import NotFound from '@/views/NotFound.vue'
-
 const routes = [
-  {path: '/', name:'home', component: HomeView},
-  {path: '/projects', name:'projects', component: ProjectView},
+  {path: '/', name:'home', component: () => import('@/views/HomeView.vue')},
+  {path: '/projects', name:'projects', component: () => import('@/views/ProjectView.vue')},
   {
     path: '/hubs',
     name: 'hub',
     children: [
-      {path: 'blogs', name: 'blogs', component: BlogList},
-      {path: 'blogs/:id', name: 'blog-detail', component: BlogDetail, props: true},
+      {path: 'blogs', name: 'blogs', component: () => import('@/views/BlogList.vue')},
+      {path: 'blogs/:id', name: 'blog-detail', component:  () => import('@/views/BlogDetail.vue'), props: true},
     ]
   },
 
 //   Route catch all
-  {path: '/:pathMatch(.*)*', name: 'not-found', component: NotFound}
+  {path: '/:pathMatch(.*)*', name: 'not-found', component: () => import('@/views/NotFound.vue')},
 ]
 
 const router = createRouter({
