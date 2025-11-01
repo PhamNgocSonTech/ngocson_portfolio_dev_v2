@@ -25,13 +25,15 @@ function truncateName(name) {
 </script>
 
 <template>
-<!--  <RouterLink :to="`/hubs/blogs/${blogProps.id}`" class="blog__item-link">-->
   <RouterLink :to="{name: 'blog-detail', params: {id: `${blogProps.id}`}}" class="blog__item-link">
     <article class="blog__item">
       <div class="blog__item-content">
         <img :src="blogProps.cover_image || defaultCover" alt="" class="blog__item-cover" />
         <span class="blog__item-title leading-tight">{{blogProps.title}}</span>
         <p class="blog__item-desc line-clamp-3 leading-relaxed">{{blogProps.description}}</p>
+      </div>
+      <div class="blog__item-tags">
+        <span v-for="tag in blogProps.tag_list" :key="tag"  class="blog__item-tag">#{{tag}}</span>
       </div>
       <div class="blog__item-media">
         <div class="blog__item-info">
@@ -67,7 +69,6 @@ function truncateName(name) {
 .blog__item:hover {
   transform: translateY(-10px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-
 }
 
 .blog__item-cover {
@@ -81,6 +82,7 @@ function truncateName(name) {
   display: flex;
   flex-direction: column;
   flex: 1;
+  min-height: 0;
 }
 
 .blog__item-title {
@@ -96,14 +98,32 @@ function truncateName(name) {
 .blog__item-desc {
   font-size: 1.6rem;
   margin-top: 2rem;
-  flex: 1;
+  /* Bỏ flex: 1 để không chiếm hết không gian */
+}
+
+.blog__item-tags {
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: auto; /* Đẩy tags xuống đáy của phần content */
+  padding-top: 1rem;
+  height: 60px;
+}
+
+.blog__item-tag {
+  border-radius: 20px;
+  padding: 2px 6px;
+  color: var(--primary-color);
+  font-weight: 500;
+  font-size: 1.2rem;
 }
 
 .blog__item-media {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 4rem;
+  margin-top: 2rem;
   padding-top: 2rem;
   border-top: 1px solid rgba(0, 0, 255, 0.18);
 }

@@ -13,6 +13,14 @@ dayjs.extend(relativeTime)
 const blogStore = useBlogStore()
 const blog = ref(null)
 
+const getTagStyle = (tag) => {
+  const hue = Math.floor(Math.random() * 360)
+  return {
+    backgroundColor: `hsl(${hue}, 70%, 90%)`,
+    color: `hsl(${hue}, 70%, 35%)`,
+  }
+}
+
 onMounted(async () => {
   try {
     blog.value = await blogStore.fetchBlogById(route.params.id)
@@ -34,6 +42,9 @@ onMounted(async () => {
         <p class="blog-detail__date"> Posted on: {{ dayjs(blog.published_at).format('MMM D, YYYY') }}
           ({{ dayjs(blog.published_at).fromNow() }})</p>
         <h1 class="blog-detail__title">{{ blog.title }}</h1>
+        <div class="blog-detail__tags">
+          <span v-for="tag in blog.tags" :key="tag" class="blog-detail__tag" :style="getTagStyle(tag)">#{{tag}}</span>
+        </div>
         <div class="blog-detail__meta">
           <div class="blog-detail__author">
             <img class="blog-detail__avatar" :src="blog.user.profile_image" alt="avatar" />
@@ -69,8 +80,11 @@ onMounted(async () => {
       </div>
 
     </article>
-    <div v-else class="blog-detail__notfound text-center text-8xl text-red-500 mt-10">
-      Blog not found.
+    <div v-else class="blog-detail__notfound text-center text-8xl text-pink-400 mt-10">
+      Blog not found 😥
+      <div class="mt-10 flex items-center justify-center gap-x-6">
+        <RouterLink to="/hubs/blogs/" class="rounded-md bg-(--primary-color) px-3.5 py-2.5 text-2xl font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Go back to Blog List</RouterLink>
+      </div>
     </div>
   </div>
 </template>
@@ -145,6 +159,22 @@ onMounted(async () => {
 
 .blog-detail__content {
   font-family: "Comic Sans MS", sans-serif;
+}
+
+.blog-detail__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.blog-detail__tag {
+  border-radius: 9999px;
+  padding: 4px 10px;
+  font-weight: 600;
+  font-size: 1.5rem;
+  transition: all 0.2s ease;
 }
 
 /* Blog Body - Custom overrides cho Dev.to content */
