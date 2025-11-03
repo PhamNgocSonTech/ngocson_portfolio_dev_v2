@@ -9,20 +9,9 @@ import Icon from '@/components/Icon.vue'
 const route = useRoute()
 import relativeTime from 'dayjs/plugin/relativeTime'
 dayjs.extend(relativeTime)
-import Prism from 'prismjs';
-import 'prismjs/themes/prism-tomorrow.css'
-import 'prismjs/components/prism-javascript'
-import 'prismjs/components/prism-python'
-import 'prismjs/components/prism-sql'
-import 'prismjs/components/prism-java'
-import 'prismjs/components/prism-json'
-import 'prismjs/plugins/toolbar/prism-toolbar.css'
-import 'prismjs/plugins/toolbar/prism-toolbar'
-import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard'
-import 'prismjs/plugins/show-language/prism-show-language.js'
-import 'prismjs/plugins/autoloader/prism-autoloader'
+import hljs from 'highlight.js'
+import 'highlight.js/styles/atom-one-dark.css'
 
-Prism.plugins.autoloader.languages_path = 'https://unpkg.com/prismjs/components/'
 
 const blogStore = useBlogStore()
 const blog = ref(null)
@@ -35,48 +24,17 @@ const getTagStyle = (tag) => {
   }
 }
 
-// Transform Dev.to HTML structure to Prism-compatible format
-const transformDevToCodeBlocks = (html) => {
-  const parser = new DOMParser()
-  const doc = parser.parseFromString(html, 'text/html')
-
-  // Find all Dev.to code blocks
-  const codeBlocks = doc.querySelectorAll('.highlight.js-code-highlight')
-
-  codeBlocks.forEach((block) => {
-    // Get the <pre> element
-    const pre = block.querySelector('pre.highlight')
-    if (!pre) return
-
-    // Extract language from class (e.g., "highlight python" -> "python")
-    const languageMatch = pre.className.match(/highlight\s+(\w+)/)
-    const language = languageMatch ? languageMatch[1] : 'javascript'
-
-    // Get the code element
-    const code = pre.querySelector('code')
-    if (!code) return
-
-    // Add Prism classes
-    pre.className = `language-${language}`
-    code.className = `language-${language}`
-
-    // Remove Dev.to's panel (SVG buttons, etc)
-    const panel = block.querySelector('.highlight__panel')
-    if (panel) panel.remove()
-
-    // Replace the entire wrapper with just the <pre><code> structure
-    block.replaceWith(pre)
+const highlightCode = () => {
+  document.querySelectorAll('pre code').forEach((block) => {
+    hljs.highlightElement(block)
   })
-
-  return doc.body.innerHTML
 }
 
 onMounted(async () => {
   try {
     blog.value = await blogStore.fetchBlogById(route.params.id)
-    blog.value.body_html = transformDevToCodeBlocks(blog.value.body_html)
     await nextTick()
-    Prism.highlightAll()
+    highlightCode()
   } catch (e) {
     console.error('Error fetching blog:', e)
   }
@@ -84,7 +42,7 @@ onMounted(async () => {
 
 watch(blog, async() => {
   await nextTick()
-  Prism.highlightAll()
+  highlightCode()
 })
 
 </script>
@@ -125,7 +83,6 @@ watch(blog, async() => {
                prose-a:text-sky-600
                prose-strong:text-gray-900 prose-strong:font-semibold
                prose-code:text-pink-600 prose-code:bg-gray-100 prose-code:px-1 prose-code:py-0.5 prose-code:rounded
-               prose-pre:bg-gray-900 prose-pre:text-gray-100
                prose-img:rounded-lg prose-img:shadow-lg
                prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:italic
                prose-ul:list-disc prose-ol:list-decimal
@@ -248,19 +205,19 @@ watch(blog, async() => {
   font-family: "DM Sans", sans-serif;
 }
 
-/* Fix cho code blocks từ Dev.to
+/* Fix cho code blocks từ Dev.to */
 .blog-body :deep(pre) {
   padding: 16px;
   border-radius: 8px;
   overflow-x: auto;
   margin: 24px 0;
+  background-color: #282c34;
 }
 
 .blog-body :deep(code) {
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 14px;
+  font-family: 'JetBrains Mono', Courier, monospace;
+  font-size: 1.5rem;
 }
-*/
 
 /* Fix cho images từ Dev.to */
 .blog-body :deep(img) {
@@ -291,5 +248,9 @@ watch(blog, async() => {
 
 .blog-body :deep(a):hover {
   color: var(--primary-color);
+}
+
+.blog-body :deep(svg) {
+  display: none;
 }
 </style>
