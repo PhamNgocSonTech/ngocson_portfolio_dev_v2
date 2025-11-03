@@ -2,13 +2,27 @@
 import defaultCover from '/src/assets/img/image-not-found.svg'
 import dayjs from 'dayjs'
 import { useBlogStore } from '@/stores/blogStore.js'
-import { onMounted, ref, watch } from 'vue'
+import { nextTick, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import Loader from '@/components/ui/Loader.vue'
 import Icon from '@/components/Icon.vue'
 const route = useRoute()
 import relativeTime from 'dayjs/plugin/relativeTime'
 dayjs.extend(relativeTime)
+import Prism from 'prismjs';
+import 'prismjs/themes/prism-tomorrow.css'
+import 'prismjs/components/prism-javascript'
+import 'prismjs/components/prism-python'
+import 'prismjs/components/prism-sql'
+import 'prismjs/components/prism-java'
+import 'prismjs/components/prism-json'
+import 'prismjs/plugins/toolbar/prism-toolbar.css'
+import 'prismjs/plugins/toolbar/prism-toolbar'
+import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard'
+import 'prismjs/plugins/show-language/prism-show-language.js'
+import 'prismjs/plugins/autoloader/prism-autoloader'
+
+Prism.plugins.autoloader.languages_path = 'https://unpkg.com/prismjs/components/'
 
 const blogStore = useBlogStore()
 const blog = ref(null)
@@ -24,14 +38,24 @@ const getTagStyle = (tag) => {
 onMounted(async () => {
   try {
     blog.value = await blogStore.fetchBlogById(route.params.id)
+    // Dev.to trả về highlight js → sửa thành language-js
+    blog.value.body_html = blog.value.body_html.replace(/highlight\s+(\w+)/g, 'language-$1')
+    await nextTick()
+    Prism.highlightAll()
   } catch (e) {
     console.error('Error fetching blog:', e)
   }
 })
 
+watch(blog, async() => {
+  await nextTick()
+  Prism.highlightAll()
+})
+
 </script>
 
 <template>
+
   <div class="blog-detail main__container">
     <!-- Loading State -->
     <Loader v-if="blogStore.isLoading" />
@@ -65,8 +89,6 @@ onMounted(async () => {
                prose-p:text-gray-700 prose-p:leading-relaxed
                prose-a:text-sky-600
                prose-strong:text-gray-900 prose-strong:font-semibold
-               prose-code:text-pink-600 prose-code:bg-gray-100 prose-code:px-1 prose-code:py-0.5 prose-code:rounded
-               prose-pre:bg-gray-900 prose-pre:text-gray-100
                prose-img:rounded-lg prose-img:shadow-lg
                prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:italic
                prose-ul:list-disc prose-ol:list-decimal
@@ -189,7 +211,7 @@ onMounted(async () => {
   font-family: "DM Sans", sans-serif;
 }
 
-/* Fix cho code blocks từ Dev.to */
+/* Fix cho code blocks từ Dev.to
 .blog-body :deep(pre) {
   padding: 16px;
   border-radius: 8px;
@@ -201,6 +223,8 @@ onMounted(async () => {
   font-family: 'Courier New', Courier, monospace;
   font-size: 14px;
 }
+*/
+
 
 /* Fix cho images từ Dev.to */
 .blog-body :deep(img) {
@@ -236,5 +260,4 @@ onMounted(async () => {
 .blog-body :deep(a):hover {
   color: var(--primary-color);
 }
-
 </style>
