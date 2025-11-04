@@ -1,9 +1,10 @@
 <script setup>
-import { computed, ref, watch } from 'vue'
-import ProjectCard from '@/components/ProjectCard.vue'
+import { computed, defineAsyncComponent, ref, watch } from 'vue'
+// import ProjectCard from '@/components/ProjectCard.vue'
+const ProjectCard = defineAsyncComponent(() => import('@/components/ProjectCard.vue'))
 import { useRoute } from 'vue-router'
 import router from '@/router/index.js'
-import {useProjectStore} from '@/stores/projectStore.js'
+import { useProjectStore } from '@/stores/projectStore.js'
 const route = useRoute()
 const projectStore = useProjectStore()
 
@@ -11,14 +12,15 @@ const projectStore = useProjectStore()
 const filter = ref('all')
 
 watch(
-  () => route.query.type, (newType) => {
-    if(['landing', 'webapp'].includes(newType)) {
+  () => route.query.type,
+  (newType) => {
+    if (['landing', 'webapp'].includes(newType)) {
       filter.value = newType
-    }else {
+    } else {
       filter.value = 'all'
     }
   },
-  {immediate: true}
+  { immediate: true },
 )
 
 // Update Filter & URL
@@ -26,10 +28,9 @@ const setFilter = (newValue) => {
   filter.value = newValue
   router.push({
     name: 'projects',
-    query: newValue === 'all' ? {} : {type: newValue}
+    query: newValue === 'all' ? {} : { type: newValue },
   })
 }
-
 
 // Filter Button
 
@@ -39,16 +40,14 @@ const filteredProjects = computed(() => {
 
 const currentHeading = computed(() => {
   const countProject = projectStore.projectCount(filter.value)
-  if(countProject === 0) return 'Coming Soon...😓'
-  const heading  = {
+  if (countProject === 0) return 'Coming Soon...😓'
+  const heading = {
     all: `All Projects (${countProject})`,
     landing: `Landing Pages (${countProject})`,
-    webapp: `Web Apps (${countProject})`
+    webapp: `Web Apps (${countProject})`,
   }
   return heading[filter.value] || 'Coming Soon...😓'
 })
-
-
 </script>
 
 <template>
@@ -58,7 +57,8 @@ const currentHeading = computed(() => {
       <button
         :class="{ active: filter === 'all' }"
         @click="setFilter('all')"
-        class="btn filter-btn">
+        class="btn filter-btn"
+      >
         All
       </button>
 
