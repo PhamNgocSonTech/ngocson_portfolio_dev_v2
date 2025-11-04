@@ -54,7 +54,8 @@ const showBadge = computed(() => {
 
 
 const isAccessible = computed(() => {
-  return projectProps.project.status === 'new' || projectProps.project.status === 'completed'
+  const status = projectProps.project.status
+  return status === 'new' || status === 'in-development' || status === 'completed'
 })
 
 

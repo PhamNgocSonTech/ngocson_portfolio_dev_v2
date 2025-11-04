@@ -1,0 +1,105 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+
+@theme {
+  --font-sans: InterVariable, sans-serif;
+  --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  :root {
+    --primary-color: #5d3bee;
+    --second-color: #fff;
+    --heading-color: #080415;
+    --background-color: #fbfaff;
+    --desc-color: #51586a;
+  }
+
+  html {
+    font-size: 62.5%;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    /* -webkit-tap-highlight-color: transparent; */
+  }
+
+  body {
+    font-size: 1.6rem;
+    font-family: "DM Sans", sans-serif;
+    -webkit-tap-highlight-color: transparent; /* for removing the highlight */
+  }
+}
+
+@layer components {
+  button {
+    pointer-events: none;
+  }
+
+  .main__container {
+    width: 1170px !important;
+    max-width: calc(100% - 48px);
+    margin: 0 auto;
+  }
+
+  /*a {*/
+  /*  text-decoration: none;*/
+  /*  color: black;*/
+  /*}*/
+
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 170px;
+    height: 62px;
+    background: var(--primary-color);
+    cursor: pointer;
+    /* pointer-events: auto; */
+    transition: all 0.4s ease;
+    border-radius: 20px;
+  }
+
+  /*.btn:hover {*/
+  /*  opacity: 0.75;*/
+  /*}*/
+
+  .heading {
+    color: var(--heading-color);
+    font-weight: 500;
+  }
+
+  ::selection {
+    @apply bg-emerald-600 text-white;
+  }
+
+  /*  Custom Scrollbar */
+  /* Toàn site dùng scrollbar mảnh và cùng tone màu */
+  * {
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: theme('colors.indigo.400') transparent;
+  }
+
+  /* Chrome, Edge, Safari */
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: theme('colors.indigo.400');
+    border-radius: 9999px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: theme('colors.indigo.500');
+  }
+}

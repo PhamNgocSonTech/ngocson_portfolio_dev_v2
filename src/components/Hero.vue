@@ -174,10 +174,8 @@ const { getImageUrl } = useImageKit()
 }
 
 .hero__title {
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-  display: inline-block;
+  display: flex;
+  align-items: center;
   gap: 9px;
   color: var(--primary-color);
   font-size: 3.2rem;
