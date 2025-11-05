@@ -237,12 +237,12 @@ watch(blog, async() => {
 .blog-body :deep(th),
 .blog-body :deep(td) {
   padding: 12px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #e3dede;
   text-align: left;
 }
 
 .blog-body :deep(th) {
-  background-color: #f9fafb;
+  background-color: #dae9f4;
   font-weight: 600;
 }
 
@@ -253,4 +253,71 @@ watch(blog, async() => {
 .blog-body :deep(svg) {
   display: none;
 }
+
+/* Fix cho crayons-card c-embed từ Dev.to */
+
+.blog-body :deep(.crayons-card.c-embed) {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 120px;
+  padding: 20px;
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  background: #f9f9f9;
+}
+
+.blog-body :deep(.c-embed__favicon) {
+  display: none;
+}
+
+.blog-body :deep(.c-embed__content) {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.blog-body :deep(.c-embed__cover) {
+  width: 110px;
+  height: 110px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blog-body :deep(.c-embed__cover img) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.blog-body :deep(.c-embed__body) {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.blog-body :deep(.c-embed__body .c-link) {
+  font-size: 2.7rem;
+  display: inline-block;
+  font-weight: 700;
+}
+
+.blog-body :deep(.c-embed__body .p) {
+  font-size: 1.8rem;
+  margin: 0 0 8px;
+  color: #171717;
+}
+
+.blog-body :deep(.c-embed__body div) {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  color: #737373;
+}
+
 </style>
