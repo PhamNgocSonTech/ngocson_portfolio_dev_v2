@@ -142,8 +142,8 @@ watch(blog, async() => {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
-  border-top: 1px solid #a5dff9;
-  border-bottom: 1px solid #a5dff9;
+  border-top: 1px solid var(--primary-color);
+  border-bottom: 1px solid var(--primary-color);
   padding: 10px;
 }
 
@@ -276,11 +276,12 @@ watch(blog, async() => {
   display: flex;
   align-items: center;
   gap: 20px;
+  width: 100%;
 }
 
 .blog-body :deep(.c-embed__cover) {
-  width: 110px;
-  height: 110px;
+  width: 100px;
+  height: 100px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -301,16 +302,22 @@ watch(blog, async() => {
   justify-content: center;
 }
 
+.blog-body :deep(.c-embed__body h2) {
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+  line-height: 1.3;
+}
+
 .blog-body :deep(.c-embed__body .c-link) {
   font-size: 2.7rem;
   display: inline-block;
   font-weight: 700;
 }
 
-.blog-body :deep(.c-embed__body .p) {
+.blog-body :deep(.c-embed__body p) {
   font-size: 1.8rem;
-  margin: 0 0 8px;
   color: #171717;
+  margin: 0;
 }
 
 .blog-body :deep(.c-embed__body div) {
@@ -320,4 +327,59 @@ watch(blog, async() => {
   color: #737373;
 }
 
+.blog-body :deep(.ltag__link) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  border: 1px solid var(--primary-color);
+  background-color: #f9f9f9;
+  border-radius: 4px;
+}
+
+.blog-body :deep(.ltag__link .ltag__link__pic) {
+  display: inline-block;
+  padding: 20px;
+}
+
+.blog-body :deep(.ltag__link img) {
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  max-width: 60px;
+  max-height: 60px;
+}
+
+.blog-body :deep(.ltag__link .ltag__link__content) {
+  display: inline-block;
+  padding: 10px 10px 10px 0;
+}
+
+.blog-body :deep(.ltag__link .ltag__link__content h2) {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  color: var(--primary-color);
+  font-size: 3.1rem;
+  line-height: 38px;
+  font-weight: 700;
+}
+
+.blog-body :deep(.ltag__link .ltag__link__content h3) {
+  margin: 4px 0;
+  padding: 0;
+  color: #a3a3a3;
+  font-size: 1.4rem;
+  line-height: 17px;
+  font-weight: 500;
+}
+
+.blog-body :deep(.ltag__link .ltag__link__content .ltag__link__taglist) {
+  margin-top: 10px;
+  padding: 0;
+  color: #8FBC94;
+  font-size: 1.4rem;
+  line-height: 14px;
+  font-weight: 500;
+}
 </style>
