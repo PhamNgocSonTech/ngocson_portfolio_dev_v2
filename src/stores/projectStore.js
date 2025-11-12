@@ -5,6 +5,19 @@ export const useProjectStore = defineStore('projects', () => {
     const projects = ref([
       //  Web App
       {
+        id: 14,
+        img: 'Portfolio-V2/Projects/coming-soon-img.jpg',
+        title: 'Mini CRM',
+        desc: 'A lightweight CRM app for managing personal clients, leads, and contacts. Includes tagging, note history, and follow-up reminders — a smarter alternative to a simple contact book.',
+        techStack: ['VueJS', 'VueRouter', 'Pinia', 'TailwindCSS', 'Shadcn-Vue', 'Supabase', 'Dashboard UI'],
+        github: '#!',
+        liveDemo: '#!',
+        type: 'webapp',
+        status: 'coming-soon',
+      },
+
+
+      {
         id: 1,
         img: 'Portfolio-V2/Projects/ngoc-son-portfolio-v2.jpg',
         title: 'Ngoc Son Portfolio v2.0',
@@ -12,7 +25,7 @@ export const useProjectStore = defineStore('projects', () => {
           'Built with Vue.js 3 and featuring dynamic project filtering, interactive status badge and clean UI design. ' +
           'The portfolio demonstrates expertise in both frontend (Vue ecosystem) and backend (Node.js, Express, MongoDB) technologies, ' +
           'with projects ranging from social media platforms to real estate landing pages.',
-        techStack: ['VueJS', 'VueRouter', 'Pinia', 'NodeJS', 'ExpressJS', 'Dashboard Admin', 'Cloudinary'],
+        techStack: ['VueJS', 'VueRouter', 'Pinia', 'NodeJS', 'ExpressJS', 'Dashboard Admin', 'Imagekit.io'],
         github: 'https://github.com/PhamNgocSonTech/ngocson_portfolio_dev_v2',
         liveDemo: 'https://ngocson-portfolio-dev-v2.vercel.app/',
         type: 'webapp',
